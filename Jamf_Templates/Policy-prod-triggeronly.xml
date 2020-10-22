@@ -18,16 +18,30 @@
     </general>
     <scope>
         <all_computers>true</all_computers>
+        <computer_groups></computer_groups>
+        <exclusions>
+            <computer_groups></computer_groups>
+        </exclusions>
     </scope>
     <package_configuration>
-        <!--Package added by JSSImporter-->
+        <packages>
+            <size>1</size>
+            <package>
+                <name>%pkg_name%</name>
+                <action>Install</action>
+            </package>
+        </packages>
     </package_configuration>
     <scripts>
-        <!--Scripts added by JSSImporter-->
+        <size>0</size>
     </scripts>
     <self_service>
         <use_for_self_service>false</use_for_self_service>
     </self_service>
+    <user_interaction>
+        <message_start>%NAME% v%version% is being installed.</message_start>
+        <message_finish>%NAME% v%version% has now been installed.</message_finish>
+    </user_interaction>
     <maintenance>
         <recon>true</recon>
     </maintenance>

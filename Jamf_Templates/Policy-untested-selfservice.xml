@@ -52,8 +52,8 @@
         <self_service_description>%SELFSERVICE_DESCRIPTION%</self_service_description>
     </self_service>
     <user_interaction>
-        <message_start>%MESSAGE_START%</message_start>
-        <message_finish>%MESSAGE_FINISH%</message_finish>
+        <message_start>%NAME% is being installed.</message_start>
+        <message_finish>%NAME% has now been installed.</message_finish>
     </user_interaction>
     <maintenance>
         <recon>true</recon>

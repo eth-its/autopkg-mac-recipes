@@ -34,16 +34,15 @@
     </scripts>
     <self_service>
         <use_for_self_service>true</use_for_self_service>
-        <install_button_text>%SELFSERVICE_INSTALL_BUTTON%</install_button_text>
-        <reinstall_button_text>%SELFSERVICE_REINSTALL_BUTTON%</reinstall_button_text>
+        <install_button_text>Install v%version%</install_button_text>
+        <reinstall_button_text>Install v%version%</reinstall_button_text>
         <self_service_display_name>%SELFSERVICE_DISPLAY_NAME%</self_service_display_name>
         <self_service_description>%SELFSERVICE_DESCRIPTION%</self_service_description>
     </self_service>
-    <user_interaction>
-        <message_start>%MESSAGE_START%</message_start>
-        <message_finish>%MESSAGE_FINISH%</message_finish>
-    </user_interaction>
     <maintenance>
         <recon>false</recon>
     </maintenance>
+    <files_processes>
+        <run_command>jamf policy -event "%TRIGGER_NAME%"</run_command>
+    </files_processes>
 </policy>
