@@ -10,10 +10,6 @@
 	<dict>
 		<key>INSTALL_BUTTON_TEXT</key>
 		<string>Install %version%</string>
-		<key>MESSAGE_FINISH</key>
-		<string>Mendeley Reference Manager v%version% installation complete</string>
-		<key>MESSAGE_START</key>
-		<string>Mendeley Reference Manager v%version% is being installed</string>
 		<key>NAME</key>
 		<string>Mendeley Reference Manager</string>
 		<key>PKG_CATEGORY</key>
@@ -47,8 +43,6 @@
 		<string>SmartGroup-test-version-installed.xml</string>
 		<key>UPDATE_PREDICATE</key>
 		<string>pkg_uploaded == False</string>
-		<key>version</key>
-		<string>%version%</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.0.0</string>

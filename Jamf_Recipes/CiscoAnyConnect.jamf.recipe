@@ -8,12 +8,6 @@
 	<string>com.github.eth-its-recipes.jamf.CiscoAnyConnect</string>
 	<key>Input</key>
 	<dict>
-		<key>INSTALL_BUTTON_TEXT</key>
-		<string>Install %version%</string>
-		<key>MESSAGE_FINISH</key>
-		<string>Cisco AnyConnect v%version% installation complete</string>
-		<key>MESSAGE_START</key>
-		<string>Cisco AnyConnect v%version% is being installed</string>
 		<key>NAME</key>
 		<string>Cisco AnyConnect Secure Mobility Client</string>
 		<key>PKG_CATEGORY</key>
@@ -24,8 +18,6 @@
 		<string>Cisco AnyConnect Secure Mobility Client v%version%</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>Policy-untested-selfservice.xml</string>
-		<key>REINSTALL_BUTTON_TEXT</key>
-		<string>Install %version%</string>
 		<key>SELFSERVICE_DESCRIPTION</key>
 		<string>Cisco AnyConnect Secure Mobility Client is a Virtual Private Network client.</string>
 		<key>SELFSERVICE_DISPLAY_NAME</key>
