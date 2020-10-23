@@ -20,14 +20,14 @@
         <all_computers>false</all_computers>
         <computer_groups>
             <computer_group>
-                <name>%INSTALLED_POLICY_NAME%</name>
+                <name>%INSTALLED_GROUP_NAME%</name>
             </computer_group>
         </computer_groups>
         <exclusions>
             <computers/>
             <computer_groups>
                 <computer_group>
-                    <name>%AUTOINSTALL_POLICY_NAME%</name>
+                    <name>%AUTOINSTALL_GROUP_NAME%</name>
                 </computer_group>
             </computer_groups>
         </exclusions>

@@ -1,30 +1,32 @@
 Comment: |
-  This recipe is a template recipe for uninstall policies which use a single script. It can be overridden directly if the NAME, SELF_SERVICE_DESCRIPTION, SELF_SERVICE_ICON and SCRIPT_NAME keys are overridden. 
+  This recipe is a template recipe for uninstall policies which remove an app. It can be overridden directly if the NAME, SELF_SERVICE_DESCRIPTION, SELF_SERVICE_ICON and SCRIPT_PATH keys are overridden. 
+  If using a template script, supply the SCRIPT_NAME key to give the script a unique name in Jamf. 
+  For Application-uninstall.sh, provide the PKG_ID key in the override. This allows the app to be closed and the package receipt to be removed. You will also need to provide JSS_INVENTORY_NAME if this does not match NAME.
   If the policy name does not match the NAME key, e.g. due to language or license being added to the policy name, SELF_SERVICE_DISPLAY_NAME and smart group name values may also need to be overridden.
   Do not add things like language or license to the NAME key.
+
 Description: Uploads a script to the Jamf Pro Server and creates a Self Service Policy and Smart Group.
 Identifier: com.github.eth-its-recipes.jamf.template-script-uninstall
 MinimumVersion: 2.0.0
 
 Input:
-  NAME: TEMPLATE_RECIPE
-  SCRIPT_NAME: Cisco AnyConnect-uninstall.sh
-  SELF_SERVICE_DESCRIPTION: Uninstalls Cisco AnyConnect. Please note that with macOS Big Sur and above, an administrator account password must be provided via a prompt in order to remove the System Extension that comes with Cisco AnyConnect.
-  SELF_SERVICE_ICON: Cisco AnyConnect.png
+  JSS_INVENTORY_NAME: "%NAME%.app"
+  SCRIPT_NAME: "%NAME%-uninstall.sh"
+  SCRIPT_PATH: Application-uninstall.sh
+  SELF_SERVICE_ICON: "%NAME%.png"
   INSTALL_ALL_GROUP_NAME: Software Gets Auto-installed
-  INSTALL_ALL_GROUP_TEMPLATE: SmartGroup-Software-Gets-Auto-installed.xml
+  INSTALL_ALL_GROUP_TEMPLATE: SmartGroup-autoinstall-all-software.xml
   AUTOINSTALL_GROUP_NAME: "%NAME% auto-install"
-  AUTOINSTALL_GROUP_TEMPLATE: SmartGroup-auto-install.xml
+  AUTOINSTALL_GROUP_TEMPLATE: SmartGroup-autoinstall.xml
   INSTALLED_GROUP_NAME: "%NAME% installed"
   INSTALLED_GROUP_TEMPLATE: SmartGroup-installed.xml
   TESTING_GROUP_NAME: Testing
   TESTING_GROUP_TEMPLATE: StaticGroup-testing.xml
   USERS_GROUP_NAME: "%NAME% users"
   USERS_GROUP_TEMPLATE: SmartGroup-users.xml
-  POLICY_CATEGORY: Uninstallers
-  POLICY_TEMPLATE: Policy-uninstall-self-service.xml
-  POLICY_NAME: "%NAME%"
-  UNINSTALL_POLICY_TEMPLATE: Policy-uninstall-self-service.xml
+  UNINSTALL_POLICY_CATEGORY: Uninstallers
+  UNINSTALL_POLICY_NAME: "Uninstall %NAME%"
+  UNINSTALL_POLICY_TEMPLATE: Policy-uninstall-selfservice.xml
   UNINSTALL_TRIGGERONLY_POLICY_TEMPLATE: Policy-uninstall-triggeronly.xml
   UNINSTALL_SELF_SERVICE_DESCRIPTION: "Uninstalls %NAME%"
   UNINSTALL_SELF_SERVICE_DISPLAY_NAME: "Uninstall %NAME%"
@@ -39,12 +41,13 @@ Input:
 Process:
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader
     Arguments:
-      category_name: "%POLICY_CATEGORY%"
+      category_name: "%UNINSTALL_POLICY_CATEGORY%"
 
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfScriptUploader
     Arguments:
-      script_category: "%POLICY_CATEGORY%"
-      script_path: "%SCRIPT_NAME%"
+      script_category: "%UNINSTALL_POLICY_CATEGORY%"
+      script_name: "%SCRIPT_NAME%"
+      script_path: "%SCRIPT_PATH%"
       script_priority: "%SCRIPT_PRIORITY%"
       replace_script: "True"
 
@@ -80,7 +83,7 @@ Process:
 
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader
     Arguments:
-      policy_template: "%POLICY_TEMPLATE%"
-      policy_name: "%POLICY_NAME%"
+      policy_template: "%UNINSTALL_POLICY_TEMPLATE%"
+      policy_name: "%UNINSTALL_POLICY_NAME%"
       icon: "%SELF_SERVICE_ICON%"
       replace_policy: "True"

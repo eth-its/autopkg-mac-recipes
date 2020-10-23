@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Comment</key>
+	<string>This recipe is a template recipe for uninstall policies which remove an app. It can be overridden directly if the NAME, SELF_SERVICE_DESCRIPTION, SELF_SERVICE_ICON and SCRIPT_PATH keys are overridden. 
+If using a template script, supply the SCRIPT_NAME key to give the script a unique name in Jamf. 
+For Application-uninstall.sh, provide the PKG_ID key in the override. This allows the app to be closed and the package receipt to be removed. You will also need to provide JSS_INVENTORY_NAME if this does not match NAME.
+If the policy name does not match the NAME key, e.g. due to language or license being added to the policy name, SELF_SERVICE_DISPLAY_NAME and smart group name values may also need to be overridden.
+Do not add things like language or license to the NAME key.
+</string>
+	<key>Description</key>
+	<string>Uploads a script to the Jamf Pro Server and creates a Self Service Policy and Smart Group.</string>
+	<key>Identifier</key>
+	<string>com.github.eth-its-recipes.jamf.template-script-uninstall</string>
+	<key>Input</key>
+	<dict>
+		<key>AUTOINSTALL_GROUP_NAME</key>
+		<string>%NAME% auto-install</string>
+		<key>AUTOINSTALL_GROUP_TEMPLATE</key>
+		<string>SmartGroup-autoinstall.xml</string>
+		<key>INSTALLED_GROUP_NAME</key>
+		<string>%NAME% installed</string>
+		<key>INSTALLED_GROUP_TEMPLATE</key>
+		<string>SmartGroup-installed.xml</string>
+		<key>INSTALL_ALL_GROUP_NAME</key>
+		<string>Software Gets Auto-installed</string>
+		<key>INSTALL_ALL_GROUP_TEMPLATE</key>
+		<string>SmartGroup-autoinstall-all-software.xml</string>
+		<key>INSTALL_BUTTON_TEXT</key>
+		<string>Uninstall</string>
+		<key>JSS_INVENTORY_NAME</key>
+		<string>%NAME%.app</string>
+		<key>REINSTALL_BUTTON_TEXT</key>
+		<string>Uninstall</string>
+		<key>SCRIPT_NAME</key>
+		<string>%NAME%-uninstall.sh</string>
+		<key>SCRIPT_PATH</key>
+		<string>Application-uninstall.sh</string>
+		<key>SCRIPT_PRIORITY</key>
+		<string>After</string>
+		<key>SELF_SERVICE_DISPLAY_NAME</key>
+		<string>Uninstall %NAME%</string>
+		<key>SELF_SERVICE_ICON</key>
+		<string>%NAME%.png</string>
+		<key>TESTING_GROUP_NAME</key>
+		<string>Testing</string>
+		<key>TESTING_GROUP_TEMPLATE</key>
+		<string>StaticGroup-testing.xml</string>
+		<key>UNINSTALL_POLICY_CATEGORY</key>
+		<string>Uninstallers</string>
+		<key>UNINSTALL_POLICY_NAME</key>
+		<string>Uninstall %NAME%</string>
+		<key>UNINSTALL_POLICY_TEMPLATE</key>
+		<string>Policy-uninstall-selfservice.xml</string>
+		<key>UNINSTALL_SELF_SERVICE_DESCRIPTION</key>
+		<string>Uninstalls %NAME%</string>
+		<key>UNINSTALL_SELF_SERVICE_DISPLAY_NAME</key>
+		<string>Uninstall %NAME%</string>
+		<key>UNINSTALL_SELF_SERVICE_INSTALL_BUTTON</key>
+		<string>Uninstall</string>
+		<key>UNINSTALL_SELF_SERVICE_REINSTALL_BUTTON</key>
+		<string>Uninstall</string>
+		<key>UNINSTALL_TRIGGERONLY_POLICY_TEMPLATE</key>
+		<string>Policy-uninstall-triggeronly.xml</string>
+		<key>UNINSTALL_TRIGGER_NAME</key>
+		<string>%NAME%-uninstall</string>
+		<key>USERS_GROUP_NAME</key>
+		<string>%NAME% users</string>
+		<key>USERS_GROUP_TEMPLATE</key>
+		<string>SmartGroup-users.xml</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.0.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>category_name</key>
+				<string>%UNINSTALL_POLICY_CATEGORY%</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>replace_script</key>
+				<string>True</string>
+				<key>script_category</key>
+				<string>%UNINSTALL_POLICY_CATEGORY%</string>
+				<key>script_name</key>
+				<string>%SCRIPT_NAME%</string>
+				<key>script_path</key>
+				<string>%SCRIPT_PATH%</string>
+				<key>script_priority</key>
+				<string>%SCRIPT_PRIORITY%</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfScriptUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>computergroup_name</key>
+				<string>%TESTING_GROUP_NAME%</string>
+				<key>computergroup_template</key>
+				<string>%TESTING_GROUP_TEMPLATE%</string>
+				<key>replace_group</key>
+				<string>False</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>computergroup_name</key>
+				<string>%USERS_GROUP_NAME%</string>
+				<key>computergroup_template</key>
+				<string>%USERS_GROUP_TEMPLATE%</string>
+				<key>replace_group</key>
+				<string>False</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>computergroup_name</key>
+				<string>%INSTALL_ALL_GROUP_NAME%</string>
+				<key>computergroup_template</key>
+				<string>%INSTALL_ALL_GROUP_TEMPLATE%</string>
+				<key>replace_group</key>
+				<string>False</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>computergroup_name</key>
+				<string>%AUTOINSTALL_GROUP_NAME%</string>
+				<key>computergroup_template</key>
+				<string>%AUTOINSTALL_GROUP_TEMPLATE%</string>
+				<key>replace_group</key>
+				<string>False</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>computergroup_name</key>
+				<string>%INSTALLED_GROUP_NAME%</string>
+				<key>computergroup_template</key>
+				<string>%INSTALLED_GROUP_TEMPLATE%</string>
+				<key>replace_group</key>
+				<string>True</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>icon</key>
+				<string>%SELF_SERVICE_ICON%</string>
+				<key>policy_name</key>
+				<string>%UNINSTALL_POLICY_NAME%</string>
+				<key>policy_template</key>
+				<string>%UNINSTALL_POLICY_TEMPLATE%</string>
+				<key>replace_policy</key>
+				<string>True</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader</string>
+		</dict>
+	</array>
+</dict>
+</plist>

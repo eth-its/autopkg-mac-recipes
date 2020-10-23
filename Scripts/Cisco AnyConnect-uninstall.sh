@@ -10,7 +10,7 @@
 #
 #######################################################################
 
-appName="Cisco AnyConnect Secure Mobility Client"
+appName="%NAME%"
 
 if [[ $(pgrep -x "$appName") ]]; then
 	echo "Closing $appName"

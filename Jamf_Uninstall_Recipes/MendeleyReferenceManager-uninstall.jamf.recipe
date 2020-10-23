@@ -5,19 +5,15 @@
 	<key>Description</key>
 	<string>Uploads a script to the Jamf Pro Server and creates a Self Service Policy and Smart Group.</string>
 	<key>Identifier</key>
-	<string>com.github.eth-its-recipes.jamf.CiscoAnyConnect-uninstall</string>
+	<string>com.github.eth-its-recipes.jamf.MendeleyReferenceManager-uninstall</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>Cisco AnyConnect Secure Mobility Client</string>
-		<key>SCRIPT_NAME</key>
-		<string>Cisco AnyConnect-uninstall.sh</string>
-		<key>SCRIPT_PATH</key>
-		<string>Cisco AnyConnect-uninstall.sh</string>
+		<string>Mendeley Reference Manager</string>
+		<key>PKG_ID</key>
+		<string>com.elsevier.mendeley</string>
 		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Uninstalls Cisco AnyConnect. Please note that with macOS Big Sur and above, an administrator account password must be provided via a prompt in order to remove the System Extension that comes with Cisco AnyConnect.</string>
-		<key>SELF_SERVICE_ICON</key>
-		<string>Cisco AnyConnect.png</string>
+		<string>Uninstalls %NAME%</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.0.0</string>
