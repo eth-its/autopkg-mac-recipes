@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Comment</key>
+	<string>This is a template recipe and cannot be used without a child recipe or RecipeOverride.
+UNTESTED_RECIPE_IDENTIFIER must be supplied
+NAME, POLICY_NAME and SELFSERVICE_DISPLAY_NAME need to be provided in the child recipe.
+If the app name does not match NAME.app, JSS_INVENTORY_NAME should also be overridden.
+If the icon does not match NAME.png, SELFSERVICE_ICON should also be overridden.
+</string>
+	<key>Description</key>
+	<string>Uploads the pkg to the JSS, and creates a Self-Service Policy available to members of a Testing group.</string>
+	<key>Identifier</key>
+	<string>com.github.eth-its-recipes.jamf.template-nodes</string>
+	<key>Input</key>
+	<dict>
+		<key>INSTALL_BUTTON_TEXT</key>
+		<string>Install %version%</string>
+		<key>POLICY_CATEGORY</key>
+		<string>Untested</string>
+		<key>POLICY_TEMPLATE</key>
+		<string>Policy-untested-selfservice.xml</string>
+		<key>REINSTALL_BUTTON_TEXT</key>
+		<string>Install %version%</string>
+		<key>SELFSERVICE_ICON</key>
+		<string>%NAME%.png</string>
+		<key>TESTING_GROUP_NAME</key>
+		<string>Testing</string>
+		<key>TESTING_GROUP_TEMPLATE</key>
+		<string>StaticGroup-testing.xml</string>
+		<key>TEST_USERS_GROUP_NAME</key>
+		<string>%NAME% test users</string>
+		<key>TEST_USERS_GROUP_TEMPLATE</key>
+		<string>SmartGroup-test-users.xml</string>
+		<key>TEST_VERSION_INSTALLED_GROUP_NAME</key>
+		<string>%NAME% test version installed</string>
+		<key>TEST_VERSION_INSTALLED_GROUP_TEMPLATE</key>
+		<string>SmartGroup-test-version-installed.xml</string>
+		<key>UPDATE_PREDICATE</key>
+		<string>pkg_uploaded == False</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.0.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>recipeoverride_identifier</key>
+				<string>%UNTESTED_RECIPE_IDENTIFIER%</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.recipes.preprocessors/LastRecipeRunChecker</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.recipes.commonprocessors/VersionRegexGenerator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>category_name</key>
+				<string>%PKG_CATEGORY%</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>replace_pkg</key>
+				<string>False</string>
+				<key>replace_pkg_metadata</key>
+				<string>True</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfPackageUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>predicate</key>
+				<string>%UPDATE_PREDICATE%</string>
+			</dict>
+			<key>Processor</key>
+			<string>StopProcessingIf</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>category_name</key>
+				<string>%POLICY_CATEGORY%</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>computergroup_name</key>
+				<string>%TESTING_GROUP_NAME%</string>
+				<key>computergroup_template</key>
+				<string>%TESTING_GROUP_TEMPLATE%</string>
+				<key>replace_group</key>
+				<string>False</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>computergroup_name</key>
+				<string>%TEST_USERS_GROUP_NAME%</string>
+				<key>computergroup_template</key>
+				<string>%TEST_USERS_GROUP_TEMPLATE%</string>
+				<key>replace_group</key>
+				<string>False</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>computergroup_name</key>
+				<string>%TEST_VERSION_INSTALLED_GROUP_NAME%</string>
+				<key>computergroup_template</key>
+				<string>%TEST_VERSION_INSTALLED_GROUP_TEMPLATE%</string>
+				<key>replace_group</key>
+				<string>True</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>icon</key>
+				<string>%SELFSERVICE_ICON%</string>
+				<key>policy_name</key>
+				<string>%POLICY_NAME%</string>
+				<key>policy_template</key>
+				<string>%POLICY_TEMPLATE%</string>
+				<key>replace_policy</key>
+				<string>True</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.recipes.postprocessors/LastRecipeRunResult</string>
+		</dict>
+	</array>
+</dict>
+</plist>
