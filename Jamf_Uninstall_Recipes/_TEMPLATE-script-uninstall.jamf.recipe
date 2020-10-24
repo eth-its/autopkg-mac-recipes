@@ -31,6 +31,16 @@ Do not add things like language or license to the NAME key.
 		<string>Uninstall</string>
 		<key>JSS_INVENTORY_NAME</key>
 		<string>%NAME%.app</string>
+		<key>PKG_ID</key>
+		<string>None</string>
+		<key>PKG_ID_2</key>
+		<string>None</string>
+		<key>PKG_ID_3</key>
+		<string>None</string>
+		<key>PKG_ID_4</key>
+		<string>None</string>
+		<key>PKG_ID_5</key>
+		<string>None</string>
 		<key>REINSTALL_BUTTON_TEXT</key>
 		<string>Uninstall</string>
 		<key>SCRIPT_NAME</key>
