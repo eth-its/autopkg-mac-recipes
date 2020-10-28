@@ -2,9 +2,7 @@
 
 #######################################################################
 #
-# %NAME% Uninstaller Script for Jamf Pro
-#
-# This script can delete apps that are sandboxed and live in /Applications
+# Remove R.app Script for Jamf Pro
 #
 #######################################################################
 
@@ -39,36 +37,20 @@ function silent_app_quit() {
     fi
 }
 
-# Inputted variables
-app_name="%JSS_INVENTORY_NAME%"
+# MAIN
 
-if [[ -z "${app_name}" ]]; then
-    echo "No application specified!"
-    exit 1
-fi
+app_name="R.app"
 
 # quit the app if running
-silent_app_quit "$appName"
-
+silent_app_quit "$app_name"
 
 # Now remove the app
 echo "Removing application: ${app_name}"
 
-# Add .app to end when providing just a name e.g. "TeamViewer"
-if [[ ! $app_name == *".app"* ]]; then
-	app_name=$app_name".app"
-fi
+app_to_trash="/Applications/$app_name"
 
-# Add standard path if none provided
-if [[ ! $app_name == *"/"* ]]; then
-	app_to_trash="/Applications/$app_name"
-else
-	app_to_trash="$app_name"
-fi
-
-echo "Application will be deleted: $app_to_trash"
 # Remove the application
-/bin/rm -rf "${app_to_trash}"
+/bin/rm -Rf "${app_to_trash}"
 
 echo "Checking if $app_name is actually deleted..."
 if [[ -d "${app_to_trash}" ]]; then
@@ -77,19 +59,30 @@ else
     echo "$app_name deleted successfully"
 fi
 
+# Remove other components
+echo "Removing /Library/Frameworks/R.framework"
+rm -Rf /Library/Frameworks/R.framework
+echo "Removing symlinks in /usr/local/bin"
+rm /usr/local/bin/R /usr/local/bin/Rscript
+
+# Removing tcltk and texinfo packages requires munki's removepackages
+munki_path="/usr/local/munki"
+if [[ ! -f "${munki_path}/removepackages" ]]; then
+    echo "${munki_path}/removepackages binary not installed! Installing now."
+    /usr/local/bin/jamf policy -event ETHPkgUninstallerTool-install
+fi
+
+# Check again
+if [[ ! -f "${munki_path}/removepackages" ]]; then
+    echo "${munki_path}/removepackages binary not installed! Cannot continue."
+    exit 1
+fi
+
 # Try to Forget the packages if we can find a match
 # Loop through the remaining parameters
-pkg_1="%PKG_ID%"
-pkg_2="%PKG_ID_2%"
-pkg_3="%PKG_ID_3%"
-pkg_4="%PKG_ID_4%"
-pkg_5="%PKG_ID_5%"
-for (( i = 1; i < 5; i++ )); do
-    pkg_id=pkg_$i
-    if [[ ${!pkg_id} != "None" ]]; then
-        echo "Forgetting package ${!pkg_id}..."
-        /usr/sbin/pkgutil --pkgs | /usr/bin/grep -i "${!pkg_id}" | /usr/bin/xargs /usr/bin/sudo /usr/sbin/pkgutil --forget
-    fi
+for package in org.R-project.R.GUI.pkg org.R-project.R.fw.pkg org.r-project.R.el-capitan.fw.pkg org.r-project.R.el-capitan.GUI.pkg org.r-project.x86_64.tcltk.x11 org.r-project.x86_64.texinfo; do
+	echo "Removing package ${package}..."
+	${munki_path}/removepackages -f ${package} | tr '\r' ';' | sed -e 's/^.*;//'
 done
 
 echo "$app_name deletion complete"

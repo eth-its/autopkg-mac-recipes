@@ -49,6 +49,8 @@ Do not add things like language or license to the NAME key.
 		<string>Application-uninstall.sh</string>
 		<key>SCRIPT_PRIORITY</key>
 		<string>After</string>
+		<key>SELF_SERVICE_DESCRIPTION</key>
+		<string>Uninstalls %NAME%</string>
 		<key>SELF_SERVICE_DISPLAY_NAME</key>
 		<string>Uninstall %NAME%</string>
 		<key>SELF_SERVICE_ICON</key>

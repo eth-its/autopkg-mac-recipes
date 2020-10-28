@@ -10,33 +10,47 @@
 #
 #######################################################################
 
-appName="%NAME%"
+function silent_app_quit() {
+    # silently kill the application.
+    # add .app to end of string if not supplied
+    app_name="${app_name/\.app/}"            # remove any .app
+    check_app_name="${app_name/\(/\\(}"       # escape any brackets for the pgrep
+    check_app_name="${check_app_name/\)/\\)}"  # escape any brackets for the pgrep
+    check_app_name="${check_app_name}.app"     # add the .app back
+    if pgrep -f "/${check_app_name}" ; then
+        echo "Closing $app_name"
+        /usr/bin/osascript -e "quit app \"$app_name\"" &
+        sleep 1
 
-if [[ $(pgrep -x "$appName") ]]; then
-	echo "Closing $appName"
-	osascript -e "quit app \"$appName\""
-	sleep 1
-
-	# double-check
-	countUp=0
-	while [[ $countUp -le 10 ]]; do
-		if [[ -z $(pgrep -x "$appName") ]]; then
-			echo "$appName closed."
-			break
-		else
-			(( countUp=countUp+1 ))
-			sleep 1
-		fi
-	done
-    if [[ $(pgrep -x "$appName") ]]; then
-	    echo "$appName failed to quit - killing."
-	    /usr/bin/pkill "$appName"
+        # double-check
+        n=0
+        while [[ $n -lt 10 ]]; do
+            if pgrep -f "$check_app_name" ; then
+                (( n=n+1 ))
+                sleep 1
+				echo "Graceful close attempt # $n"
+            else
+                echo "$app_name closed."
+                break
+            fi
+        done
+        if pgrep -f "$check_app_name" ; then
+            echo "$app_name failed to quit - killing."
+            /usr/bin/pkill -f "$check_app_name"
+        fi
     fi
-fi
+}
+
+# MAIN
+
+app_name="Cisco AnyConnect Secure Mobility Client"
+
+# quit the app if running
+silent_app_quit "$app_name"
 
 # Run Cisco's built-in uninstaller
 # Taken from http://kb.mit.edu/confluence/display/mitcontrib/Cisco+Anyconnect+Manual+uninstall+Mac+OS
-echo "Removing application: ${appName}"
+echo "Removing application: ${app_name}"
 
 cisco_uninstaller="/opt/cisco/vpn/bin/vpn_uninstall.sh"
 cisco_uninstaller_new="/opt/cisco/anyconnect/bin/anyconnect_uninstall.sh"
@@ -55,4 +69,4 @@ pkgutilcmd="/usr/sbin/pkgutil"
 $pkgutilcmd --pkgs=com.cisco.pkg.anyconnect.vpn && $pkgutilcmd --forget com.cisco.pkg.anyconnect.vpn
 $pkgutilcmd --pkgs=ch.ethz.id.pkg.CiscoAnyConnect && $pkgutilcmd --forget ch.ethz.id.pkg.CiscoAnyConnect
 
-echo "${appName} removal complete!"
+echo "${app_name} removal complete!"
