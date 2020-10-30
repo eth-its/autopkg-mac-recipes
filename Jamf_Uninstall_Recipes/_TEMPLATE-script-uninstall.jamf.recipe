@@ -59,6 +59,10 @@ Do not add things like language or license to the NAME key.
 		<string>Testing</string>
 		<key>TESTING_GROUP_TEMPLATE</key>
 		<string>StaticGroup-testing.xml</string>
+		<key>TEST_USERS_GROUP_NAME</key>
+		<string>%NAME% test users</string>
+		<key>TEST_USERS_GROUP_TEMPLATE</key>
+		<string>SmartGroup-test-users.xml</string>
 		<key>UNINSTALL_POLICY_CATEGORY</key>
 		<string>Uninstallers</string>
 		<key>UNINSTALL_POLICY_NAME</key>
