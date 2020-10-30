@@ -12,7 +12,7 @@ Do not add things like language or license to the NAME key.
 	<key>Description</key>
 	<string>Uploads a script to the Jamf Pro Server and creates a Self Service Policy and Smart Group.</string>
 	<key>Identifier</key>
-	<string>com.github.eth-its-recipes.jamf.template-script-uninstall</string>
+	<string>com.github.eth-its-recipes.jamf.template-script-autouninstall</string>
 	<key>Input</key>
 	<dict>
 		<key>AUTOINSTALL_GROUP_NAME</key>
