@@ -8,12 +8,26 @@
 	<string>com.github.eth-its-recipes.jamf.R-uninstall</string>
 	<key>Input</key>
 	<dict>
+		<key>AUTOINSTALL_GROUP_NAME</key>
+		<string>%NAME% EN auto-install</string>
+		<key>INSTALLED_GROUP_NAME</key>
+		<string>%NAME% EN installed</string>
 		<key>NAME</key>
 		<string>R</string>
 		<key>SCRIPT_NAME</key>
 		<string>R-uninstall.sh</string>
 		<key>SCRIPT_PATH</key>
 		<string>R-uninstall.sh</string>
+		<key>SELF_SERVICE_DISPLAY_NAME</key>
+		<string>Uninstall %NAME% EN</string>
+		<key>TEST_USERS_GROUP_NAME</key>
+		<string>%NAME% EN test users</string>
+		<key>UNINSTALL_POLICY_NAME</key>
+		<string>Uninstall %NAME% EN</string>
+		<key>UNINSTALL_SELF_SERVICE_DISPLAY_NAME</key>
+		<string>Uninstall %NAME% EN</string>
+		<key>USERS_GROUP_NAME</key>
+		<string>%NAME% EN users</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.0.0</string>
