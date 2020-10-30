@@ -5,19 +5,19 @@
 	<key>Description</key>
 	<string>Uploads a script to the Jamf Pro Server and creates a Self Service Policy and Smart Group.</string>
 	<key>Identifier</key>
-	<string>com.github.eth-its-recipes.jamf.CiscoAnyConnect-uninstall</string>
+	<string>com.github.eth-its-recipes.jamf.AdobeFlashPlayer-uninstall</string>
 	<key>Input</key>
 	<dict>
+		<key>EXTENSION_ATTRIBUTE_NAME</key>
+		<string>AdobeFlashVersion</string>
+		<key>INSTALLED_GROUP_TEMPLATE</key>
+		<string>SmartGroup-installed-EA.xml</string>
 		<key>NAME</key>
-		<string>Cisco AnyConnect Secure Mobility Client</string>
+		<string>Adobe Flash Player</string>
 		<key>SCRIPT_NAME</key>
-		<string>CiscoAnyConnect-uninstall.sh</string>
+		<string>AdobeFlashPlayer-uninstall.sh</string>
 		<key>SCRIPT_PATH</key>
-		<string>CiscoAnyConnect-uninstall.sh</string>
-		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Uninstalls Cisco AnyConnect. Please note that with macOS Big Sur and above, an administrator account password must be provided via a prompt in order to remove the System Extension that comes with Cisco AnyConnect.</string>
-		<key>SELF_SERVICE_ICON</key>
-		<string>Cisco AnyConnect.png</string>
+		<string>AdobeFlashPlayer-uninstall.sh</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.0.0</string>

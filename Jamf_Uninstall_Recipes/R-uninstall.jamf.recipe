@@ -22,6 +22,8 @@
 		<string>Uninstall %NAME% EN</string>
 		<key>TEST_USERS_GROUP_NAME</key>
 		<string>%NAME% EN test users</string>
+		<key>TRIGGER_UNINSTALL_POLICY_NAME</key>
+		<string>Trigger-uninstall %NAME% EN</string>
 		<key>UNINSTALL_POLICY_NAME</key>
 		<string>Uninstall %NAME% EN</string>
 		<key>UNINSTALL_SELF_SERVICE_DISPLAY_NAME</key>

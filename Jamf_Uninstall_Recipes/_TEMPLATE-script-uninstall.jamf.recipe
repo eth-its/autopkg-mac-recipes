@@ -63,6 +63,12 @@ Do not add things like language or license to the NAME key.
 		<string>%NAME% test users</string>
 		<key>TEST_USERS_GROUP_TEMPLATE</key>
 		<string>SmartGroup-test-users.xml</string>
+		<key>TRIGGER_UNINSTALL_POLICY_CATEGORY</key>
+		<string>Triggered Uninstallers</string>
+		<key>TRIGGER_UNINSTALL_POLICY_NAME</key>
+		<string>Trigger-uninstall %NAME%</string>
+		<key>TRIGGER_UNINSTALL_POLICY_TEMPLATE</key>
+		<string>Policy-uninstall-triggeronly.xml</string>
 		<key>UNINSTALL_POLICY_CATEGORY</key>
 		<string>Uninstallers</string>
 		<key>UNINSTALL_POLICY_NAME</key>
@@ -77,8 +83,6 @@ Do not add things like language or license to the NAME key.
 		<string>Uninstall</string>
 		<key>UNINSTALL_SELF_SERVICE_REINSTALL_BUTTON</key>
 		<string>Uninstall</string>
-		<key>UNINSTALL_TRIGGERONLY_POLICY_TEMPLATE</key>
-		<string>Policy-uninstall-triggeronly.xml</string>
 		<key>UNINSTALL_TRIGGER_NAME</key>
 		<string>%NAME%-uninstall</string>
 		<key>USERS_GROUP_NAME</key>
@@ -190,6 +194,19 @@ Do not add things like language or license to the NAME key.
 				<string>%UNINSTALL_POLICY_NAME%</string>
 				<key>policy_template</key>
 				<string>%UNINSTALL_POLICY_TEMPLATE%</string>
+				<key>replace_policy</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>policy_name</key>
+				<string>%TRIGGER_UNINSTALL_POLICY_NAME%</string>
+				<key>policy_template</key>
+				<string>%TRIGGER_UNINSTALL_POLICY_TEMPLATE%</string>
 				<key>replace_policy</key>
 				<true/>
 			</dict>

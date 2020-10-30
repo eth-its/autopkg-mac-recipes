@@ -34,7 +34,9 @@ Input:
   UNINSTALL_POLICY_CATEGORY: Uninstallers
   UNINSTALL_POLICY_NAME: "Uninstall %NAME%"
   UNINSTALL_POLICY_TEMPLATE: Policy-uninstall-selfservice.xml
-  UNINSTALL_TRIGGERONLY_POLICY_TEMPLATE: Policy-uninstall-triggeronly.xml
+  TRIGGER_UNINSTALL_POLICY_CATEGORY: Triggered Uninstallers
+  TRIGGER_UNINSTALL_POLICY_NAME: "Trigger-uninstall %NAME%"
+  TRIGGER_UNINSTALL_POLICY_TEMPLATE: Policy-uninstall-triggeronly.xml
   UNINSTALL_SELF_SERVICE_DESCRIPTION: "Uninstalls %NAME%"
   UNINSTALL_SELF_SERVICE_DISPLAY_NAME: "Uninstall %NAME%"
   UNINSTALL_SELF_SERVICE_INSTALL_BUTTON: Uninstall
@@ -94,4 +96,10 @@ Process:
       policy_template: "%UNINSTALL_POLICY_TEMPLATE%"
       policy_name: "%UNINSTALL_POLICY_NAME%"
       icon: "%SELF_SERVICE_ICON%"
+      replace_policy: True
+
+  - Processor: com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader
+    Arguments:
+      policy_template: "%TRIGGER_UNINSTALL_POLICY_TEMPLATE%"
+      policy_name: "%TRIGGER_UNINSTALL_POLICY_NAME%"
       replace_policy: True
