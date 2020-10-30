@@ -57,41 +57,41 @@ Process:
       script_name: "%SCRIPT_NAME%"
       script_path: "%SCRIPT_PATH%"
       script_priority: "%SCRIPT_PRIORITY%"
-      replace_script: "True"
+      replace_script: True
 
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader
     Arguments:
       computergroup_template: "%TESTING_GROUP_TEMPLATE%"
       computergroup_name: "%TESTING_GROUP_NAME%"
-      replace_group: "False"
+      replace_group: False
 
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader
     Arguments:
       computergroup_template: "%USERS_GROUP_TEMPLATE%"
       computergroup_name: "%USERS_GROUP_NAME%"
-      replace_group: "False"
+      replace_group: False
 
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader
     Arguments:
       computergroup_template: "%INSTALL_ALL_GROUP_TEMPLATE%"
       computergroup_name: "%INSTALL_ALL_GROUP_NAME%"
-      replace_group: "False"
+      replace_group: False
 
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader
     Arguments:
       computergroup_template: "%AUTOINSTALL_GROUP_TEMPLATE%"
       computergroup_name: "%AUTOINSTALL_GROUP_NAME%"
-      replace_group: "False"
+      replace_group: False
 
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader
     Arguments:
       computergroup_template: "%INSTALLED_GROUP_TEMPLATE%"
       computergroup_name: "%INSTALLED_GROUP_NAME%"
-      replace_group: "True"
+      replace_group: True
 
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader
     Arguments:
       policy_template: "%UNINSTALL_POLICY_TEMPLATE%"
       policy_name: "%UNINSTALL_POLICY_NAME%"
       icon: "%SELF_SERVICE_ICON%"
-      replace_policy: "True"
+      replace_policy: True
