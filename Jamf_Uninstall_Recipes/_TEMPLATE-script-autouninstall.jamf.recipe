@@ -10,7 +10,7 @@ If the policy name does not match the NAME key, e.g. due to language or license 
 Do not add things like language or license to the NAME key.
 </string>
 	<key>Description</key>
-	<string>Uploads a script to the Jamf Pro Server and creates a Self Service Policy and Smart Group.</string>
+	<string>Creates a Self Service Policy and Smart Group. Requires the uninstall recipe to have already been run.</string>
 	<key>Identifier</key>
 	<string>com.github.eth-its-recipes.jamf.template-script-autouninstall</string>
 	<key>Input</key>
