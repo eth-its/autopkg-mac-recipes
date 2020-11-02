@@ -16,7 +16,7 @@
       <name>Computer Name</name>
       <priority>1</priority>
       <and_or>and</and_or>
-      <search_type>does not match regex</search_type>
+      <search_type>is</search_type>
       <value>DUMMY CRITERION - REPLACE</value>
       <opening_paren>false</opening_paren>
       <closing_paren>false</closing_paren>
