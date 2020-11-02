@@ -16,6 +16,7 @@ Input:
   USERS_GROUP_NAME: "%NAME% users"
   INSTALLED_GROUP_NAME: "%NAME% installed"
   AUTOUNINSTALL_GROUP_NAME: "Auto-uninstall %NAME%"
+  AUTOUNINSTALL_GROUP_TEMPLATE: SmartGroup-autouninstall.xml
   AUTOUNINSTALL_POLICY_CATEGORY: Auto-uninstallers
   AUTOUNINSTALL_POLICY_NAME: "Auto-uninstall %NAME%"
   AUTOUNINSTALL_POLICY_TEMPLATE: Policy-uninstall-autouninstall.xml
