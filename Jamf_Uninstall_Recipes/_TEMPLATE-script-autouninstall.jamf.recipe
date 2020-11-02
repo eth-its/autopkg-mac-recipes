@@ -59,7 +59,7 @@ Do not add things like language or license to the NAME key.
 				<key>computergroup_template</key>
 				<string>%AUTOUNINSTALL_GROUP_TEMPLATE%</string>
 				<key>replace_group</key>
-				<false/>
+				<true/>
 			</dict>
 			<key>Processor</key>
 			<string>com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader</string>
