@@ -20,7 +20,7 @@ Do not add things like language or license to the NAME key.
 		<key>AUTOINSTALL_GROUP_TEMPLATE</key>
 		<string>SmartGroup-autoinstall.xml</string>
 		<key>AUTOUNINSTALL_GROUP_NAME</key>
-		<string>Auto-uninstall %NAME%</string>
+		<string>%NAME% auto-uninstall</string>
 		<key>AUTOUNINSTALL_GROUP_TEMPLATE</key>
 		<string>SmartGroup-autouninstall.xml</string>
 		<key>AUTOUNINSTALL_POLICY_CATEGORY</key>
