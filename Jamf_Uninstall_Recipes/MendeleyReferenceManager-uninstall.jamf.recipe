@@ -12,7 +12,7 @@
 		<string>Mendeley Reference Manager</string>
 		<key>PKG_ID</key>
 		<string>com.elsevier.mendeley</string>
-		<key>SELF_SERVICE_DESCRIPTION</key>
+		<key>SELFSERVICE_DESCRIPTION</key>
 		<string>Uninstalls %NAME%</string>
 	</dict>
 	<key>MinimumVersion</key>

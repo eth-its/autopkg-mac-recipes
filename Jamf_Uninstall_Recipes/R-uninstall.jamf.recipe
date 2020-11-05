@@ -18,7 +18,7 @@
 		<string>R-uninstall.sh</string>
 		<key>SCRIPT_PATH</key>
 		<string>R-uninstall.sh</string>
-		<key>SELF_SERVICE_DISPLAY_NAME</key>
+		<key>SELFSERVICE_DISPLAY_NAME</key>
 		<string>Uninstall %NAME% EN</string>
 		<key>TEST_USERS_GROUP_NAME</key>
 		<string>%NAME% EN test users</string>

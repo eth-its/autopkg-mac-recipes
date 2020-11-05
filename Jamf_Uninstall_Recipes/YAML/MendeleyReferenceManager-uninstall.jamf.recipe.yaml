@@ -5,5 +5,5 @@ ParentRecipe: com.github.eth-its-recipes.jamf.template-script-uninstall
 
 Input:
   NAME: Mendeley Reference Manager
-  SELF_SERVICE_DESCRIPTION: "Uninstalls %NAME%"
+  SELFSERVICE_DESCRIPTION: "Uninstalls %NAME%"
   PKG_ID: com.elsevier.mendeley
