@@ -42,10 +42,10 @@
     </scripts>
     <self_service>
         <use_for_self_service>true</use_for_self_service>
-        <install_button_text>%SELFSERVICE_INSTALL_BUTTON%</install_button_text>
-        <reinstall_button_text>%SELFSERVICE_REINSTALL_BUTTON%</reinstall_button_text>
-        <self_service_display_name>%SELFSERVICE_DISPLAY_NAME%</self_service_display_name>
-        <self_service_description>%SELFSERVICE_DESCRIPTION%</self_service_description>
+        <install_button_text>%UNINSTALL_SELFSERVICE_INSTALL_BUTTON%</install_button_text>
+        <reinstall_button_text>%UNINSTALL_SELFSERVICE_REINSTALL_BUTTON%</reinstall_button_text>
+        <self_service_display_name>%UNINSTALL_SELFSERVICE_DISPLAY_NAME%</self_service_display_name>
+        <self_service_description>%UNINSTALL_SELFSERVICE_DESCRIPTION%</self_service_description>
     </self_service>
     <maintenance>
         <recon>true</recon>
