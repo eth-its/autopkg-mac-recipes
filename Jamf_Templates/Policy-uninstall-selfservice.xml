@@ -46,6 +46,7 @@
         <reinstall_button_text>%UNINSTALL_SELFSERVICE_REINSTALL_BUTTON%</reinstall_button_text>
         <self_service_display_name>%UNINSTALL_SELFSERVICE_DISPLAY_NAME%</self_service_display_name>
         <self_service_description>%UNINSTALL_SELFSERVICE_DESCRIPTION%</self_service_description>
+        <force_users_to_view_description>%SELFSERVICE_FORCE_DESCRIPTION%</force_users_to_view_description>
     </self_service>
     <maintenance>
         <recon>true</recon>
