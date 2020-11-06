@@ -53,6 +53,8 @@ Do not add things like language or license to the NAME key.
 		<string>Uninstalls %NAME%</string>
 		<key>SELFSERVICE_DISPLAY_NAME</key>
 		<string>Uninstall %NAME%</string>
+		<key>SELFSERVICE_FORCE_DESCRIPTION</key>
+		<string>false</string>
 		<key>SELFSERVICE_ICON</key>
 		<string>%NAME%.png</string>
 		<key>TESTING_GROUP_NAME</key>

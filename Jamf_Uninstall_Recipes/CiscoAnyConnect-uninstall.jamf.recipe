@@ -16,6 +16,8 @@
 		<string>CiscoAnyConnect-uninstall.sh</string>
 		<key>SELFSERVICE_DESCRIPTION</key>
 		<string>Uninstalls Cisco AnyConnect. Please note that with macOS Big Sur and above, an administrator account password must be provided via a prompt in order to remove the System Extension that comes with Cisco AnyConnect.</string>
+		<key>SELFSERVICE_FORCE_DESCRIPTION</key>
+		<string>true</string>
 		<key>SELFSERVICE_ICON</key>
 		<string>Cisco AnyConnect.png</string>
 	</dict>
