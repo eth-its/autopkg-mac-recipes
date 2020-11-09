@@ -15,6 +15,10 @@ Do not add things like language or license to the NAME key.
 	<string>com.github.eth-its-recipes.jamf.template-script-autouninstall</string>
 	<key>Input</key>
 	<dict>
+		<key>AUTOINSTALL_GROUP_NAME</key>
+		<string>%NAME% auto-install</string>
+		<key>AUTOINSTALL_GROUP_TEMPLATE</key>
+		<string>SmartGroup-autoinstall.xml</string>
 		<key>AUTOUNINSTALL_GROUP_NAME</key>
 		<string>%NAME% auto-uninstall</string>
 		<key>AUTOUNINSTALL_GROUP_TEMPLATE</key>

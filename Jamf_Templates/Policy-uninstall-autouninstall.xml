@@ -27,7 +27,7 @@
             <computers/>
             <computer_groups>
                 <computer_group>
-                    <name>%INSTALLED_FOR_AUTOUNINSTALL_GROUP_NAME%</name>
+                    <name>%AUTOINSTALL_GROUP_NAME%</name>
                 </computer_group>
             </computer_groups>
         </exclusions>
