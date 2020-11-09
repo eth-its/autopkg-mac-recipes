@@ -10,4 +10,5 @@
             <search_type>is</search_type>
             <value>%JSS_INVENTORY_NAME%</value>
         </criterion>
-    </computer_group>
+    </criteria>
+</computer_group>

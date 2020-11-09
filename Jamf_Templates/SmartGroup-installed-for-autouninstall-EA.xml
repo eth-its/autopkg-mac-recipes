@@ -10,4 +10,5 @@
             <search_type>does not match regex</search_type>
             <value>^$</value>
         </criterion>
-    </computer_group>
+    </criteria>
+</computer_group>
