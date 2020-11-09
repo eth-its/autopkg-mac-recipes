@@ -29,8 +29,10 @@ Do not add things like language or license to the NAME key.
 		<string>Auto-uninstall %NAME%</string>
 		<key>AUTOUNINSTALL_POLICY_TEMPLATE</key>
 		<string>Policy-uninstall-autouninstall.xml</string>
-		<key>INSTALLED_GROUP_NAME</key>
-		<string>%NAME% installed</string>
+		<key>INSTALLED_FOR_AUTOUNINSTALL_GROUP_NAME</key>
+		<string>%NAME% can be auto-uninstalled</string>
+		<key>INSTALLED_FOR_AUTOUNINSTALL_GROUP_TEMPLATE</key>
+		<string>SmartGroup-installed-for-autouninstall.xml</string>
 		<key>JSS_INVENTORY_NAME</key>
 		<string>%NAME%.app</string>
 		<key>UNINSTALL_TRIGGER_NAME</key>
@@ -50,6 +52,19 @@ Do not add things like language or license to the NAME key.
 			</dict>
 			<key>Processor</key>
 			<string>com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>computergroup_name</key>
+				<string>%INSTALLED_FOR_AUTOUNINSTALL_GROUP_NAME%</string>
+				<key>computergroup_template</key>
+				<string>%INSTALLED_FOR_AUTOUNINSTALL_GROUP_TEMPLATE%</string>
+				<key>replace_group</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
