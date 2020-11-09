@@ -10,8 +10,8 @@
 	<dict>
 		<key>EXTENSION_ATTRIBUTE_NAME</key>
 		<string>AdobeFlashVersion</string>
-		<key>INSTALLED_GROUP_TEMPLATE</key>
-		<string>SmartGroup-installed-EA.xml</string>
+		<key>INSTALLED_FOR_AUTOUNINSTALL_GROUP_TEMPLATE</key>
+		<string>SmartGroup-installed-for-autouninstall-EA.xml</string>
 		<key>NAME</key>
 		<string>Adobe Flash Player</string>
 		<key>SCRIPT_NAME</key>

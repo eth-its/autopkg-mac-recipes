@@ -8,4 +8,4 @@ Input:
   SCRIPT_PATH: AdobeFlashPlayer-uninstall.sh
   SCRIPT_NAME: AdobeFlashPlayer-uninstall.sh
   EXTENSION_ATTRIBUTE_NAME: AdobeFlashVersion
-  INSTALLED_GROUP_TEMPLATE: SmartGroup-installed-EA.xml
+  INSTALLED_FOR_AUTOUNINSTALL_GROUP_TEMPLATE: SmartGroup-installed-for-autouninstall-EA.xml
