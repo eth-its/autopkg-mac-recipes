@@ -20,6 +20,8 @@
 		<string>SophosAntiVirus-uninstall.sh</string>
 		<key>SCRIPT_PATH</key>
 		<string>SophosAntiVirus-uninstall.sh</string>
+		<key>SELFSERVICE_ICON</key>
+		<string>Sophos Anti-Virus.png</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.0.0</string>
