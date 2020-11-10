@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Uploads a script to the Jamf Pro Server and creates a Self Service Policy and Smart Group.</string>
+	<key>Identifier</key>
+	<string>com.github.eth-its-recipes.jamf.SophosAntiVirus-uninstall</string>
+	<key>Input</key>
+	<dict>
+		<key>EXTENSION_ATTRIBUTE_NAME</key>
+		<string>SophosPrimaryServerURL</string>
+		<key>INSTALLED_GROUP_TEMPLATE</key>
+		<string>SmartGroup-installed-EA.xml</string>
+		<key>NAME</key>
+		<string>Sophos Anti-Virus</string>
+		<key>PKG_ID</key>
+		<string>ch.ethz.id.pkg.SophosAntiVirus</string>
+		<key>SCRIPT_NAME</key>
+		<string>SophosAntiVirus-uninstall.sh</string>
+		<key>SCRIPT_PATH</key>
+		<string>SophosAntiVirus-uninstall.sh</string>
+		<key>SELFSERVICE_ICON</key>
+		<string>Sophos Anti-Virus.png</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.0.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.eth-its-recipes.jamf.template-script-uninstall</string>
+</dict>
+</plist>
