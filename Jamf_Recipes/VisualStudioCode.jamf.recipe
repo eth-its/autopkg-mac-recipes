@@ -43,7 +43,7 @@
 		<key>TEST_VERSION_INSTALLED_GROUP_TEMPLATE</key>
 		<string>SmartGroup-test-version-installed.xml</string>
 		<key>UPDATE_PREDICATE</key>
-		<string>pkg_uploaded == False</string>
+		<string>pkg_uploaded != True</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.0.0</string>
