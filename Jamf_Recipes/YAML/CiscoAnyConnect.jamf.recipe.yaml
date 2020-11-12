@@ -18,6 +18,7 @@ Input:
   TEST_VERSION_INSTALLED_GROUP_NAME: "%NAME% test version installed"
   TEST_VERSION_INSTALLED_GROUP_TEMPLATE: SmartGroup-test-version-installed.xml
   POLICY_TEMPLATE: Policy-untested-selfservice.xml
+  POLICY_RUN_COMMAND: ""
   UPDATE_PREDICATE: "pkg_uploaded == False"
 
 Process:

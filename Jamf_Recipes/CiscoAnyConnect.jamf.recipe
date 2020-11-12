@@ -16,6 +16,8 @@
 		<string>Untested</string>
 		<key>POLICY_NAME</key>
 		<string>Cisco AnyConnect Secure Mobility Client v%version%</string>
+		<key>POLICY_RUN_COMMAND</key>
+		<string></string>
 		<key>POLICY_TEMPLATE</key>
 		<string>Policy-untested-selfservice.xml</string>
 		<key>SELFSERVICE_DESCRIPTION</key>

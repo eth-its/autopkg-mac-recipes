@@ -5,32 +5,31 @@
 	<key>Description</key>
 	<string>Uploads the pkg to the JSS, and creates a Self-Service Policy available to members of a Testing group.</string>
 	<key>Identifier</key>
-	<string>com.github.eth-its-recipes.jamf.MendeleyReferenceManager</string>
+	<string>com.github.eth-its-recipes.jamf.VisualStudioCode</string>
 	<key>Input</key>
 	<dict>
 		<key>INSTALL_BUTTON_TEXT</key>
 		<string>Install %version%</string>
 		<key>NAME</key>
-		<string>Mendeley Reference Manager</string>
+		<string>Visual Studio Code</string>
 		<key>PKG_CATEGORY</key>
 		<string>Productivity</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Untested</string>
 		<key>POLICY_NAME</key>
-		<string>Mendeley Reference Manager v%version%</string>
+		<string>Visual Studio Code v%version%</string>
 		<key>POLICY_RUN_COMMAND</key>
-		<string></string>
+		<string>chown -R "$(stat -f%Su /dev/console)" "/Applications/%NAME%.app" &amp;amp;&amp;amp; echo "Corrected permissions for %NAME%."</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>Policy-untested-selfservice.xml</string>
 		<key>REINSTALL_BUTTON_TEXT</key>
 		<string>Install %version%</string>
 		<key>SELFSERVICE_DESCRIPTION</key>
-		<string>A modern alternative to the Mendeley Desktop application: add papers directly from your browser with a few clicks or import any documents from your desktop. Access your library from anywhere. Windows, Mac, Linux and all browsers.
-</string>
+		<string>Visual Studio for Mac is a modern, sophisticated IDE with many features for creating mobile, desktop, and web applications.</string>
 		<key>SELFSERVICE_DISPLAY_NAME</key>
-		<string>Mendeley Reference Manager v%version%</string>
+		<string>Visual Studio Code v%version%</string>
 		<key>SELFSERVICE_ICON</key>
-		<string>Mendeley Reference Manager.png</string>
+		<string>%NAME%.png</string>
 		<key>TESTING_GROUP_NAME</key>
 		<string>Testing</string>
 		<key>TESTING_GROUP_TEMPLATE</key>
@@ -49,7 +48,7 @@
 	<key>MinimumVersion</key>
 	<string>2.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.grahampugh.recipes.pkg.MendeleyReferenceManager</string>
+	<string>com.github.killahquam.pkg.visualstudioscode</string>
 	<key>Process</key>
 	<array>
 		<dict>

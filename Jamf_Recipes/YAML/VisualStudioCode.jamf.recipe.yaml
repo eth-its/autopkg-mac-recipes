@@ -1,17 +1,16 @@
 Description: Uploads the pkg to the JSS, and creates a Self-Service Policy available to members of a Testing group.
-Identifier: com.github.eth-its-recipes.jamf.MendeleyReferenceManager
-ParentRecipe: com.github.grahampugh.recipes.pkg.MendeleyReferenceManager
+Identifier: com.github.eth-its-recipes.jamf.VisualStudioCode
+ParentRecipe: com.github.killahquam.pkg.visualstudioscode
 MinimumVersion: 2.0.0
 
 Input:
-  NAME: Mendeley Reference Manager
+  NAME: Visual Studio Code
+  SELFSERVICE_DESCRIPTION: Visual Studio for Mac is a modern, sophisticated IDE with many features for creating mobile, desktop, and web applications.
   PKG_CATEGORY: Productivity
   POLICY_CATEGORY: Untested
-  SELFSERVICE_DESCRIPTION: |
-    A modern alternative to the Mendeley Desktop application: add papers directly from your browser with a few clicks or import any documents from your desktop. Access your library from anywhere. Windows, Mac, Linux and all browsers.
-  SELFSERVICE_ICON: Mendeley Reference Manager.png
-  POLICY_NAME: "Mendeley Reference Manager v%version%"
-  SELFSERVICE_DISPLAY_NAME: "Mendeley Reference Manager v%version%"
+  SELFSERVICE_ICON: "%NAME%.png"
+  POLICY_NAME: "Visual Studio Code v%version%"
+  SELFSERVICE_DISPLAY_NAME: "Visual Studio Code v%version%"
   TESTING_GROUP_NAME: Testing
   TESTING_GROUP_TEMPLATE: StaticGroup-testing.xml
   TEST_USERS_GROUP_NAME: "%NAME% test users"
@@ -21,7 +20,7 @@ Input:
   INSTALL_BUTTON_TEXT: "Install %version%"
   REINSTALL_BUTTON_TEXT: "Install %version%"
   POLICY_TEMPLATE: Policy-untested-selfservice.xml
-  POLICY_RUN_COMMAND: ""
+  POLICY_RUN_COMMAND: 'chown -R "$(stat -f%Su /dev/console)" "/Applications/%NAME%.app" &amp;&amp; echo "Corrected permissions for %NAME%."'
   UPDATE_PREDICATE: "pkg_uploaded == False"
 
 Process:
