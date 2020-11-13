@@ -149,10 +149,6 @@ If the icon does not match NAME.png, SELFSERVICE_ICON should also be overridden.
 			<key>Processor</key>
 			<string>com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader</string>
 		</dict>
-		<dict>
-			<key>Processor</key>
-			<string>com.github.grahampugh.recipes.postprocessors/LastRecipeRunResult</string>
-		</dict>
 	</array>
 </dict>
 </plist>
