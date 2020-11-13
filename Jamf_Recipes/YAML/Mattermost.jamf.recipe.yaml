@@ -19,7 +19,7 @@ Input:
   INSTALL_BUTTON_TEXT: "Install %version%"
   REINSTALL_BUTTON_TEXT: "Install %version%"
   POLICY_TEMPLATE: Policy-untested-selfservice.xml
-  SELF_SERVICE_ICON: "%NAME%.png"
+  SELFSERVICE_ICON: "%NAME%.png"
   POLICY_RUN_COMMAND: 'chown -R "$(stat -f%Su /dev/console)" "/Applications/%NAME%.app" &amp;&amp; echo "Corrected permissions for %NAME%."'
   UPDATE_PREDICATE: "pkg_uploaded != True"
 
