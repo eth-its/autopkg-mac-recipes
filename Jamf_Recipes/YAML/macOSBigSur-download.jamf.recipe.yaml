@@ -19,7 +19,7 @@ Input:
   POLICY_TEMPLATE: Policy-untested-selfservice.xml
   POLICY_RUN_COMMAND: /Library/Management/erase-install/erase-install.sh --os=11.0 --overwrite --move
   SELFSERVICE_DISPLAY_NAME: "Download macOS Big Sur Installer v%version%"
-  SELF_SERVICE_DESCRIPTION: This will download 'Install macOS Big Sur.app' to the Applications folder. If there are any existing macOS installers present in the Applications folder, this will replace them.
+  SELFSERVICE_DESCRIPTION: This will download 'Install macOS Big Sur.app' to the Applications folder. If there are any existing macOS installers present in the Applications folder, this will replace them.
   SELFSERVICE_ICON: Install macOS Big Sur.png
   INSTALL_BUTTON_TEXT: Download
   REINSTALL_BUTTON_TEXT: Download
