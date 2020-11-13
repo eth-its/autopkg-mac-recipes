@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Creates a Self-Service Policy available to members of a Testing group.</string>
+	<key>Identifier</key>
+	<string>com.github.eth-its-recipes.jamf.macos-bigsur-download-nodes</string>
+	<key>Input</key>
+	<dict>
+		<key>INSTALL_BUTTON_TEXT</key>
+		<string>Download</string>
+		<key>MODEL_IDENTIFIER_REGEX</key>
+		<string>^(iMac14,4|iMac1[5-9]|iMac2[0-9]|iMacPro|MacBook[8-9]|MacBook1[0-9]|MacBookAir[6-9]|MacBookAir1[0-9]|MacBookPro1[1-6]|Macmini[7-9]|MacPro[6-9])</string>
+		<key>NAME</key>
+		<string>Download macOS Big Sur Installer</string>
+		<key>POLICY_NAME</key>
+		<string>Download macOS Big Sur Installer v%version%</string>
+		<key>POLICY_RUN_COMMAND</key>
+		<string>/Library/Management/erase-install/erase-install.sh --os=11.0 --overwrite --move</string>
+		<key>REINSTALL_BUTTON_TEXT</key>
+		<string>Download</string>
+		<key>SELFSERVICE_DISPLAY_NAME</key>
+		<string>Download macOS Big Sur Installer v%version%</string>
+		<key>SELFSERVICE_ICON</key>
+		<string>Install macOS Big Sur.png</string>
+		<key>SELF_SERVICE_DESCRIPTION</key>
+		<string>This will download 'Install macOS Big Sur.app' to the Applications folder. If there are any existing macOS installers present in the Applications folder, this will replace them.</string>
+		<key>TEST_VERSION_INSTALLED_GROUP_NAME</key>
+		<string>%NAME% ineligible</string>
+		<key>TEST_VERSION_INSTALLED_GROUP_TEMPLATE</key>
+		<string>SmartGroup-macOS-download-ineligible.xml</string>
+		<key>UNTESTED_RECIPE_IDENTIFIER</key>
+		<string>local.jamf.macOSBigSur-download</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.0.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.eth-its-recipes.jamf.template-nodes</string>
+</dict>
+</plist>
