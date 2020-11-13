@@ -24,12 +24,12 @@
 		<string>Policy-untested-selfservice.xml</string>
 		<key>REINSTALL_BUTTON_TEXT</key>
 		<string>Install %version%</string>
+		<key>SELFSERVICE_DESCRIPTION</key>
+		<string>Mattermost is an Open Source, Private Cloud alternative to Slack.</string>
 		<key>SELFSERVICE_DISPLAY_NAME</key>
 		<string>%NAME% v%version%</string>
 		<key>SELFSERVICE_ICON</key>
 		<string>%NAME%.png</string>
-		<key>SELF_SERVICE_DESCRIPTION</key>
-		<string>Mattermost is an Open Source, Private Cloud alternative to Slack.</string>
 		<key>TESTING_GROUP_NAME</key>
 		<string>Testing</string>
 		<key>TESTING_GROUP_TEMPLATE</key>
