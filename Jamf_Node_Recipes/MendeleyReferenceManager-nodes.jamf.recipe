@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Description</key>
-	<string>Uploads the pkg to the JSS, and creates a Self-Service Policy available to members of a Testing group.</string>
+	<string>Creates a Self-Service Policy available to members of a Testing group.</string>
 	<key>Identifier</key>
 	<string>com.github.eth-its-recipes.jamf.MendeleyReferenceManager-nodes</string>
 	<key>Input</key>
