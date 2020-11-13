@@ -21,7 +21,7 @@
 		<key>POLICY_CATEGORY</key>
 		<string>Untested</string>
 		<key>POLICY_NAME</key>
-		<string>%NAME%</string>
+		<string>Upgrade to macOS Big Sur v%version%</string>
 		<key>POLICY_RUN_COMMAND</key>
 		<string>/Library/Management/erase-install/erase-install.sh --os=11.0 --overwrite --move --reinstall</string>
 		<key>POLICY_TEMPLATE</key>
@@ -30,6 +30,8 @@
 		<string>Upgrade macOS</string>
 		<key>SELFSERVICE_DESCRIPTION</key>
 		<string>WARNING! This will download the latest version of macOS Big Sur and install it on the system volume. All work should be saved and backed up before starting.</string>
+		<key>SELFSERVICE_DISPLAY_NAME</key>
+		<string>Upgrade to macOS Big Sur v%version%</string>
 		<key>SELFSERVICE_ICON</key>
 		<string>Install macOS Big Sur.png</string>
 		<key>TESTING_GROUP_NAME</key>
