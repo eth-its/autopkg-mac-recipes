@@ -25,6 +25,12 @@ If the icon does not match NAME.png, SELFSERVICE_ICON should also be overridden.
 		<string>Policy-untested-selfservice.xml</string>
 		<key>REINSTALL_BUTTON_TEXT</key>
 		<string>Install %version%</string>
+		<key>SCRIPT_NAME</key>
+		<string>%NAME%-postinstall.py</string>
+		<key>SCRIPT_PATH</key>
+		<string>%NAME%-postinstall.py</string>
+		<key>SCRIPT_PRIORITY</key>
+		<string>After</string>
 		<key>SELFSERVICE_ICON</key>
 		<string>%NAME%.png</string>
 		<key>TESTING_GROUP_NAME</key>

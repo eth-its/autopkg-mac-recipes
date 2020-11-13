@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Creates a Self-Service Policy available to members of a Testing group.</string>
+	<key>Identifier</key>
+	<string>com.github.eth-its-recipes.jamf.GoogleChrome-nodes</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Google Chrome</string>
+		<key>POLICY_NAME</key>
+		<string>%NAME% v%version%</string>
+		<key>SELFSERVICE_DISPLAY_NAME</key>
+		<string>%NAME% v%version%</string>
+		<key>UNTESTED_RECIPE_IDENTIFIER</key>
+		<string>local.jamf.GoogleChrome</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.0.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.eth-its-recipes.jamf.template-nodes</string>
+</dict>
+</plist>
