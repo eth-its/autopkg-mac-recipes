@@ -17,7 +17,7 @@
 		<key>POLICY_NAME</key>
 		<string>Cisco AnyConnect Secure Mobility Client v%version%</string>
 		<key>POLICY_RUN_COMMAND</key>
-		<string></string>
+		<string>echo 'Installation of %NAME% complete'</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>Policy-untested-selfservice.xml</string>
 		<key>SELFSERVICE_DESCRIPTION</key>

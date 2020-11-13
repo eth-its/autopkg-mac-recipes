@@ -19,7 +19,7 @@
 		<key>POLICY_NAME</key>
 		<string>Mendeley Reference Manager v%version%</string>
 		<key>POLICY_RUN_COMMAND</key>
-		<string></string>
+		<string>echo 'Installation of %NAME% complete'</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>Policy-untested-selfservice.xml</string>
 		<key>REINSTALL_BUTTON_TEXT</key>
