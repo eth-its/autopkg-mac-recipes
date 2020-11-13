@@ -15,6 +15,7 @@ Input:
   POLICY_NAME: "%NAME% v%version%"
   POLICY_TEMPLATE: Policy-untested-selfservice-script.xml
   SELFSERVICE_ICON: "%NAME%.png"
+  SELFSERVICE_DISPLAY_NAME: "%NAME% v%version%"
   SCRIPT_NAME: "%NAME%-postinstall.py"
   SCRIPT_PATH: "%NAME%-postinstall.py"
   SCRIPT_PRIORITY: After

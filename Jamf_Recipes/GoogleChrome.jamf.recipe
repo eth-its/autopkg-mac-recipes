@@ -32,6 +32,8 @@
 		<string>After</string>
 		<key>SELFSERVICE_DESCRIPTION</key>
 		<string>Google Chrome is a fast, simple, and secure web browser, built for the modern web.</string>
+		<key>SELFSERVICE_DISPLAY_NAME</key>
+		<string>%NAME% v%version%</string>
 		<key>SELFSERVICE_ICON</key>
 		<string>%NAME%.png</string>
 		<key>TESTING_GROUP_NAME</key>
