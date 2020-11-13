@@ -15,3 +15,5 @@ Input:
   SELFSERVICE_ICON: Install macOS Big Sur.png
   INSTALL_BUTTON_TEXT: Upgrade macOS
   REINSTALL_BUTTON_TEXT: Upgrade macOS
+  TEST_VERSION_INSTALLED_GROUP_NAME: "%NAME% ineligible"
+  TEST_VERSION_INSTALLED_GROUP_TEMPLATE: SmartGroup-macOS-upgrade-ineligible.xml

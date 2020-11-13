@@ -28,6 +28,10 @@
 		<string>Upgrade to macOS Big Sur v%version%</string>
 		<key>SELFSERVICE_ICON</key>
 		<string>Install macOS Big Sur.png</string>
+		<key>TEST_VERSION_INSTALLED_GROUP_NAME</key>
+		<string>%NAME% ineligible</string>
+		<key>TEST_VERSION_INSTALLED_GROUP_TEMPLATE</key>
+		<string>SmartGroup-macOS-upgrade-ineligible.xml</string>
 		<key>UNTESTED_RECIPE_IDENTIFIER</key>
 		<string>local.jamf.macOSBigSur-upgrade</string>
 	</dict>

@@ -45,7 +45,7 @@
 		<key>TEST_VERSION_INSTALLED_GROUP_NAME</key>
 		<string>%NAME% ineligible</string>
 		<key>TEST_VERSION_INSTALLED_GROUP_TEMPLATE</key>
-		<string>%NAME%-SmartGroupTemplate-ineligible.xml</string>
+		<string>SmartGroup-macOS-upgrade-ineligible.xml</string>
 		<key>UPDATE_PREDICATE</key>
 		<string>pkg_uploaded == False</string>
 	</dict>
