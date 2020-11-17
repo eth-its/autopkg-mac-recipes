@@ -54,3 +54,19 @@ done
 
 # forget packages
 pkgutil --pkgs=%PKG_ID% && pkgutil --forget %PKG_ID%
+
+# remove the Sophos OU file if present
+install_dir="/Library/Management/SophosEndpointInstaller"
+group_path="${install_dir}/grouppath.txt"
+if [[ -f "${group_path}" ]]; then
+    echo "Removing grouppath.txt"
+    rm -f "${group_path}"
+fi
+if [[ -f "${install_dir}" ]]; then
+    echo "Removing ${install_dir}"
+    rm -Rf "${install_dir}"
+else
+    echo "${install_dir} not present"
+fi
+
+
