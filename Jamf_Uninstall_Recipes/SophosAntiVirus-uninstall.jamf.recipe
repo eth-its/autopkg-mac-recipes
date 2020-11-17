@@ -9,7 +9,7 @@
 	<key>Input</key>
 	<dict>
 		<key>EXTENSION_ATTRIBUTE_NAME</key>
-		<string>SophosPrimaryServerURL</string>
+		<string>SophosGroupPath</string>
 		<key>INSTALLED_GROUP_TEMPLATE</key>
 		<string>SmartGroup-installed-EA.xml</string>
 		<key>NAME</key>
