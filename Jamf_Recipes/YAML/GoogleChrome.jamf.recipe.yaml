@@ -3,8 +3,11 @@ Identifier: com.github.eth-its-recipes.jamf.GoogleChrome
 MinimumVersion: 2.0.0
 ParentRecipe: com.github.autopkg.pkg.googlechrome
 
+Comment: Overriding the DOWNLOAD_URL to obtain the Universal installer
+
 Input:
   NAME: Google Chrome
+  DOWNLOAD_URL: https://dl.google.com/chrome/mac/universal/stable/GGRO/googlechrome.dmg
   PKG_CATEGORY: Browsers & Players
   SELFSERVICE_DESCRIPTION: Google Chrome is a fast, simple, and secure web browser, built for the modern web.
   TEST_VERSION_INSTALLED_GROUP_NAME: "%NAME% test version installed"
@@ -14,7 +17,7 @@ Input:
   POLICY_CATEGORY: Untested
   POLICY_NAME: "%NAME% v%version%"
   POLICY_TEMPLATE: Policy-untested-selfservice-script.xml
-  SELFSERVICE_ICON: "%NAME%.png"
+  SELFSERVICE_ICON: Google Chrome 2020.png
   SELFSERVICE_DISPLAY_NAME: "%NAME% v%version%"
   SCRIPT_NAME: "%NAME%-postinstall.py"
   SCRIPT_PATH: "%NAME%-postinstall.py"
