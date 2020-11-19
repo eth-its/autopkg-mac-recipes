@@ -28,6 +28,8 @@
 		<string>Policy-untested-selfservice-script.xml</string>
 		<key>REINSTALL_BUTTON_TEXT</key>
 		<string>Install %version%</string>
+		<key>REPLACE_PKG</key>
+		<string>False</string>
 		<key>SCRIPT_NAME</key>
 		<string>%NAME%-postinstall.py</string>
 		<key>SCRIPT_PATH</key>
@@ -75,6 +77,11 @@
 			<string>com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader</string>
 		</dict>
 		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>replace_pkg</key>
+				<string>%REPLACE_PKG%</string>
+			</dict>
 			<key>Processor</key>
 			<string>com.github.grahampugh.jamf-upload.processors/JamfPackageUploader</string>
 		</dict>
