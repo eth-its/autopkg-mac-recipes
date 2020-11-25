@@ -1,0 +1,31 @@
+Description: Uploads the pkg to the JSS, and creates a Self-Service Policy available to members of a Testing group.
+Identifier: com.github.eth-its-recipes.jamf.rosetta
+MinimumVersion: 1.0.0
+ParentRecipe: com.github.grahampugh.recipes.pkg.erase-install
+
+Input:
+  NAME: Rosetta 2
+  PKG_CATEGORY: Administration
+  POLICY_CATEGORY: Administration
+  POLICY_NAME: "Rosetta 2"
+  POLICY_TEMPLATE: Policy-Rosetta-once-per-computer.xml
+  UPDATE_PREDICATE: "pkg_uploaded == False"
+
+Process:
+  - Processor: com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader
+    Arguments:
+      category_name: "%PKG_CATEGORY%"
+
+  - Processor: com.github.grahampugh.jamf-upload.processors/JamfPackageUploader
+
+  - Processor: StopProcessingIf
+    Arguments:
+      predicate: "%UPDATE_PREDICATE%"
+
+  - Processor: com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader
+    Arguments:
+      policy_template: "%POLICY_TEMPLATE%"
+      policy_name: "%POLICY_NAME%"
+      replace_policy: "True"
+
+  - Processor: com.github.grahampugh.recipes.postprocessors/LastRecipeRunResult
