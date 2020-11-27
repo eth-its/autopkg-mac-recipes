@@ -79,6 +79,8 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>pkg_category</key>
+				<string>%PKG_CATEGORY%</string>
 				<key>replace_pkg</key>
 				<string>%REPLACE_PKG%</string>
 			</dict>

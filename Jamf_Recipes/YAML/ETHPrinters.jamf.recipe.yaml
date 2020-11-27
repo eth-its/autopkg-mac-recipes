@@ -39,6 +39,7 @@ Process:
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfPackageUploader
     Arguments:
       replace_pkg: "%REPLACE_PKG%"
+      pkg_category: "%PKG_CATEGORY%"
 
   - Processor: StopProcessingIf
     Arguments:

@@ -31,6 +31,8 @@ Process:
       category_name: "%PKG_CATEGORY%"
 
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfPackageUploader
+    Arguments:
+      pkg_category: "%PKG_CATEGORY%"
 
   - Processor: StopProcessingIf
     Arguments:
