@@ -7,8 +7,8 @@ Input:
   NAME: Rosetta 2
   PKG_CATEGORY: Administration
   POLICY_CATEGORY: Administration
-  POLICY_NAME: "Rosetta 2"
-  POLICY_TEMPLATE: Policy-Rosetta-once-per-computer.xml
+  POLICY_NAME: "0001 - Install Rosetta 2"
+  POLICY_TEMPLATE: Policy-all-computers-once-per-computer.xml
   UPDATE_PREDICATE: "pkg_uploaded == False"
 
 Process:
