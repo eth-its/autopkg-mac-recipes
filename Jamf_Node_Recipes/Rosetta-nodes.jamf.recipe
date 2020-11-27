@@ -18,6 +18,8 @@
 		<string>0001 - Install Rosetta 2</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>Policy-all-computers-once-per-computer.xml</string>
+		<key>UNTESTED_RECIPE_IDENTIFIER</key>
+		<string>local.jamf.rosetta</string>
 		<key>UPDATE_PREDICATE</key>
 		<string>pkg_uploaded == False</string>
 	</dict>

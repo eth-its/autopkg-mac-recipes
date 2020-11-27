@@ -4,6 +4,7 @@ MinimumVersion: 1.0.0
 
 Input:
   NAME: Rosetta 2
+  UNTESTED_RECIPE_IDENTIFIER: local.jamf.rosetta
   PKG_CATEGORY: Administration
   POLICY_CATEGORY: Administration
   POLICY_NAME: "0001 - Install Rosetta 2"
