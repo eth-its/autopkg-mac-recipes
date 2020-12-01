@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Overriding the DOWNLOAD_URL to obtain the Universal installer</string>
 	<key>Description</key>
 	<string>Downloads the latest version of ETH Printers and makes a pkg of it then uploads it to the JSS, and creates a Self-Service Policy available to members of a Testing group.</string>
 	<key>Identifier</key>
@@ -29,9 +27,9 @@
 		<key>REPLACE_PKG</key>
 		<string>False</string>
 		<key>SCRIPT_NAME</key>
-		<string>%NAME%-preinstall.py</string>
+		<string>ETHPrinters-preinstall.sh</string>
 		<key>SCRIPT_PATH</key>
-		<string>%NAME%-preinstall.py</string>
+		<string>ETHPrinters-preinstall.sh</string>
 		<key>SCRIPT_PRIORITY</key>
 		<string>After</string>
 		<key>SELFSERVICE_DESCRIPTION</key>
@@ -58,7 +56,7 @@
 	<key>MinimumVersion</key>
 	<string>2.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.autopkg.pkg.googlechrome</string>
+	<string>ch.ethz.id.download.ETHPrinters</string>
 	<key>Process</key>
 	<array>
 		<dict>

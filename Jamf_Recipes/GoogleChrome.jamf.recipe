@@ -31,9 +31,9 @@
 		<key>REPLACE_PKG</key>
 		<string>False</string>
 		<key>SCRIPT_NAME</key>
-		<string>%NAME%-postinstall.py</string>
+		<string>GoogleChrome-postinstall.py</string>
 		<key>SCRIPT_PATH</key>
-		<string>%NAME%-postinstall.py</string>
+		<string>GoogleChrome-postinstall.py</string>
 		<key>SCRIPT_PRIORITY</key>
 		<string>After</string>
 		<key>SELFSERVICE_DESCRIPTION</key>
