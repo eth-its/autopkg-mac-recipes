@@ -8,8 +8,6 @@
 	<string>com.github.eth-its-recipes.jamf.ETHPrinters-uninstall</string>
 	<key>Input</key>
 	<dict>
-		<key>JSS_INVENTORY_NAME</key>
-		<string>/Applications/Utilities/ETH Printers.app</string>
 		<key>NAME</key>
 		<string>ETH Printers</string>
 		<key>PKG_ID</key>
@@ -19,7 +17,7 @@
 		<key>SCRIPT_NAME</key>
 		<string>ETH Printers-uninstall.sh</string>
 		<key>SCRIPT_PATH</key>
-		<string>Application-uninstall.sh</string>
+		<string>ETHPrinters-uninstall.sh</string>
 		<key>SELFSERVICE_DESCRIPTION</key>
 		<string>Uninstalls the ETH Printers app. This will not uninstall the printer drivers.</string>
 		<key>SELFSERVICE_FORCE_DESCRIPTION</key>
