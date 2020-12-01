@@ -56,7 +56,7 @@
 	<key>MinimumVersion</key>
 	<string>2.0.0</string>
 	<key>ParentRecipe</key>
-	<string>ch.ethz.id.download.ETHPrinters</string>
+	<string>ch.ethz.id.pkg.ETHPrinters</string>
 	<key>Process</key>
 	<array>
 		<dict>
