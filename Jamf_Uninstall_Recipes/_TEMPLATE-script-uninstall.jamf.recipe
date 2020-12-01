@@ -15,18 +15,18 @@ Do not add things like language or license to the NAME key.
 	<string>com.github.eth-its-recipes.jamf.template-script-uninstall</string>
 	<key>Input</key>
 	<dict>
+		<key>AUTOINSTALL_ALL_SOFTWARE_GROUP_NAME</key>
+		<string>Software Gets Auto-installed</string>
 		<key>AUTOINSTALL_GROUP_NAME</key>
 		<string>%NAME% auto-install</string>
 		<key>AUTOINSTALL_GROUP_TEMPLATE</key>
 		<string>SmartGroup-autoinstall.xml</string>
+		<key>AUTOUPDATE_ALL_SOFTWARE_GROUP_NAME</key>
+		<string>Software Gets Auto-updated</string>
 		<key>INSTALLED_GROUP_NAME</key>
 		<string>%NAME% installed</string>
 		<key>INSTALLED_GROUP_TEMPLATE</key>
 		<string>SmartGroup-installed.xml</string>
-		<key>INSTALL_ALL_GROUP_NAME</key>
-		<string>Software Gets Auto-installed</string>
-		<key>INSTALL_ALL_GROUP_TEMPLATE</key>
-		<string>SmartGroup-autoinstall-all-software.xml</string>
 		<key>INSTALL_BUTTON_TEXT</key>
 		<string>Uninstall</string>
 		<key>JSS_INVENTORY_NAME</key>
@@ -136,19 +136,6 @@ Do not add things like language or license to the NAME key.
 				<string>%USERS_GROUP_NAME%</string>
 				<key>computergroup_template</key>
 				<string>%USERS_GROUP_TEMPLATE%</string>
-				<key>replace_group</key>
-				<false/>
-			</dict>
-			<key>Processor</key>
-			<string>com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>computergroup_name</key>
-				<string>%INSTALL_ALL_GROUP_NAME%</string>
-				<key>computergroup_template</key>
-				<string>%INSTALL_ALL_GROUP_TEMPLATE%</string>
 				<key>replace_group</key>
 				<false/>
 			</dict>
