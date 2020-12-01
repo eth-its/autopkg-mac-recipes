@@ -5,6 +5,7 @@ ParentRecipe: com.github.eth-its-recipes.jamf.template-script-uninstall
 
 Input:
   NAME: ETH Printers
+  JSS_INVENTORY_NAME: /Applications/Utilities/ETH Printers.app
   SCRIPT_PATH: Application-uninstall.sh
   SCRIPT_NAME: ETH Printers-uninstall.sh
   SELFSERVICE_DESCRIPTION: Uninstalls the ETH Printers app. This will not uninstall the printer drivers.

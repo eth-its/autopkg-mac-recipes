@@ -8,6 +8,8 @@
 	<string>com.github.eth-its-recipes.jamf.ETHPrinters-uninstall</string>
 	<key>Input</key>
 	<dict>
+		<key>JSS_INVENTORY_NAME</key>
+		<string>/Applications/Utilities/ETH Printers.app</string>
 		<key>NAME</key>
 		<string>ETH Printers</string>
 		<key>PKG_ID</key>
