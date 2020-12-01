@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Uploads a script to the Jamf Pro Server and creates a Self Service Policy and Smart Group.</string>
+	<key>Identifier</key>
+	<string>com.github.eth-its-recipes.jamf.ETHPrinters-uninstall</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>ETH Printers</string>
+		<key>PKG_ID</key>
+		<string>ch.ethz.ethprinters.pkg</string>
+		<key>PKG_ID_2</key>
+		<string>com.houdah.ETH-Printers</string>
+		<key>SCRIPT_NAME</key>
+		<string>ETH Printers-uninstall.sh</string>
+		<key>SCRIPT_PATH</key>
+		<string>Application-uninstall.sh</string>
+		<key>SELFSERVICE_DESCRIPTION</key>
+		<string>Uninstalls the ETH Printers app. This will not uninstall the printer drivers.</string>
+		<key>SELFSERVICE_FORCE_DESCRIPTION</key>
+		<string>true</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.0.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.eth-its-recipes.jamf.template-script-uninstall</string>
+</dict>
+</plist>
