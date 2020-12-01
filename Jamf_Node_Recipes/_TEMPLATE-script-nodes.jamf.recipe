@@ -12,7 +12,7 @@ If the icon does not match NAME.png, SELFSERVICE_ICON should also be overridden.
 	<key>Description</key>
 	<string>Uploads the pkg to the JSS, and creates a Self-Service Policy available to members of a Testing group.</string>
 	<key>Identifier</key>
-	<string>com.github.eth-its-recipes.jamf.template-nodes</string>
+	<string>com.github.eth-its-recipes.jamf.template-script-nodes</string>
 	<key>Input</key>
 	<dict>
 		<key>INSTALL_BUTTON_TEXT</key>
@@ -26,9 +26,9 @@ If the icon does not match NAME.png, SELFSERVICE_ICON should also be overridden.
 		<key>REINSTALL_BUTTON_TEXT</key>
 		<string>Install %version%</string>
 		<key>SCRIPT_NAME</key>
-		<string>%NAME%-postinstall.py</string>
+		<string>%NAME%-postinstall.sh</string>
 		<key>SCRIPT_PATH</key>
-		<string>%NAME%-postinstall.py</string>
+		<string>%NAME%-postinstall.sh</string>
 		<key>SCRIPT_PRIORITY</key>
 		<string>After</string>
 		<key>SELFSERVICE_ICON</key>

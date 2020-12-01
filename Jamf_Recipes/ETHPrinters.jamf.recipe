@@ -31,7 +31,7 @@
 		<key>SCRIPT_PATH</key>
 		<string>ETHPrinters-preinstall.sh</string>
 		<key>SCRIPT_PRIORITY</key>
-		<string>After</string>
+		<string>Before</string>
 		<key>SELFSERVICE_DESCRIPTION</key>
 		<string>Installs the ETH Printers application in the Applications:Utilities folder and installs the HP and Ricoh printer drivers.</string>
 		<key>SELFSERVICE_DISPLAY_NAME</key>
