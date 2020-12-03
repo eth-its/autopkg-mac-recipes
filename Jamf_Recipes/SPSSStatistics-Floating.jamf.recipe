@@ -89,7 +89,7 @@ Use a simple drag and drop interface to access a wide range of capabilities and 
 		<key>TRIGGER_POLICY_NAME</key>
 		<string>Trigger Activate SPSS Statistics %MAJOR_VERSION% Floating License</string>
 		<key>TRIGGER_POLICY_RUN_COMMAND</key>
-		<string></string>
+		<string>echo 'Installation of %POLICY_NAME% complete'</string>
 		<key>TRIGGER_POLICY_TEMPLATE</key>
 		<string>Policy-script-triggeronly.xml</string>
 		<key>UPDATE_PREDICATE</key>

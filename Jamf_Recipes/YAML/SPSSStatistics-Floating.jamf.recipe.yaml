@@ -29,7 +29,7 @@ Input:
   TRIGGER_POLICY_NAME: "Trigger Activate SPSS Statistics %MAJOR_VERSION% Floating License"
   TRIGGER_POLICY_TEMPLATE: Policy-script-triggeronly.xml
   TRIGGER_POLICY_CATEGORY: Triggered Installers
-  TRIGGER_POLICY_RUN_COMMAND: ""
+  TRIGGER_POLICY_RUN_COMMAND: "echo 'Installation of %POLICY_NAME% complete'"
   LICENSE_SET_POLICY_NAME: "Activate SPSS Statistics %MAJOR_VERSION% Floating License"
   LICENSE_INSTALLED_GROUP_NAME: "SPSS Statistics %MAJOR_VERSION% Floating License activated"
   LICENSE_INSTALLED_GROUP_TEMPLATE: ""
