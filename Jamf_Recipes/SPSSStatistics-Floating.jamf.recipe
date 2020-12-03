@@ -13,7 +13,7 @@
 		<key>EXTENSION_ATTRIBUTE_SCRIPT</key>
 		<string>SPSSStatistics-EA.sh</string>
 		<key>EXTENSION_ATTRIBUTE_VALUE</key>
-		<string>Floating</string>
+		<string>%LICENSE%</string>
 		<key>FLOATING_LICENSE_URL</key>
 		<string>lic-spss.ethz.ch</string>
 		<key>INSTALLED_GROUP_NAME</key>
@@ -25,11 +25,11 @@
 		<key>LICENSE</key>
 		<string>Floating</string>
 		<key>LICENSE_INSTALLED_GROUP_NAME</key>
-		<string>SPSS Statistics %MAJOR_VERSION% Floating License activated</string>
+		<string>SPSS Statistics %MAJOR_VERSION% %LICENSE% License activated</string>
 		<key>LICENSE_INSTALLED_GROUP_TEMPLATE</key>
 		<string></string>
 		<key>LICENSE_SET_POLICY_NAME</key>
-		<string>Activate SPSS Statistics %MAJOR_VERSION% Floating License</string>
+		<string>Activate SPSS Statistics %MAJOR_VERSION% %LICENSE% License</string>
 		<key>LIST_LANGUAGE</key>
 		<string>ML</string>
 		<key>LIST_NAME</key>
@@ -37,7 +37,7 @@
 		<key>MAJOR_VERSION</key>
 		<string>27</string>
 		<key>MESSAGE_FINISH</key>
-		<string>SPSS Statistics %MAJOR_VERSION% Floating License is now activated</string>
+		<string>SPSS Statistics %MAJOR_VERSION% %LICENSE% License is now activated</string>
 		<key>NAME</key>
 		<string>SPSS Statistics</string>
 		<key>PKG_CATEGORY</key>
@@ -83,11 +83,11 @@ Use a simple drag and drop interface to access a wide range of capabilities and 
 		<key>TEST_VERSION_INSTALLED_GROUP_TEMPLATE</key>
 		<string>SmartGroup-test-version-installed.xml</string>
 		<key>TRIGGER_NAME</key>
-		<string>Activate-SPSS-%MAJOR_VERSION%-Floating-License</string>
+		<string>Activate-SPSS-%MAJOR_VERSION%-%LICENSE%-License</string>
 		<key>TRIGGER_POLICY_CATEGORY</key>
 		<string>Triggered Installers</string>
 		<key>TRIGGER_POLICY_NAME</key>
-		<string>Trigger Activate SPSS Statistics %MAJOR_VERSION% Floating License</string>
+		<string>Trigger Activate SPSS Statistics %MAJOR_VERSION% %LICENSE% License</string>
 		<key>TRIGGER_POLICY_RUN_COMMAND</key>
 		<string>echo 'Installation of %POLICY_NAME% complete'</string>
 		<key>TRIGGER_POLICY_TEMPLATE</key>

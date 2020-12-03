@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Uploads the pkg to the JSS, and creates a Self-Service Policy available to members of a Testing group.</string>
 	<key>Identifier</key>
-	<string>com.github.eth-its-recipes.jamf.SPSSStatistics-Floating-nodes</string>
+	<string>com.github.eth-its-recipes.jamf.SPSSStatistics-Node</string>
 	<key>Input</key>
 	<dict>
 		<key>EXTENSION_ATTRIBUTE_NAME</key>
@@ -14,8 +14,6 @@
 		<string>SPSSStatistics-EA.sh</string>
 		<key>EXTENSION_ATTRIBUTE_VALUE</key>
 		<string>%LICENSE%</string>
-		<key>FLOATING_LICENSE_URL</key>
-		<string>lic-spss.ethz.ch</string>
 		<key>INSTALLED_GROUP_NAME</key>
 		<string>SPSS Statistics %MAJOR_VERSION% installed</string>
 		<key>INSTALLED_GROUP_TEMPLATE</key>
@@ -23,7 +21,7 @@
 		<key>INSTALL_BUTTON_TEXT</key>
 		<string>Install %version%</string>
 		<key>LICENSE</key>
-		<string>Floating</string>
+		<string>Node</string>
 		<key>LICENSE_INSTALLED_GROUP_NAME</key>
 		<string>SPSS Statistics %MAJOR_VERSION% %LICENSE% License activated</string>
 		<key>LICENSE_INSTALLED_GROUP_TEMPLATE</key>
@@ -49,9 +47,9 @@
 		<key>REINSTALL_BUTTON_TEXT</key>
 		<string>Install %version%</string>
 		<key>SCRIPT_NAME</key>
-		<string>SPSSStatistics-floating-license-activation.sh</string>
+		<string>SPSSStatistics-node-license-activation.sh</string>
 		<key>SCRIPT_PATH</key>
-		<string>SPSSStatistics-floating-license-activation.sh</string>
+		<string>SPSSStatistics-node-license-activation.sh</string>
 		<key>SCRIPT_PRIORITY</key>
 		<string>After</string>
 		<key>SELFSERVICE_DESCRIPTION</key>
@@ -95,8 +93,6 @@ Use a simple drag and drop interface to access a wide range of capabilities and 
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.0.0</string>
-	<key>ParentRecipe</key>
-	<string>ch.ethz.id.pkg.SPSSStatistics27</string>
 	<key>Process</key>
 	<array>
 		<dict>
