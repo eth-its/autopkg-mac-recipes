@@ -95,8 +95,6 @@ Use a simple drag and drop interface to access a wide range of capabilities and 
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.0.0</string>
-	<key>ParentRecipe</key>
-	<string>ch.ethz.id.pkg.SPSSStatistics27</string>
 	<key>Process</key>
 	<array>
 		<dict>
