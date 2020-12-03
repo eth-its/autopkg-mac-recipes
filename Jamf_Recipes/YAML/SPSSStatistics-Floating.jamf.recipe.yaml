@@ -96,10 +96,6 @@ Process:
       computergroup_template: "%TEST_VERSION_INSTALLED_GROUP_TEMPLATE%"
       replace_group: "True"
 
-  - Processor: com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader
-    Arguments:
-      category_name: "%POLICY_CATEGORY%"
-
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader
     Comment: Untested Self Service policy
     Arguments:

@@ -200,15 +200,6 @@ Use a simple drag and drop interface to access a wide range of capabilities and 
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>category_name</key>
-				<string>%POLICY_CATEGORY%</string>
-			</dict>
-			<key>Processor</key>
-			<string>com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>icon</key>
 				<string>%SELFSERVICE_ICON%</string>
 				<key>policy_name</key>
