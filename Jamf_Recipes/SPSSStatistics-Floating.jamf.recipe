@@ -218,21 +218,6 @@ Use a simple drag and drop interface to access a wide range of capabilities and 
 				<key>replace_policy</key>
 				<string>True</string>
 			</dict>
-			<key>Processor</key>
-			<string>com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>icon</key>
-				<string>%SELFSERVICE_ICON%</string>
-				<key>policy_name</key>
-				<string>%POLICY_NAME%</string>
-				<key>policy_template</key>
-				<string>%POLICY_TEMPLATE%</string>
-				<key>replace_policy</key>
-				<string>True</string>
-			</dict>
 			<key>Comment</key>
 			<string>Untested Self Service policy</string>
 			<key>Processor</key>
