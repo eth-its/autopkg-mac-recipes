@@ -36,6 +36,8 @@
 		<string>IBM SPSS</string>
 		<key>MAJOR_VERSION</key>
 		<string>27</string>
+		<key>MESSAGE_FINISH</key>
+		<string>SPSS Statistics %MAJOR_VERSION% Floating License is now activated</string>
 		<key>NAME</key>
 		<string>SPSS Statistics</string>
 		<key>PKG_CATEGORY</key>

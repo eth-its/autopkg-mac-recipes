@@ -33,6 +33,7 @@ Input:
   LICENSE_SET_POLICY_NAME: "Activate SPSS Statistics %MAJOR_VERSION% Floating License"
   LICENSE_INSTALLED_GROUP_NAME: "SPSS Statistics %MAJOR_VERSION% Floating License activated"
   LICENSE_INSTALLED_GROUP_TEMPLATE: ""
+  MESSAGE_FINISH: "SPSS Statistics %MAJOR_VERSION% Floating License is now activated"
   SELFSERVICE_ICON: '%NAME%.png'
   POLICY_NAME: "SPSS Statistics %MAJOR_VERSION% %LICENSE% v%version%"
   SELFSERVICE_DISPLAY_NAME: "SPSS Statistics %MAJOR_VERSION% v%version%"
