@@ -36,7 +36,7 @@ Input:
   MESSAGE_FINISH: "SPSS Statistics %MAJOR_VERSION% Floating License is now activated"
   SELFSERVICE_ICON: '%NAME%.png'
   POLICY_NAME: "SPSS Statistics %MAJOR_VERSION% %LICENSE% v%version%"
-  SELFSERVICE_DISPLAY_NAME: "SPSS Statistics %MAJOR_VERSION% v%version%"
+  SELFSERVICE_DISPLAY_NAME: "SPSS Statistics %MAJOR_VERSION% %LICENSE% v%version%"
   TESTING_GROUP_NAME: Testing
   TESTING_GROUP_TEMPLATE: StaticGroup-testing.xml
   INSTALLED_GROUP_NAME: "SPSS Statistics %MAJOR_VERSION% installed"

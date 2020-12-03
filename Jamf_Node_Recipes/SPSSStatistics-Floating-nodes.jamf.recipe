@@ -63,7 +63,7 @@ Enhance the SPSS Syntax with R and Python through specialized extensions.
 Use a simple drag and drop interface to access a wide range of capabilities and work across multiple data sources.
 </string>
 		<key>SELFSERVICE_DISPLAY_NAME</key>
-		<string>SPSS Statistics %MAJOR_VERSION% v%version%</string>
+		<string>SPSS Statistics %MAJOR_VERSION% %LICENSE% v%version%</string>
 		<key>SELFSERVICE_ICON</key>
 		<string>%NAME%.png</string>
 		<key>TESTING_GROUP_NAME</key>
