@@ -47,6 +47,7 @@ Input:
   UNINSTALL_TRIGGER_NAME: "%NAME% %MAJOR_VERSION%-uninstall"
   INSTALL_BUTTON_TEXT: Uninstall
   REINSTALL_BUTTON_TEXT: Uninstall
+  SELF_SERVICE_FORCE_DESCRIPTION: 'false'
 
 Process:
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader

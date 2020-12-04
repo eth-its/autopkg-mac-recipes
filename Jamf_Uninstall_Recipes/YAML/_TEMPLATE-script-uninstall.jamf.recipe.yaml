@@ -45,6 +45,7 @@ Input:
   SCRIPT_PRIORITY: After
   INSTALL_BUTTON_TEXT: Uninstall
   REINSTALL_BUTTON_TEXT: Uninstall
+  SELF_SERVICE_FORCE_DESCRIPTION: 'false'
 
 Process:
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader
