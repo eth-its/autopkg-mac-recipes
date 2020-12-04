@@ -15,9 +15,9 @@
 		<key>POLICY_NAME</key>
 		<string>Policy-uninstall-triggeronly-script-parameter4.xml</string>
 		<key>SCRIPT_NAME</key>
-		<string>SPSSStatistics-uninstall.sh</string>
+		<string>SPSS Statistics-uninstall.sh</string>
 		<key>SCRIPT_PATH</key>
-		<string>SPSSStatistics-uninstall.sh</string>
+		<string>SPSS Statistics-uninstall.sh</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.0.0</string>
