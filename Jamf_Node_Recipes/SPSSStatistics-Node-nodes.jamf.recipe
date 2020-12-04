@@ -25,9 +25,11 @@
 		<key>LICENSE_INSTALLED_GROUP_NAME</key>
 		<string>SPSS Statistics %MAJOR_VERSION% %LICENSE% License activated</string>
 		<key>LICENSE_INSTALLED_GROUP_TEMPLATE</key>
-		<string></string>
+		<string>SmartGroup-installed-for-license-EA.xml</string>
 		<key>LICENSE_SET_POLICY_NAME</key>
 		<string>Activate SPSS Statistics %MAJOR_VERSION% %LICENSE% License</string>
+		<key>LICENSE_SET_POLICY_TEMPLATE</key>
+		<string>Policy-prod-selfservice-install-license-script.xml</string>
 		<key>MAJOR_VERSION</key>
 		<string>27</string>
 		<key>MESSAGE_FINISH</key>
@@ -151,6 +153,15 @@ Use a simple drag and drop interface to access a wide range of capabilities and 
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>category_name</key>
+				<string>%TRIGGER_POLICY_CATEGORY%</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>replace_script</key>
 				<true/>
 				<key>script_category</key>
@@ -164,6 +175,17 @@ Use a simple drag and drop interface to access a wide range of capabilities and 
 			</dict>
 			<key>Processor</key>
 			<string>com.github.grahampugh.jamf-upload.processors/JamfScriptUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>ea_name</key>
+				<string>%EXTENSION_ATTRIBUTE_NAME%</string>
+				<key>ea_script_path</key>
+				<string>%EXTENSION_ATTRIBUTE_SCRIPT%</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfExtensionAttributeUploader</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -207,6 +229,32 @@ Use a simple drag and drop interface to access a wide range of capabilities and 
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>computergroup_name</key>
+				<string>%INSTALLED_GROUP_NAME%</string>
+				<key>computergroup_template</key>
+				<string>%INSTALLED_GROUP_TEMPLATE%</string>
+				<key>replace_group</key>
+				<string>True</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>computergroup_name</key>
+				<string>%LICENSE_INSTALLED_GROUP_NAME%</string>
+				<key>computergroup_template</key>
+				<string>%LICENSE_INSTALLED_GROUP_TEMPLATE%</string>
+				<key>replace_group</key>
+				<string>True</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>icon</key>
 				<string>%SELFSERVICE_ICON%</string>
 				<key>policy_name</key>
@@ -224,26 +272,6 @@ Use a simple drag and drop interface to access a wide range of capabilities and 
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>category_name</key>
-				<string>%TRIGGER_POLICY_CATEGORY%</string>
-			</dict>
-			<key>Processor</key>
-			<string>com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>ea_name</key>
-				<string>%EXTENSION_ATTRIBUTE_NAME%</string>
-				<key>ea_script_path</key>
-				<string>%EXTENSION_ATTRIBUTE_SCRIPT%</string>
-			</dict>
-			<key>Processor</key>
-			<string>com.github.grahampugh.jamf-upload.processors/JamfExtensionAttributeUploader</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>policy_name</key>
 				<string>%TRIGGER_POLICY_NAME%</string>
 				<key>policy_template</key>
@@ -253,6 +281,21 @@ Use a simple drag and drop interface to access a wide range of capabilities and 
 			</dict>
 			<key>Comment</key>
 			<string>Trigger policy for activating the license</string>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>policy_name</key>
+				<string>%LICENSE_SET_POLICY_NAME%</string>
+				<key>policy_template</key>
+				<string>%LICENSE_SET_POLICY_TEMPLATE%</string>
+				<key>replace_policy</key>
+				<string>True</string>
+			</dict>
+			<key>Comment</key>
+			<string>Self Service policy for activating the license</string>
 			<key>Processor</key>
 			<string>com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader</string>
 		</dict>
