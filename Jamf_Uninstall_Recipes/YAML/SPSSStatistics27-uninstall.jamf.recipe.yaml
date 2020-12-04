@@ -1,0 +1,13 @@
+Description: Uploads a script to the Jamf Pro Server and creates a Self Service Policy and Smart Group.
+Identifier: com.github.eth-its-recipes.jamf.SPSSStatistics27-uninstall
+MinimumVersion: 2.0.0
+ParentRecipe: com.github.eth-its-recipes.jamf.template-majorversion-script-uninstall
+
+Input:
+  NAME: SPSS Statistics
+  MAJOR_VERSION: '27'
+  POLICY_NAME: Policy-uninstall-triggeronly-script-parameter4.xml
+  SCRIPT_PATH: SPSSStatistics-uninstall.sh
+  SCRIPT_NAME: SPSSStatistics-uninstall.sh
+  SCRIPT_PARAMETER4: '%MAJOR_VERSION%'
+  SELFSERVICE_FORCE_DESCRIPTION: "true"
