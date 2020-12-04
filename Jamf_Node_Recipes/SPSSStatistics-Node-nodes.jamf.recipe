@@ -28,6 +28,8 @@
 		<string>SmartGroup-installed-for-license-EA.xml</string>
 		<key>LICENSE_SET_INSTALL_BUTTON_TEXT</key>
 		<string>Activate</string>
+		<key>LICENSE_SET_MESSAGE_FINISH</key>
+		<string>SPSS Statistics %MAJOR_VERSION% %LICENSE% License activated</string>
 		<key>LICENSE_SET_POLICY_NAME</key>
 		<string>Activate SPSS Statistics %MAJOR_VERSION% %LICENSE% License</string>
 		<key>LICENSE_SET_POLICY_TEMPLATE</key>
