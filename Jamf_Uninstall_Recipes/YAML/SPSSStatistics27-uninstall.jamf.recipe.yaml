@@ -9,5 +9,3 @@ Input:
   POLICY_NAME: Policy-uninstall-triggeronly-script-parameter4.xml
   SCRIPT_PATH: SPSSStatistics-uninstall.sh
   SCRIPT_NAME: SPSSStatistics-uninstall.sh
-  SCRIPT_PARAMETER4: '%MAJOR_VERSION%'
-  SELFSERVICE_FORCE_DESCRIPTION: "true"

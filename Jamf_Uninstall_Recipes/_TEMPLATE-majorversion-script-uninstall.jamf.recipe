@@ -41,12 +41,14 @@ Do not add things like language or license to the NAME key.
 		<string>None</string>
 		<key>PKG_ID_5</key>
 		<string>None</string>
+		<key>POLICY_SCRIPT_PARAMETER4</key>
+		<string>%MAJOR_VERSION%</string>
 		<key>REINSTALL_BUTTON_TEXT</key>
 		<string>Uninstall</string>
 		<key>SCRIPT_NAME</key>
 		<string>%NAME%-uninstall.sh</string>
 		<key>SCRIPT_PARAMETER4</key>
-		<string>%MAJOR_VERSION%</string>
+		<string>Major Version</string>
 		<key>SCRIPT_PATH</key>
 		<string>Application-uninstall.sh</string>
 		<key>SCRIPT_PRIORITY</key>
@@ -97,6 +99,15 @@ Do not add things like language or license to the NAME key.
 			<dict>
 				<key>category_name</key>
 				<string>%UNINSTALL_POLICY_CATEGORY%</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>category_name</key>
+				<string>%TRIGGER_UNINSTALL_POLICY_CATEGORY%</string>
 			</dict>
 			<key>Processor</key>
 			<string>com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader</string>

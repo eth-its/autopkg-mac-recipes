@@ -28,7 +28,7 @@
         <script>
             <name>%SCRIPT_NAME%</name>
             <priority>%SCRIPT_PRIORITY%</priority>
-            <parameter4>%SCRIPT_PARAMETER4%</paramter4>
+            <parameter4>%POLICY_SCRIPT_PARAMETER4%</paramter4>
             <parameter5/>
             <parameter6/>
             <parameter7/>

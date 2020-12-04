@@ -16,12 +16,8 @@
 		<string>Policy-uninstall-triggeronly-script-parameter4.xml</string>
 		<key>SCRIPT_NAME</key>
 		<string>SPSSStatistics-uninstall.sh</string>
-		<key>SCRIPT_PARAMETER4</key>
-		<string>%MAJOR_VERSION%</string>
 		<key>SCRIPT_PATH</key>
 		<string>SPSSStatistics-uninstall.sh</string>
-		<key>SELFSERVICE_FORCE_DESCRIPTION</key>
-		<string>true</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.0.0</string>
