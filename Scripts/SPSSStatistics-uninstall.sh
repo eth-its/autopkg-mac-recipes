@@ -61,24 +61,22 @@ fi
 # Loop through the remaining parameters
 pkg_1="com.ibm.spss.statistics.installer"
 pkg_2="com.ibm.spss.statistics.licensing"
-for (( i = 1; i < 5; i++ )); do
+for (( i = 1; i < 2; i++ )); do
     pkg_id=pkg_$i
-    if [[ ${!pkg_id} != "None" ]]; then
-        echo "Forgetting package ${!pkg_id}..."
-        /usr/sbin/pkgutil --pkgs | /usr/bin/grep -i "${!pkg_id}" | /usr/bin/xargs /usr/bin/sudo /usr/sbin/pkgutil --forget
-    fi
+    echo "Forgetting package ${!pkg_id}..."
+    /usr/sbin/pkgutil --pkgs="${!pkg_id}" && /usr/sbin/pkgutil --forget "${!pkg_id}"
 done
 
 # remove license indicator files
-if rm /Library/Management/SPSSStatistics/%MAJOR_VERSION%/node_license_activated ; then 
+if rm "/Library/Management/SPSSStatistics/$major_version/node_license_activated" 2> /dev/null ; then 
     # clear out the Node license 
     echo "Node license removed" 
 fi
-if rm /Library/Management/SPSSStatistics/%MAJOR_VERSION%/floating_license_present ; then 
+if rm "/Library/Management/SPSSStatistics/$major_version/floating_license_present" 2> /dev/null ; then 
     # clear out the Floating license 
     echo "Floating license removed" 
 fi
-if rm -Rf /Library/Management/SPSSStatistics/%MAJOR_VERSION% ; then
+if rm -Rf "/Library/Management/SPSSStatistics/$major_version" ; then
     echo "License removal complete"
 fi
 

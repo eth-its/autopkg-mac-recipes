@@ -28,10 +28,18 @@
 		<string>SPSS Statistics %MAJOR_VERSION% %LICENSE% License activated</string>
 		<key>LICENSE_INSTALLED_GROUP_TEMPLATE</key>
 		<string>SmartGroup-installed-for-license-EA.xml</string>
+		<key>LICENSE_SET_INSTALL_BUTTON_TEXT</key>
+		<string>Activate</string>
 		<key>LICENSE_SET_POLICY_NAME</key>
 		<string>Activate SPSS Statistics %MAJOR_VERSION% %LICENSE% License</string>
 		<key>LICENSE_SET_POLICY_TEMPLATE</key>
-		<string>Policy-prod-selfservice-install-license-script.xml</string>
+		<string>Policy-prod-selfservice-install-license.xml</string>
+		<key>LICENSE_SET_REINSTALL_BUTTON_TEXT</key>
+		<string>Activate</string>
+		<key>LICENSE_SET_SELFSERVICE_DESCRIPTION</key>
+		<string>Activates the SPSS Statistics %MAJOR_VERSION% %LICENSE% License</string>
+		<key>LICENSE_SET_SELFSERVICE_DISPLAY_NAME</key>
+		<string>Activate SPSS Statistics %MAJOR_VERSION% %LICENSE% License</string>
 		<key>MAJOR_VERSION</key>
 		<string>27</string>
 		<key>MESSAGE_FINISH</key>

@@ -29,7 +29,11 @@ Input:
   TRIGGER_POLICY_CATEGORY: Triggered Installers
   TRIGGER_POLICY_RUN_COMMAND: "echo 'Installation of %POLICY_NAME% complete'"
   LICENSE_SET_POLICY_NAME: "Activate SPSS Statistics %MAJOR_VERSION% %LICENSE% License"
-  LICENSE_SET_POLICY_TEMPLATE: Policy-prod-selfservice-install-license-script.xml
+  LICENSE_SET_POLICY_TEMPLATE: Policy-prod-selfservice-install-license.xml
+  LICENSE_SET_SELFSERVICE_DISPLAY_NAME: "Activate SPSS Statistics %MAJOR_VERSION% %LICENSE% License"
+  LICENSE_SET_SELFSERVICE_DESCRIPTION: "Activates the SPSS Statistics %MAJOR_VERSION% %LICENSE% License"
+  LICENSE_SET_INSTALL_BUTTON_TEXT: Activate
+  LICENSE_SET_REINSTALL_BUTTON_TEXT: Activate
   LICENSE_INSTALLED_GROUP_NAME: "SPSS Statistics %MAJOR_VERSION% %LICENSE% License activated"
   LICENSE_INSTALLED_GROUP_TEMPLATE: SmartGroup-installed-for-license-EA.xml
   MESSAGE_FINISH: "SPSS Statistics %MAJOR_VERSION% %LICENSE% License is now activated"
