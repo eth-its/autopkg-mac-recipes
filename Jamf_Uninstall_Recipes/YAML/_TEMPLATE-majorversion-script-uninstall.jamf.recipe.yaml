@@ -13,8 +13,8 @@ Input:
   JSS_INVENTORY_NAME: "%NAME%.app"
   SCRIPT_NAME: "%NAME%-uninstall.sh"
   SCRIPT_PATH: Application-uninstall.sh
-  SCRIPT_PARAMETER4: Major Version
-  POLICY_SCRIPT_PARAMETER4: '%MAJOR_VERSION%'
+  PARAMETER4_TITLE: Major Version
+  PARAMETER4_VALUE: '%MAJOR_VERSION%'
   SCRIPT_PRIORITY: After
   PKG_ID: "None"
   PKG_ID_2: "None"
@@ -64,7 +64,7 @@ Process:
       script_name: "%SCRIPT_NAME%"
       script_path: "%SCRIPT_PATH%"
       script_priority: "%SCRIPT_PRIORITY%"
-      script_parameter4: "%SCRIPT_PARAMETER4%"
+      script_parameter4: "%PARAMETER4_TITLE%"
       replace_script: True
 
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader

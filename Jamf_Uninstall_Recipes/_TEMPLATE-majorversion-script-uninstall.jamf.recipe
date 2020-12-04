@@ -31,6 +31,10 @@ Do not add things like language or license to the NAME key.
 		<string>Uninstall</string>
 		<key>JSS_INVENTORY_NAME</key>
 		<string>%NAME%.app</string>
+		<key>PARAMETER4_TITLE</key>
+		<string>Major Version</string>
+		<key>PARAMETER4_VALUE</key>
+		<string>%MAJOR_VERSION%</string>
 		<key>PKG_ID</key>
 		<string>None</string>
 		<key>PKG_ID_2</key>
@@ -41,14 +45,10 @@ Do not add things like language or license to the NAME key.
 		<string>None</string>
 		<key>PKG_ID_5</key>
 		<string>None</string>
-		<key>POLICY_SCRIPT_PARAMETER4</key>
-		<string>%MAJOR_VERSION%</string>
 		<key>REINSTALL_BUTTON_TEXT</key>
 		<string>Uninstall</string>
 		<key>SCRIPT_NAME</key>
 		<string>%NAME%-uninstall.sh</string>
-		<key>SCRIPT_PARAMETER4</key>
-		<string>Major Version</string>
 		<key>SCRIPT_PATH</key>
 		<string>Application-uninstall.sh</string>
 		<key>SCRIPT_PRIORITY</key>
@@ -124,7 +124,7 @@ Do not add things like language or license to the NAME key.
 				<key>script_name</key>
 				<string>%SCRIPT_NAME%</string>
 				<key>script_parameter4</key>
-				<string>%SCRIPT_PARAMETER4%</string>
+				<string>%PARAMETER4_TITLE%</string>
 				<key>script_path</key>
 				<string>%SCRIPT_PATH%</string>
 				<key>script_priority</key>

@@ -16,6 +16,11 @@
             <name>%TRIGGER_UNINSTALL_POLICY_CATEGORY%</name>
         </category>
     </general>
+    <package_configuration>
+        <packages>
+            <size>0</size>
+        </packages>
+    </package_configuration>
     <scope>
         <all_computers>true</all_computers>
         <computer_groups></computer_groups>
