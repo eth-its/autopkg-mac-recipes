@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of Firefox and makes a pkg of it then uploads it to the JSS, and creates a Self-Service Policy available to members of a Testing group.</string>
 	<key>Identifier</key>
-	<string>com.github.eth-its-recipes.jamf.Firefox</string>
+	<string>com.github.eth-its-recipes.jamf.Firefox-nodes</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
