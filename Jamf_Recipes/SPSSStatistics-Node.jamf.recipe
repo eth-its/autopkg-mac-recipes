@@ -22,6 +22,10 @@
 		<string>Install %version%</string>
 		<key>LICENSE</key>
 		<string>Node</string>
+		<key>LICENSE_INSTALLED_GROUP_NAME</key>
+		<string>SPSS Statistics %MAJOR_VERSION% %LICENSE% License activated</string>
+		<key>LICENSE_INSTALLED_GROUP_TEMPLATE</key>
+		<string>SmartGroup-installed-for-license-EA.xml</string>
 		<key>LICENSE_SET_INSTALL_BUTTON_TEXT</key>
 		<string>Activate</string>
 		<key>LICENSE_SET_POLICY_NAME</key>
