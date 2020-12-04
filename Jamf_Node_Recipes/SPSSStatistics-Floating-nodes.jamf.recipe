@@ -73,7 +73,7 @@ Use a simple drag and drop interface to access a wide range of capabilities and 
 		<key>TESTING_GROUP_TEMPLATE</key>
 		<string>StaticGroup-testing.xml</string>
 		<key>TEST_USERS_GROUP_NAME</key>
-		<string>%NAME% %MAJOR_VERSION% test users</string>
+		<string>%NAME% %MAJOR_VERSION% %LICENSE% test users</string>
 		<key>TEST_USERS_GROUP_TEMPLATE</key>
 		<string>SmartGroup-test-users.xml</string>
 		<key>TEST_VERSION_INSTALLED_GROUP_NAME</key>
@@ -95,7 +95,7 @@ Use a simple drag and drop interface to access a wide range of capabilities and 
 		<key>UPDATE_PREDICATE</key>
 		<string>pkg_uploaded == False</string>
 		<key>USERS_GROUP_NAME</key>
-		<string>%NAME% users</string>
+		<string>%NAME% %MAJOR_VERSION% %LICENSE% users</string>
 		<key>USERS_GROUP_TEMPLATE</key>
 		<string>SmartGroup-users.xml</string>
 	</dict>
