@@ -94,6 +94,10 @@ Use a simple drag and drop interface to access a wide range of capabilities and 
 		<string>local.jamf.SPSSStatistics-Floating</string>
 		<key>UPDATE_PREDICATE</key>
 		<string>pkg_uploaded == False</string>
+		<key>USERS_GROUP_NAME</key>
+		<string>%NAME% users</string>
+		<key>USERS_GROUP_TEMPLATE</key>
+		<string>SmartGroup-users.xml</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.0.0</string>
@@ -224,6 +228,19 @@ Use a simple drag and drop interface to access a wide range of capabilities and 
 				<string>%TEST_VERSION_INSTALLED_GROUP_TEMPLATE%</string>
 				<key>replace_group</key>
 				<string>True</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>computergroup_name</key>
+				<string>%USERS_GROUP_NAME%</string>
+				<key>computergroup_template</key>
+				<string>%USERS_GROUP_TEMPLATE%</string>
+				<key>replace_group</key>
+				<string>False</string>
 			</dict>
 			<key>Processor</key>
 			<string>com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader</string>
