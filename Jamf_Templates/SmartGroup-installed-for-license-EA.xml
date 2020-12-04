@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <computer_group>
-    <name>%INSTALLED_GROUP_NAME%</name>
+    <name>%LICENSE_INSTALLED_GROUP_NAME%</name>
     <is_smart>true</is_smart>
     <criteria>
         <criterion>
