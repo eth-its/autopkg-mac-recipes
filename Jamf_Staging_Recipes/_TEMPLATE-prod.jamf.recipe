@@ -322,6 +322,17 @@ If the icon does not match NAME.png, SELFSERVICE_ICON should also be overridden.
 			<key>Processor</key>
 			<string>com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader</string>
 		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>policy_name</key>
+				<string>%LAST_RUN_POLICY_NAME%</string>
+			</dict>
+			<key>Comment</key>
+			<string>Delete the untested policy</string>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfPolicyDeleter</string>
+		</dict>
 	</array>
 </dict>
 </plist>
