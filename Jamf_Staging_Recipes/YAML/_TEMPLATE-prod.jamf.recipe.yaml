@@ -45,10 +45,13 @@ Input:
   UPDATE_POLICY_CATEGORY: Updates
   SELFSERVICE_POLICY_NAME: "%NAME%"
   SELFSERVICE_POLICY_TEMPLATE: Policy-prod-selfservice-install.xml
+  INSTALL_BUTTON_TEXT: "Install %version%"
+  UPDATE_BUTTON_TEXT: "Update to %version%"
   TRIGGER_NAME: "%NAME%-install"
   SELFSERVICE_DISPLAY_NAME: "%NAME%"
   SELFSERVICE_ICON: "%NAME%.png"
   UPDATE_SELFSERVICE_DISPLAY_NAME: "Update %NAME%"
+  UPDATE_SELFSERVICE_DESCRIPTION: "%NAME% will be updated to version %version%."
   PROD_PREDICATE: "ready_to_stage == False"
 
 Process:

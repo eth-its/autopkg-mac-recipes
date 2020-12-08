@@ -3,6 +3,14 @@
     <general>
         <name>%UPDATE_POLICY_NAME%</name>
         <enabled>true</enabled>
+        <trigger>EVENT</trigger>
+        <trigger_checkin>false</trigger_checkin>
+        <trigger_enrollment_complete>false</trigger_enrollment_complete>
+        <trigger_login>false</trigger_login>
+        <trigger_logout>false</trigger_logout>
+        <trigger_network_state_changed>false</trigger_network_state_changed>
+        <trigger_startup>false</trigger_startup>
+        <trigger_other/>
         <frequency>Ongoing</frequency>
         <category>
             <name>%UPDATE_POLICY_CATEGORY%</name>
@@ -34,10 +42,10 @@
     </scripts>
     <self_service>
         <use_for_self_service>true</use_for_self_service>
-        <install_button_text>Install v%version%</install_button_text>
-        <reinstall_button_text>Install v%version%</reinstall_button_text>
+        <install_button_text>%UPDATE_BUTTON_TEXT%</install_button_text>
+        <reinstall_button_text>%UPDATE_BUTTON_TEXT%</reinstall_button_text>
         <self_service_display_name>%UPDATE_SELFSERVICE_DISPLAY_NAME%</self_service_display_name>
-        <self_service_description>The application will be upgraded to version %version%.</self_service_description>
+        <self_service_description>%UPDATE_SELFSERVICE_DESCRIPTION%</self_service_description>
         <self_service_categories>
             <category>
                 <name>%SELFSERVICE_POLICY_CATEGORY%</name>

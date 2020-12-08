@@ -52,6 +52,8 @@ If the icon does not match NAME.png, SELFSERVICE_ICON should also be overridden.
 		<string>%NAME% installed</string>
 		<key>INSTALLED_GROUP_TEMPLATE</key>
 		<string>SmartGroup-installed.xml</string>
+		<key>INSTALL_BUTTON_TEXT</key>
+		<string>Install %version%</string>
 		<key>JSS_INVENTORY_NAME</key>
 		<string>%NAME%.app</string>
 		<key>PROD_PREDICATE</key>
@@ -82,12 +84,16 @@ If the icon does not match NAME.png, SELFSERVICE_ICON should also be overridden.
 		<string>Policy-prod-triggeronly.xml</string>
 		<key>UNTESTED_VERSION_INSTALLED_GROUP_NAME</key>
 		<string>%NAME% test version installed</string>
+		<key>UPDATE_BUTTON_TEXT</key>
+		<string>Update to %version%</string>
 		<key>UPDATE_POLICY_CATEGORY</key>
 		<string>Updates</string>
 		<key>UPDATE_POLICY_NAME</key>
 		<string>Update %NAME%</string>
 		<key>UPDATE_POLICY_TEMPLATE</key>
 		<string>Policy-prod-selfservice-update.xml</string>
+		<key>UPDATE_SELFSERVICE_DESCRIPTION</key>
+		<string>%NAME% will be updated to version %version%.</string>
 		<key>UPDATE_SELFSERVICE_DISPLAY_NAME</key>
 		<string>Update %NAME%</string>
 		<key>USERS_GROUP_NAME</key>
