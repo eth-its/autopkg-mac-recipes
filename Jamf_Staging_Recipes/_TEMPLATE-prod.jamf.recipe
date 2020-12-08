@@ -109,6 +109,10 @@ If the icon does not match NAME.png, SELFSERVICE_ICON should also be overridden.
 			<string>com.github.grahampugh.recipes.preprocessors/LastRecipeRunChecker</string>
 		</dict>
 		<dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.recipes.commonprocessors/VersionRegexGenerator</string>
+		</dict>
+		<dict>
 			<key>Arguments</key>
 			<dict>
 				<key>category_name</key>
