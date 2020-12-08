@@ -157,7 +157,7 @@ class JamfUploadSlackReporter(Processor):
                 slack_text = (
                     f"*Item moved to Production:*\nURL: {jss_url}\n"
                     + f"Title: *{policy_name}*\n"
-                    + f"Version: *{version}\n"
+                    + f"Version: *{version}*\n"
                     + f"Category: *{category}*\n"
                     + f"Uploaded Package Name: *{pkg_name}*"
                 )
@@ -165,7 +165,7 @@ class JamfUploadSlackReporter(Processor):
                 slack_text = (
                     f"*Item moved to Production:*\nURL: {jss_url}\n"
                     + f"Title: *{policy_name}*\n"
-                    + f"Version: *{version}\n"
+                    + f"Version: *{version}*\n"
                     + f"Category: *{category}*"
                 )
 
