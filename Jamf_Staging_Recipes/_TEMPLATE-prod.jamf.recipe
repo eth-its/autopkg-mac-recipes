@@ -119,6 +119,15 @@ If the icon does not match NAME.png, SELFSERVICE_ICON should also be overridden.
 			<string>com.github.eth-its-recipes.processors/JamfUploadSharepointStageCheck</string>
 		</dict>
 		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>predicate</key>
+				<string>%PROD_PREDICATE%</string>
+			</dict>
+			<key>Processor</key>
+			<string>StopProcessingIf</string>
+		</dict>
+		<dict>
 			<key>Processor</key>
 			<string>com.github.grahampugh.recipes.commonprocessors/VersionRegexGenerator</string>
 		</dict>

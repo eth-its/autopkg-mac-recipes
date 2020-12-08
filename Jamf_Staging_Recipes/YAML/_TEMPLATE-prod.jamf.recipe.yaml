@@ -61,6 +61,10 @@ Process:
 
   - Processor: com.github.eth-its-recipes.processors/JamfUploadSharepointStageCheck
 
+  - Processor: StopProcessingIf
+    Arguments:
+      predicate: "%PROD_PREDICATE%"
+
   - Processor: com.github.grahampugh.recipes.commonprocessors/VersionRegexGenerator
 
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader
