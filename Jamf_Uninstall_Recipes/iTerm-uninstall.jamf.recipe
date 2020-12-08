@@ -5,13 +5,13 @@
 	<key>Description</key>
 	<string>Uploads a script to the Jamf Pro Server and creates a Self Service Policy and Smart Group.</string>
 	<key>Identifier</key>
-	<string>com.github.eth-its-recipes.jamf.Firefox-uninstall</string>
+	<string>com.github.eth-its-recipes.jamf.iTerm-uninstall</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
-		<string>Firefox</string>
+		<string>iTerm</string>
 		<key>PKG_ID</key>
-		<string>org.mozilla.firefox.pkg</string>
+		<string>com.googlecode.iterm2</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.0.0</string>
