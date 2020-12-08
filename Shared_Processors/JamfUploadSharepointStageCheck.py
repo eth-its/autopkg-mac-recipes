@@ -55,7 +55,7 @@ class JamfUploadSharepointStageCheck(Processor):
                 "This can be set in the com.github.autopkg preferences"
             ),
         },
-        "policy_name": {"required": False, "description": ("Policy name.")},
+        "LAST_RUN_POLICY_NAME": {"required": False, "description": ("Policy name.")},
     }
     output_variables = {
         "ready_to_stage": {"description": "Outputs True or False."},
@@ -159,7 +159,7 @@ class JamfUploadSharepointStageCheck(Processor):
 
     def main(self):
         """Do the main thing"""
-        untested_policy_name = self.env.get("policy_name")
+        untested_policy_name = self.env.get("LAST_RUN_POLICY_NAME")
         sp_url = self.env.get("SP_URL")
         sp_user = self.env.get("SP_USER")
         sp_pass = self.env.get("SP_PASS")
