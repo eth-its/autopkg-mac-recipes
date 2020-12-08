@@ -43,7 +43,7 @@ class JamfUploadSlackReporter(Processor):
         "JSS_URL": {"required": False, "description": ("JSS_URL.")},
         "POLICY_CATEGORY": {"required": False, "description": ("Policy Category.")},
         "PKG_CATEGORY": {"required": False, "description": ("Package Category.")},
-        "POLICY_NAME": {"required": False, "description": ("Untested product name.")},
+        "policy_name": {"required": False, "description": ("Untested product name.")},
         "SELFSERVICE_POLICY_NAME": {
             "required": False,
             "description": ("Staged product name."),
@@ -76,7 +76,7 @@ class JamfUploadSlackReporter(Processor):
         jss_url = self.env.get("JSS_URL")
         policy_category = self.env.get("POLICY_CATEGORY")
         category = self.env.get("PKG_CATEGORY")
-        policy_name = self.env.get("POLICY_NAME")
+        policy_name = self.env.get("policy_name")
         name = self.env.get("NAME")
         staged_policy_name = self.env.get("SELFSERVICE_POLICY_NAME")
         version = self.env.get("version")
