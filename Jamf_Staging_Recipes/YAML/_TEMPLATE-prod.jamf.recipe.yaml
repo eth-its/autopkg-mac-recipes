@@ -59,6 +59,8 @@ Process:
     Arguments:
       recipeoverride_identifier: "%UNTESTED_RECIPE_IDENTIFIER%"
 
+  - Processor: com.github.eth-its-recipes.processors/JamfUploadSharepointStageCheck
+
   - Processor: com.github.grahampugh.recipes.commonprocessors/VersionRegexGenerator
 
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader

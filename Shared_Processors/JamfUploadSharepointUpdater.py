@@ -73,7 +73,7 @@ class JamfUploadSharepointUpdaterUntestedPolicies(Processor):
         "LICENSE": {"required": False, "description": "Package license type."},
         "MAJOR_VERSION": {"required": False, "description": "Policy major version."},
         "NAME": {"required": True, "description": "Product name."},
-        "POLICY_NAME": {
+        "policy_name": {
             "required": False,
             "description": ("Product untested policy name."),
         },
