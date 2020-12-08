@@ -49,7 +49,7 @@ class JamfUploadSlackReporter(Processor):
             "description": ("Staged product name."),
         },
         "version": {"required": True, "description": ("Product version.")},
-        "vepkg_namersion": {"required": True, "description": ("Package in policy.")},
+        "pkg_name": {"required": True, "description": ("Package in policy.")},
         "webhook_url": {"required": False, "description": ("Slack webhook.")},
         "username": {
             "required": False,
