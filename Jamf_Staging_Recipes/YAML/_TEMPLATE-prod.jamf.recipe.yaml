@@ -31,7 +31,7 @@ Input:
   TRIGGER_POLICY_NAME: "Install %NAME%"
   TRIGGER_POLICY_TEMPLATE: Policy-prod-triggeronly.xml
   TRIGGER_POLICY_CATEGORY: Triggered Installers
-  TRIGGER_POLICY_RUN_COMMAND: ""
+  TRIGGER_POLICY_RUN_COMMAND: "echo 'Installation of %NAME% complete'"
   AUTOINSTALL_POLICY_NAME: "Auto-install %NAME%"
   AUTOINSTALL_POLICY_TEMPLATE: Policy-prod-autoinstall.xml
   AUTOINSTALL_POLICY_CATEGORY: Auto-installers
