@@ -27,11 +27,10 @@ from ntlm3 import HTTPNtlmAuthHandler
 from autopkglib import Processor  # pylint: disable=import-error
 
 ssl._create_default_https_context = ssl._create_unverified_context
+__all__ = ["JamfUploadSharepointUpdater"]
 
-__all__ = ["JamfUploadSharepointUpdaterUntestedPolicies"]
 
-
-class JamfUploadSharepointUpdaterUntestedPolicies(Processor):
+class JamfUploadSharepointUpdater(Processor):
     description = (
         "Performs actions on a SharePoint site based on output of a JSSImporter run."
     )
@@ -556,5 +555,5 @@ class JamfUploadSharepointUpdaterUntestedPolicies(Processor):
 
 
 if __name__ == "__main__":
-    PROCESSOR = JamfUploadSharepointUpdaterUntestedPolicies()
+    PROCESSOR = JamfUploadSharepointUpdater()
     PROCESSOR.execute_shell()
