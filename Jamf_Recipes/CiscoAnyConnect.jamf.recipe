@@ -15,15 +15,18 @@
 		<key>POLICY_CATEGORY</key>
 		<string>Untested</string>
 		<key>POLICY_NAME</key>
-		<string>Cisco AnyConnect Secure Mobility Client v%version%</string>
+		<string>%NAME% (Testing)</string>
 		<key>POLICY_RUN_COMMAND</key>
 		<string>echo 'Installation of %NAME% complete'</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>Policy-untested-selfservice.xml</string>
 		<key>SELFSERVICE_DESCRIPTION</key>
-		<string>Cisco AnyConnect Secure Mobility Client is a Virtual Private Network client.</string>
+		<string>Cisco AnyConnect Secure Mobility Client is the Virtual Private Network (VPN) client for ETH Zürich.  
+Version: %version%
+Category: %PKG_CATEGORY%
+</string>
 		<key>SELFSERVICE_DISPLAY_NAME</key>
-		<string>Cisco AnyConnect Secure Mobility Client v%version%</string>
+		<string>%NAME% (Testing)</string>
 		<key>SELFSERVICE_ICON</key>
 		<string>Cisco AnyConnect.png</string>
 		<key>TESTING_GROUP_NAME</key>

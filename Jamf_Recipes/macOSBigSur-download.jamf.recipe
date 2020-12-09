@@ -29,7 +29,8 @@
 		<key>REINSTALL_BUTTON_TEXT</key>
 		<string>Download</string>
 		<key>SELFSERVICE_DESCRIPTION</key>
-		<string>This will download 'Install macOS Big Sur.app' to the Applications folder. If there are any existing macOS installers present in the Applications folder, this will replace them.</string>
+		<string>Downloads 'Install macOS Big Sur.app' to the Applications folder. If there are any existing macOS installers present in the Applications folder, this will replace them.
+</string>
 		<key>SELFSERVICE_DISPLAY_NAME</key>
 		<string>Download macOS Big Sur Installer v%version%</string>
 		<key>SELFSERVICE_ICON</key>

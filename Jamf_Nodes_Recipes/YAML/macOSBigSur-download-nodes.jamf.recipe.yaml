@@ -6,10 +6,8 @@ MinimumVersion: 2.0.0
 Input:
   NAME: Download macOS Big Sur Installer
   UNTESTED_RECIPE_IDENTIFIER: local.jamf.macOSBigSur-download
-  POLICY_NAME: "Download macOS Big Sur Installer v%version%"
   POLICY_RUN_COMMAND: /Library/Management/erase-install/erase-install.sh --os=11.0 --overwrite --move
   MODEL_IDENTIFIER_REGEX: ^(iMac14,4|iMac1[5-9]|iMac2[0-9]|iMacPro|MacBook[8-9]|MacBook1[0-9]|MacBookAir[6-9]|MacBookAir1[0-9]|MacBookPro1[1-6]|Macmini[7-9]|MacPro[6-9])
-  SELFSERVICE_DISPLAY_NAME: "Download macOS Big Sur Installer v%version%"
   SELFSERVICE_DESCRIPTION: This will download 'Install macOS Big Sur.app' to the Applications folder. If there are any existing macOS installers present in the Applications folder, this will replace them.
   SELFSERVICE_ICON: Install macOS Big Sur.png
   INSTALL_BUTTON_TEXT: Download

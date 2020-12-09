@@ -6,6 +6,3 @@ ParentRecipe: com.github.eth-its-recipes.jamf.template-nodes
 Input:
   NAME: Firefox
   UNTESTED_RECIPE_IDENTIFIER: local.jamf.Firefox
-  POLICY_NAME: "Firefox v%version%"
-  SELFSERVICE_DISPLAY_NAME: "Firefox v%version%"
-

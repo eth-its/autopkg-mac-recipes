@@ -25,7 +25,10 @@
 		<key>REINSTALL_BUTTON_TEXT</key>
 		<string>Install %version%</string>
 		<key>SELFSERVICE_DESCRIPTION</key>
-		<string>Visual Studio for Mac is a modern, sophisticated IDE with many features for creating mobile, desktop, and web applications.</string>
+		<string>A modern, sophisticated Integrated Development Engine (IDE) with many features for creating mobile, desktop, and web applications, which is also a versatile text editor.
+Version: %version%
+Category: %PKG_CATEGORY%
+</string>
 		<key>SELFSERVICE_DISPLAY_NAME</key>
 		<string>Visual Studio Code v%version%</string>
 		<key>SELFSERVICE_ICON</key>

@@ -65,12 +65,9 @@
 		<key>SCRIPT_PRIORITY</key>
 		<string>After</string>
 		<key>SELFSERVICE_DESCRIPTION</key>
-		<string>*IBM SPSS Statistics:*
-Work inside a single, integrated interface to run descriptive statistics, regression, advanced statistics and many more. Create publication ready charts, tables, and decision trees in one tool.
-
-Enhance the SPSS Syntax with R and Python through specialized extensions.
-
-Use a simple drag and drop interface to access a wide range of capabilities and work across multiple data sources.
+		<string>An integrated interface for running descriptive statistics, regression, advanced statistics and more. SPSS Statistics can create publication ready charts, tables, and decision trees in one tool. Specialized extensions allow the SPSS Statistics syntax to be enhanced with R and Python through specialized extensions.
+Version: %version%
+Category: %PKG_CATEGORY%
 </string>
 		<key>SELFSERVICE_DISPLAY_NAME</key>
 		<string>SPSS Statistics %MAJOR_VERSION% %LICENSE% v%version%</string>

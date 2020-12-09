@@ -19,7 +19,8 @@ Input:
   POLICY_TEMPLATE: Policy-untested-selfservice.xml
   POLICY_RUN_COMMAND: /Library/Management/erase-install/erase-install.sh --os=11.0 --overwrite --move --reinstall
   SELFSERVICE_DISPLAY_NAME: "Upgrade to macOS Big Sur v%version%"
-  SELFSERVICE_DESCRIPTION: WARNING! This will download the latest version of macOS Big Sur and install it on the system volume. All work should be saved and backed up before starting.
+  SELFSERVICE_DESCRIPTION: |
+    WARNING! This will download the latest version of macOS Big Sur and install it on the system volume. All work should be saved and backed up before starting.
   SELFSERVICE_ICON: Install macOS Big Sur.png
   INSTALL_BUTTON_TEXT: Upgrade macOS
   REINSTALL_BUTTON_TEXT: Upgrade macOS

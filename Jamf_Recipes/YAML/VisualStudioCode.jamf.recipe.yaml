@@ -5,7 +5,10 @@ MinimumVersion: 2.0.0
 
 Input:
   NAME: Visual Studio Code
-  SELFSERVICE_DESCRIPTION: Visual Studio for Mac is a modern, sophisticated IDE with many features for creating mobile, desktop, and web applications.
+  SELFSERVICE_DESCRIPTION: |
+    A modern, sophisticated Integrated Development Engine (IDE) with many features for creating mobile, desktop, and web applications, which is also a versatile text editor.
+    Version: %version%
+    Category: %PKG_CATEGORY%
   PKG_CATEGORY: Productivity
   POLICY_CATEGORY: Untested
   SELFSERVICE_ICON: "%NAME%.png"

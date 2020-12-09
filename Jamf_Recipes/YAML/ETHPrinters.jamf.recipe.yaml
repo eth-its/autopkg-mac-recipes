@@ -6,7 +6,10 @@ ParentRecipe: ch.ethz.id.pkg.ETHPrinters
 Input:
   NAME: ETH Printers
   PKG_CATEGORY: Connect & Remote
-  SELFSERVICE_DESCRIPTION: Installs the ETH Printers application in the Applications:Utilities folder and installs the HP and Ricoh printer drivers.
+  SELFSERVICE_DESCRIPTION: |
+    The ETH Printers application installs the HP and Ricoh printer drivers. It is installed into the Applications - Utilities folder. 
+    Version: %version%
+    Category: %PKG_CATEGORY%
   TEST_VERSION_INSTALLED_GROUP_NAME: "%NAME% test version installed"
   TEST_VERSION_INSTALLED_GROUP_TEMPLATE: SmartGroup-test-version-installed.xml
   TEST_USERS_GROUP_NAME: "%NAME% test users"
@@ -25,7 +28,7 @@ Input:
   REINSTALL_BUTTON_TEXT: "Install %version%"
   POLICY_RUN_COMMAND: "echo 'Installation of %NAME% complete'"
   UPDATE_PREDICATE: "pkg_uploaded != True"
-  REPLACE_PKG: 'False'
+  REPLACE_PKG: "False"
 
 Process:
   - Processor: com.github.grahampugh.recipes.commonprocessors/VersionRegexGenerator

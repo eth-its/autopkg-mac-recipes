@@ -26,6 +26,8 @@
 		<string>Install %version%</string>
 		<key>SELFSERVICE_DESCRIPTION</key>
 		<string>A modern alternative to the Mendeley Desktop application: add papers directly from your browser with a few clicks or import any documents from your desktop. Access your library from anywhere. Windows, Mac, Linux and all browsers.
+Version: %version%
+Category: %PKG_CATEGORY%
 </string>
 		<key>SELFSERVICE_DISPLAY_NAME</key>
 		<string>Mendeley Reference Manager v%version%</string>

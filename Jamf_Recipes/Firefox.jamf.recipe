@@ -35,7 +35,10 @@
 		<key>REPLACE_PKG</key>
 		<string>False</string>
 		<key>SELFSERVICE_DESCRIPTION</key>
-		<string>Firefox is a free and open-source web browser developed by Mozilla. Firefox is available for Windows, macOS and Linux operating systems. Firefox uses the Gecko layout engine to render web pages, which implements current and anticipated web standards.</string>
+		<string>Firefox is a free and open-source web browser developed by Mozilla. 
+Version: %version%
+Category: %PKG_CATEGORY%
+</string>
 		<key>SELFSERVICE_DISPLAY_NAME</key>
 		<string>%NAME% v%version%</string>
 		<key>SELFSERVICE_ICON</key>

@@ -33,7 +33,10 @@
 		<key>SCRIPT_PRIORITY</key>
 		<string>Before</string>
 		<key>SELFSERVICE_DESCRIPTION</key>
-		<string>Installs the ETH Printers application in the Applications:Utilities folder and installs the HP and Ricoh printer drivers.</string>
+		<string>The ETH Printers application installs the HP and Ricoh printer drivers. It is installed into the Applications - Utilities folder. 
+Version: %version%
+Category: %PKG_CATEGORY%
+</string>
 		<key>SELFSERVICE_DISPLAY_NAME</key>
 		<string>%NAME% v%version%</string>
 		<key>SELFSERVICE_ICON</key>

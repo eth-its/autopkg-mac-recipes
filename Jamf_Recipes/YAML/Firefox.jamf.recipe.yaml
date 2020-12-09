@@ -6,10 +6,13 @@ ParentRecipe: com.github.autopkg.pkg.Firefox_EN
 Input:
   NAME: Firefox
   LOCALE: "en-GB"
-  ORG_NAME: 'ETH'
+  ORG_NAME: "ETH"
   PKG_ID: ch.ethz.id.Firefox.pkg
   RELEASE: latest
-  SELFSERVICE_DESCRIPTION: Firefox is a free and open-source web browser developed by Mozilla. Firefox is available for Windows, macOS and Linux operating systems. Firefox uses the Gecko layout engine to render web pages, which implements current and anticipated web standards.
+  SELFSERVICE_DESCRIPTION: |
+    Firefox is a free and open-source web browser developed by Mozilla. 
+    Version: %version%
+    Category: %PKG_CATEGORY%
   PKG_CATEGORY: Browsers & Players
   TEST_VERSION_INSTALLED_GROUP_NAME: "%NAME% test version installed"
   TEST_VERSION_INSTALLED_GROUP_TEMPLATE: SmartGroup-test-version-installed.xml
@@ -26,7 +29,7 @@ Input:
   REINSTALL_BUTTON_TEXT: "Install %version%"
   POLICY_RUN_COMMAND: "echo 'Installation of %NAME% complete'"
   UPDATE_PREDICATE: "pkg_uploaded != True"
-  REPLACE_PKG: 'False'
+  REPLACE_PKG: "False"
 
 Process:
   - Processor: com.github.grahampugh.recipes.commonprocessors/VersionRegexGenerator

@@ -25,7 +25,10 @@
 		<key>REINSTALL_BUTTON_TEXT</key>
 		<string>Install %version%</string>
 		<key>SELFSERVICE_DESCRIPTION</key>
-		<string>Mattermost is an Open Source, Private Cloud alternative to Slack.</string>
+		<string>Mattermost is an Open Source, Private Cloud alternative to Slack.
+Version: %version%
+Category: %PKG_CATEGORY%
+</string>
 		<key>SELFSERVICE_DISPLAY_NAME</key>
 		<string>%NAME% v%version%</string>
 		<key>SELFSERVICE_ICON</key>

@@ -37,7 +37,10 @@
 		<key>SCRIPT_PRIORITY</key>
 		<string>After</string>
 		<key>SELFSERVICE_DESCRIPTION</key>
-		<string>Google Chrome is a fast, simple, and secure web browser, built for the modern web.</string>
+		<string>Google Chrome is a web browser.
+Version: %version%
+Category: %PKG_CATEGORY%
+</string>
 		<key>SELFSERVICE_DISPLAY_NAME</key>
 		<string>%NAME% v%version%</string>
 		<key>SELFSERVICE_ICON</key>

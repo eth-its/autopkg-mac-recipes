@@ -6,8 +6,6 @@ MinimumVersion: 2.0.0
 Input:
   NAME: Upgrade to macOS Big Sur
   UNTESTED_RECIPE_IDENTIFIER: local.jamf.macOSBigSur-upgrade
-  POLICY_NAME: "Upgrade to macOS Big Sur v%version%"
-  SELFSERVICE_DISPLAY_NAME: "Upgrade to macOS Big Sur v%version%"
   POLICY_RUN_COMMAND: /Library/Management/erase-install/erase-install.sh --os=11.0 --overwrite --move --reinstall
   MAX_OS_VERSION: 10.15.8
   MODEL_IDENTIFIER_REGEX: ^(iMac14,4|iMac1[5-9]|iMac2[0-9]|iMacPro|MacBook[8-9]|MacBook1[0-9]|MacBookAir[6-9]|MacBookAir1[0-9]|MacBookPro1[1-6]|Macmini[7-9]|MacPro[6-9])

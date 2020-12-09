@@ -7,10 +7,13 @@ Input:
   NAME: Cisco AnyConnect Secure Mobility Client
   PKG_CATEGORY: Connect & Remote
   POLICY_CATEGORY: Untested
-  SELFSERVICE_DESCRIPTION: Cisco AnyConnect Secure Mobility Client is a Virtual Private Network client.
+  SELFSERVICE_DESCRIPTION: |
+    Cisco AnyConnect Secure Mobility Client is the Virtual Private Network (VPN) client for ETH Zürich.  
+    Version: %version%
+    Category: %PKG_CATEGORY%
   SELFSERVICE_ICON: Cisco AnyConnect.png
-  POLICY_NAME: "Cisco AnyConnect Secure Mobility Client v%version%"
-  SELFSERVICE_DISPLAY_NAME: "Cisco AnyConnect Secure Mobility Client v%version%"
+  POLICY_NAME: "%NAME% (Testing)"
+  SELFSERVICE_DISPLAY_NAME: "%NAME% (Testing)"
   TESTING_GROUP_NAME: Testing
   TESTING_GROUP_TEMPLATE: StaticGroup-testing.xml
   TEST_USERS_GROUP_NAME: "%NAME% test users"
