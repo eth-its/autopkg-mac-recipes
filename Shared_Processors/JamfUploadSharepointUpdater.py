@@ -209,10 +209,9 @@ class JamfUploadSharepointUpdater(Processor):
         self.output("Current Category: %s" % policy_category)
 
         # section for untested recipes
-        if staged_policy_name:
-            self.output(
-                f"Sending updates to SharePoint based on Policy Name {staged_policy_name}"
-            )
+        if not staged_policy_name:
+            self.output("Sending staging updates to SharePoint")
+
             staged_policy_name = name
             if major_version:
                 staged_policy_name = staged_policy_name + " " + major_version
@@ -418,7 +417,9 @@ class JamfUploadSharepointUpdater(Processor):
 
         # section for prod recipes
         else:
-            self.output("Sending staging updates to SharePoint")
+            self.output(
+                f"Sending updates to SharePoint based on Policy Name {staged_policy_name}"
+            )
 
             # connect to the sharepoint site
             site = self.connect_sharepoint(sp_url, sp_user, sp_pass)
