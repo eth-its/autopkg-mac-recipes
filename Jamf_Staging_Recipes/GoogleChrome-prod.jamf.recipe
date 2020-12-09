@@ -10,6 +10,8 @@
 	<dict>
 		<key>NAME</key>
 		<string>Google Chrome</string>
+		<key>SELFSERVICE_ICON</key>
+		<string>Google Chrome 2020.png</string>
 		<key>UNTESTED_RECIPE_IDENTIFIER</key>
 		<string>local.jamf.GoogleChrome</string>
 	</dict>

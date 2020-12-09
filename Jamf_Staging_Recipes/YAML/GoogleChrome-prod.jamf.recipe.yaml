@@ -6,3 +6,4 @@ ParentRecipe: com.github.eth-its-recipes.jamf.template-noupdate-prod
 Input:
   NAME: Google Chrome
   UNTESTED_RECIPE_IDENTIFIER: local.jamf.GoogleChrome
+  SELFSERVICE_ICON: Google Chrome 2020.png
