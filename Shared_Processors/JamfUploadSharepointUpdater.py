@@ -202,10 +202,16 @@ class JamfUploadSharepointUpdater(Processor):
         sp_user = self.env.get("SP_USER")
         sp_pass = self.env.get("SP_PASS")
 
+        self.output("Title: %s" % staged_policy_name)
+        self.output("Policy: %s" % policy_name)
+        self.output("Version: %s" % version)
+        self.output("Production Category: %s" % category)
+        self.output("Current Category: %s" % policy_category)
+
         # section for untested recipes
         if staged_policy_name:
             self.output(
-                f"Sending updates to SharePoint based on Policy Category {policy_category}"
+                f"Sending updates to SharePoint based on Policy Name {staged_policy_name}"
             )
             staged_policy_name = name
             if major_version:
@@ -214,12 +220,6 @@ class JamfUploadSharepointUpdater(Processor):
                 staged_policy_name = staged_policy_name + " " + policy_language
             if policy_license:
                 staged_policy_name = staged_policy_name + " " + policy_license
-
-            self.output("Title: %s" % staged_policy_name)
-            self.output("Policy: %s" % policy_name)
-            self.output("Version: %s" % version)
-            self.output("Production Category: %s" % category)
-            self.output("Current Category: %s" % policy_category)
 
             # connect to the sharepoint site
             site = self.connect_sharepoint(sp_url, sp_user, sp_pass)
@@ -418,14 +418,7 @@ class JamfUploadSharepointUpdater(Processor):
 
         # section for prod recipes
         else:
-            self.output(
-                f"Sending updates to SharePoint based on Policy Category {policy_category}"
-            )
-            policy_name = f"{staged_policy_name} v{version}"
-            self.output("Title: %s" % policy_name)
-            self.output(f"Policy: {policy_name}")
-            self.output("Version: %s" % version)
-            self.output("Production Category: %s" % policy_category)
+            self.output("Sending staging updates to SharePoint")
 
             # connect to the sharepoint site
             site = self.connect_sharepoint(sp_url, sp_user, sp_pass)
