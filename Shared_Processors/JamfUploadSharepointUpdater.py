@@ -187,6 +187,18 @@ class JamfUploadSharepointUpdater(Processor):
                     % (sp_list_criterion, existing_value)
                 )
 
+    def test_report_url(self, sp_url, policy_name):
+        """Creates the Test Report URL needed in Jamf Content List"""
+        params = {"Title": policy_name}
+        url_encoded = urllib.parse.urlencode(params)
+        list_name_url = "Jamf_Item_Test"
+        test_report_url = "%s/Lists/%s/DispForm.aspx?%s" % (
+            sp_url,
+            list_name_url,
+            url_encoded,
+        )
+        return test_report_url
+
     def main(self):
         """Do the main thing"""
         policy_category = self.env.get("POLICY_CATEGORY")
@@ -210,7 +222,10 @@ class JamfUploadSharepointUpdater(Processor):
 
         # section for untested recipes
         if not staged_policy_name:
-            self.output("Sending staging updates to SharePoint")
+            self.output(
+                "UNTESTED recipe type: "
+                f"Sending updates to SharePoint based on Policy Name {staged_policy_name}"
+            )
 
             staged_policy_name = name
             if major_version:
@@ -417,10 +432,7 @@ class JamfUploadSharepointUpdater(Processor):
 
         # section for prod recipes
         else:
-            self.output(
-                f"Sending updates to SharePoint based on Policy Name {staged_policy_name}"
-            )
-
+            self.output("PROD recipe type: Sending staging instructions to SharePoint")
             # connect to the sharepoint site
             site = self.connect_sharepoint(sp_url, sp_user, sp_pass)
 
