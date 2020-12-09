@@ -72,7 +72,7 @@ class JamfUploadSharepointUpdater(Processor):
         "LICENSE": {"required": False, "description": "Package license type."},
         "MAJOR_VERSION": {"required": False, "description": "Policy major version."},
         "NAME": {"required": True, "description": "Product name."},
-        "policy_name": {
+        "LAST_RUN_POLICY_NAME": {
             "required": False,
             "description": ("Product untested policy name."),
         },
@@ -193,7 +193,7 @@ class JamfUploadSharepointUpdater(Processor):
         category = self.env.get("PKG_CATEGORY")
         version = self.env.get("version")
         name = self.env.get("NAME")
-        policy_name = self.env.get("POLICY_NAME")
+        policy_name = self.env.get("LAST_RUN_POLICY_NAME")
         staged_policy_name = self.env.get("SELFSERVICE_POLICY_NAME")
         policy_language = self.env.get("POLICY_LANGUAGE")
         policy_license = self.env.get("POLICY_LICENSE")
@@ -203,7 +203,10 @@ class JamfUploadSharepointUpdater(Processor):
         sp_pass = self.env.get("SP_PASS")
 
         # section for untested recipes
-        if policy_category == "Untested":
+        if staged_policy_name:
+            self.output(
+                f"Sending updates to SharePoint based on Policy Category {policy_category}"
+            )
             staged_policy_name = name
             if major_version:
                 staged_policy_name = staged_policy_name + " " + major_version
@@ -415,6 +418,9 @@ class JamfUploadSharepointUpdater(Processor):
 
         # section for prod recipes
         else:
+            self.output(
+                f"Sending updates to SharePoint based on Policy Category {policy_category}"
+            )
             policy_name = f"{staged_policy_name} v{version}"
             self.output("Title: %s" % policy_name)
             self.output(f"Policy: {policy_name}")
