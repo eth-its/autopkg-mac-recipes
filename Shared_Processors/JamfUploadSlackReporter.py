@@ -43,7 +43,14 @@ class JamfUploadSlackReporter(Processor):
         "JSS_URL": {"required": False, "description": ("JSS_URL.")},
         "POLICY_CATEGORY": {"required": False, "description": ("Policy Category.")},
         "PKG_CATEGORY": {"required": False, "description": ("Package Category.")},
-        "policy_name": {"required": False, "description": ("Untested product name.")},
+        "policy_name": {
+            "required": False,
+            "description": ("Untested product name from a jamf recipe."),
+        },
+        "LAST_RUN_POLICY_NAME": {
+            "required": False,
+            "description": ("Product untested policy name from a prod.jamf recipe."),
+        },
         "SELFSERVICE_POLICY_NAME": {
             "required": False,
             "description": ("Staged product name."),
@@ -77,6 +84,7 @@ class JamfUploadSlackReporter(Processor):
         policy_category = self.env.get("POLICY_CATEGORY")
         category = self.env.get("PKG_CATEGORY")
         policy_name = self.env.get("policy_name")
+        untested_policy_name = self.env.get("LAST_RUN_POLICY_NAME")
         name = self.env.get("NAME")
         staged_policy_name = self.env.get("SELFSERVICE_POLICY_NAME")
         version = self.env.get("version")
@@ -146,12 +154,11 @@ class JamfUploadSlackReporter(Processor):
 
         # section for prod policies
         else:
-            self.output("JSS address: %s" % jss_url)
-            policy_name = f"{staged_policy_name} v{version}"
-            self.output("Title: %s" % policy_name)
-            self.output(f"Policy: {policy_name}")
-            self.output("Version: %s" % version)
-            self.output("Production Category: %s" % category)
+            self.output(f"JSS address: {jss_url}")
+            self.output(f"Title: {staged_policy_name}")
+            self.output(f"Untested policy: {untested_policy_name}")
+            self.output(f"Version: {version}")
+            self.output(f"Production Category: {category}")
 
             if pkg_name:
                 slack_text = (
