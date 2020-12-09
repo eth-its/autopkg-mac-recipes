@@ -548,7 +548,7 @@ class JamfUploadSharepointUpdater(Processor):
                 site,
                 "Jamf Content List",
                 "Prod_x002e__x0020_Version",
-                policy_name,
+                version,
                 "Title",
                 staged_policy_name,
             )
