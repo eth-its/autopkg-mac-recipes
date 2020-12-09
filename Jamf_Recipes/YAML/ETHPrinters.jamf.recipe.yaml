@@ -5,6 +5,8 @@ ParentRecipe: ch.ethz.id.pkg.ETHPrinters
 
 Input:
   NAME: ETH Printers
+  POLICY_NAME: "%NAME% (Testing)"
+  SELFSERVICE_DISPLAY_NAME: "%NAME% (Testing)"
   PKG_CATEGORY: Connect & Remote
   SELFSERVICE_DESCRIPTION: |
     The ETH Printers application installs the HP and Ricoh printer drivers. It is installed into the Applications - Utilities folder. 
@@ -15,10 +17,8 @@ Input:
   TEST_USERS_GROUP_NAME: "%NAME% test users"
   TEST_USERS_GROUP_TEMPLATE: SmartGroup-test-users.xml
   POLICY_CATEGORY: Untested
-  POLICY_NAME: "%NAME% v%version%"
   POLICY_TEMPLATE: Policy-untested-selfservice-script.xml
   SELFSERVICE_ICON: "%NAME%.png"
-  SELFSERVICE_DISPLAY_NAME: "%NAME% v%version%"
   SCRIPT_NAME: ETHPrinters-preinstall.sh
   SCRIPT_PATH: ETHPrinters-preinstall.sh
   SCRIPT_PRIORITY: Before

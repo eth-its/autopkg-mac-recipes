@@ -5,6 +5,8 @@ ParentRecipe: com.github.grahampugh.recipes.pkg.erase-install
 
 Input:
   NAME: Download macOS Big Sur Installer
+  POLICY_NAME: "%NAME% (Testing)"
+  SELFSERVICE_DISPLAY_NAME: "%NAME% (Testing)"
   PKG_CATEGORY: Updates
   TESTING_GROUP_NAME: Testing
   TESTING_GROUP_TEMPLATE: StaticGroup-testing.xml
@@ -15,10 +17,8 @@ Input:
   MAX_OS_VERSION: 10.15.8
   MODEL_IDENTIFIER_REGEX: ^(iMac14,4|iMac1[5-9]|iMac2[0-9]|iMacPro|MacBook[8-9]|MacBook1[0-9]|MacBookAir[6-9]|MacBookAir1[0-9]|MacBookPro1[1-6]|Macmini[7-9]|MacPro[6-9])
   POLICY_CATEGORY: Untested
-  POLICY_NAME: "Download macOS Big Sur Installer v%version%"
   POLICY_TEMPLATE: Policy-untested-selfservice.xml
   POLICY_RUN_COMMAND: /Library/Management/erase-install/erase-install.sh --os=11.0 --overwrite --move
-  SELFSERVICE_DISPLAY_NAME: "Download macOS Big Sur Installer v%version%"
   SELFSERVICE_DESCRIPTION: |
     Downloads 'Install macOS Big Sur.app' to the Applications folder. If there are any existing macOS installers present in the Applications folder, this will replace them.
   SELFSERVICE_ICON: Install macOS Big Sur.png

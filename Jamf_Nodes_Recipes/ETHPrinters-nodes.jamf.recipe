@@ -11,7 +11,7 @@
 		<key>NAME</key>
 		<string>ETH Printers</string>
 		<key>POLICY_NAME</key>
-		<string>ETH Printers v%version%</string>
+		<string>%NAME% (Testing)</string>
 		<key>SCRIPT_NAME</key>
 		<string>ETHPrinters-preinstall.sh</string>
 		<key>SCRIPT_PATH</key>
@@ -19,7 +19,7 @@
 		<key>SCRIPT_PRIORITY</key>
 		<string>Before</string>
 		<key>SELFSERVICE_DISPLAY_NAME</key>
-		<string>ETH Printers v%version%</string>
+		<string>%NAME% (Testing)</string>
 		<key>UNTESTED_RECIPE_IDENTIFIER</key>
 		<string>local.jamf.ETHPrinters</string>
 	</dict>

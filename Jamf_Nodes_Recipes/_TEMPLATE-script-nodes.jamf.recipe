@@ -19,6 +19,8 @@ If the icon does not match NAME.png, SELFSERVICE_ICON should also be overridden.
 		<string>Install %version%</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Untested</string>
+		<key>POLICY_NAME</key>
+		<string>%NAME% (Testing)</string>
 		<key>POLICY_RUN_COMMAND</key>
 		<string>echo 'Installation of %NAME% complete'</string>
 		<key>POLICY_TEMPLATE</key>
@@ -31,6 +33,8 @@ If the icon does not match NAME.png, SELFSERVICE_ICON should also be overridden.
 		<string>%NAME%-postinstall.sh</string>
 		<key>SCRIPT_PRIORITY</key>
 		<string>After</string>
+		<key>SELFSERVICE_DISPLAY_NAME</key>
+		<string>%NAME% (Testing)</string>
 		<key>SELFSERVICE_ICON</key>
 		<string>%NAME%.png</string>
 		<key>TESTING_GROUP_NAME</key>

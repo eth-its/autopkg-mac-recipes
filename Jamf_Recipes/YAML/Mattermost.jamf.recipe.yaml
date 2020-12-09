@@ -5,6 +5,8 @@ ParentRecipe: com.github.jlehikoinen.pkg.Mattermost
 
 Input:
   NAME: Mattermost
+  POLICY_NAME: "%NAME% (Testing)"
+  SELFSERVICE_DISPLAY_NAME: "%NAME% (Testing)"
   PKG_CATEGORY: Connect & Remote
   SELFSERVICE_DESCRIPTION: |
     Mattermost is an Open Source, Private Cloud alternative to Slack.
@@ -17,8 +19,6 @@ Input:
   TEST_USERS_GROUP_NAME: "%NAME% test users"
   TEST_USERS_GROUP_TEMPLATE: SmartGroup-test-users.xml
   POLICY_CATEGORY: Untested
-  POLICY_NAME: "%NAME% v%version%"
-  SELFSERVICE_DISPLAY_NAME: "%NAME% v%version%"
   INSTALL_BUTTON_TEXT: "Install %version%"
   REINSTALL_BUTTON_TEXT: "Install %version%"
   POLICY_TEMPLATE: Policy-untested-selfservice.xml

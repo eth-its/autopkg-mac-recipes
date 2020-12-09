@@ -10,10 +10,6 @@
 	<dict>
 		<key>NAME</key>
 		<string>Mendeley Reference Manager</string>
-		<key>POLICY_NAME</key>
-		<string>Mendeley Reference Manager v%version%</string>
-		<key>SELFSERVICE_DISPLAY_NAME</key>
-		<string>Mendeley Reference Manager v%version%</string>
 		<key>UNTESTED_RECIPE_IDENTIFIER</key>
 		<string>local.jamf.MendeleyReferenceManager</string>
 	</dict>

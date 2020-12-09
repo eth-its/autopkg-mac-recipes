@@ -57,7 +57,7 @@
 		<key>POLICY_CATEGORY</key>
 		<string>Untested</string>
 		<key>POLICY_NAME</key>
-		<string>SPSS Statistics %MAJOR_VERSION% %LICENSE% v%version%</string>
+		<string>SPSS Statistics %MAJOR_VERSION% %LICENSE% (Testing)</string>
 		<key>POLICY_RUN_COMMAND</key>
 		<string>jamf policy -event '%TRIGGER_NAME%'</string>
 		<key>POLICY_TEMPLATE</key>
@@ -76,7 +76,7 @@ Version: %version%
 Category: %PKG_CATEGORY%
 </string>
 		<key>SELFSERVICE_DISPLAY_NAME</key>
-		<string>SPSS Statistics %MAJOR_VERSION% %LICENSE% v%version%</string>
+		<string>SPSS Statistics %MAJOR_VERSION% %LICENSE% (Testing)</string>
 		<key>SELFSERVICE_ICON</key>
 		<string>%NAME%.png</string>
 		<key>TESTING_GROUP_NAME</key>

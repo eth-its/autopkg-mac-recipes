@@ -10,10 +10,6 @@
 	<dict>
 		<key>NAME</key>
 		<string>Google Chrome</string>
-		<key>POLICY_NAME</key>
-		<string>%NAME% v%version%</string>
-		<key>SELFSERVICE_DISPLAY_NAME</key>
-		<string>%NAME% v%version%</string>
 		<key>SELFSERVICE_ICON</key>
 		<string>Google Chrome 2020.png</string>
 		<key>UNTESTED_RECIPE_IDENTIFIER</key>

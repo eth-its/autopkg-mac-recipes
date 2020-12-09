@@ -5,6 +5,8 @@ ParentRecipe: com.github.autopkg.pkg.Firefox_EN
 
 Input:
   NAME: Firefox
+  POLICY_NAME: "%NAME% (Testing)"
+  SELFSERVICE_DISPLAY_NAME: "%NAME% (Testing)"
   LOCALE: "en-GB"
   ORG_NAME: "ETH"
   PKG_ID: ch.ethz.id.Firefox.pkg
@@ -19,10 +21,8 @@ Input:
   TEST_USERS_GROUP_NAME: "%NAME% test users"
   TEST_USERS_GROUP_TEMPLATE: SmartGroup-test-users.xml
   POLICY_CATEGORY: Untested
-  POLICY_NAME: "%NAME% v%version%"
   POLICY_TEMPLATE: Policy-untested-selfservice.xml
   SELFSERVICE_ICON: Firefox.png
-  SELFSERVICE_DISPLAY_NAME: "%NAME% v%version%"
   TESTING_GROUP_NAME: Testing
   TESTING_GROUP_TEMPLATE: StaticGroup-testing.xml
   INSTALL_BUTTON_TEXT: "Install %version%"

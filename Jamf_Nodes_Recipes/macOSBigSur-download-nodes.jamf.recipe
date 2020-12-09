@@ -14,16 +14,12 @@
 		<string>^(iMac14,4|iMac1[5-9]|iMac2[0-9]|iMacPro|MacBook[8-9]|MacBook1[0-9]|MacBookAir[6-9]|MacBookAir1[0-9]|MacBookPro1[1-6]|Macmini[7-9]|MacPro[6-9])</string>
 		<key>NAME</key>
 		<string>Download macOS Big Sur Installer</string>
-		<key>POLICY_NAME</key>
-		<string>Download macOS Big Sur Installer v%version%</string>
 		<key>POLICY_RUN_COMMAND</key>
 		<string>/Library/Management/erase-install/erase-install.sh --os=11.0 --overwrite --move</string>
 		<key>REINSTALL_BUTTON_TEXT</key>
 		<string>Download</string>
 		<key>SELFSERVICE_DESCRIPTION</key>
 		<string>This will download 'Install macOS Big Sur.app' to the Applications folder. If there are any existing macOS installers present in the Applications folder, this will replace them.</string>
-		<key>SELFSERVICE_DISPLAY_NAME</key>
-		<string>Download macOS Big Sur Installer v%version%</string>
 		<key>SELFSERVICE_ICON</key>
 		<string>Install macOS Big Sur.png</string>
 		<key>TEST_VERSION_INSTALLED_GROUP_NAME</key>

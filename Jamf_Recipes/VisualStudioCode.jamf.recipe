@@ -17,7 +17,7 @@
 		<key>POLICY_CATEGORY</key>
 		<string>Untested</string>
 		<key>POLICY_NAME</key>
-		<string>Visual Studio Code v%version%</string>
+		<string>%NAME% (Testing)</string>
 		<key>POLICY_RUN_COMMAND</key>
 		<string>chown -R "$(stat -f%Su /dev/console)" "/Applications/%NAME%.app" &amp;amp;&amp;amp; echo "Corrected permissions for %NAME%."</string>
 		<key>POLICY_TEMPLATE</key>
@@ -30,7 +30,7 @@ Version: %version%
 Category: %PKG_CATEGORY%
 </string>
 		<key>SELFSERVICE_DISPLAY_NAME</key>
-		<string>Visual Studio Code v%version%</string>
+		<string>%NAME% (Testing)</string>
 		<key>SELFSERVICE_ICON</key>
 		<string>%NAME%.png</string>
 		<key>TESTING_GROUP_NAME</key>
