@@ -156,7 +156,7 @@ class JamfUploadSlackReporter(Processor):
             if pkg_name:
                 slack_text = (
                     f"*Item moved to Production:*\nURL: {jss_url}\n"
-                    + f"Title: *{policy_name}*\n"
+                    + f"Title: *{staged_policy_name}*\n"
                     + f"Version: *{version}*\n"
                     + f"Category: *{category}*\n"
                     + f"Uploaded Package Name: *{pkg_name}*"
@@ -164,7 +164,7 @@ class JamfUploadSlackReporter(Processor):
             else:
                 slack_text = (
                     f"*Item moved to Production:*\nURL: {jss_url}\n"
-                    + f"Title: *{policy_name}*\n"
+                    + f"Title: *{staged_policy_name}*\n"
                     + f"Version: *{version}*\n"
                     + f"Category: *{category}*"
                 )
