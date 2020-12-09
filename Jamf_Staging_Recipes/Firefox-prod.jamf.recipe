@@ -16,6 +16,6 @@
 	<key>MinimumVersion</key>
 	<string>2.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.eth-its-recipes.jamf.template-prod</string>
+	<string>com.github.eth-its-recipes.jamf.template-noupdate-prod</string>
 </dict>
 </plist>
