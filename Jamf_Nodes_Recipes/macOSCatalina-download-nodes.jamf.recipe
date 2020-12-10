@@ -5,27 +5,27 @@
 	<key>Description</key>
 	<string>Creates a Self-Service Policy available to members of a Testing group.</string>
 	<key>Identifier</key>
-	<string>com.github.eth-its-recipes.jamf.macos-bigsur-download-nodes</string>
+	<string>com.github.eth-its-recipes.jamf.macos-catalina-download-nodes</string>
 	<key>Input</key>
 	<dict>
 		<key>INSTALL_BUTTON_TEXT</key>
 		<string>Download</string>
 		<key>MODEL_IDENTIFIER_REGEX</key>
-		<string>^(iMac14,4|iMac1[5-9]|iMac2[0-9]|iMacPro|MacBook[8-9]|MacBook1[0-9]|MacBookAir[6-9]|MacBookAir1[0-9]|MacBookPro1[1-6]|Macmini[7-9]|MacPro[6-9])</string>
+		<string>^(iMac1[3-9]|iMac2[0-9]|iMacPro|MacBook[8-9]|MacBook1[0-9]|MacBookAir[5-9]|MacBookAir1[0-9]|MacBookPro9|MacBookPro1[0-6]|MacMini[6-9]|MacPro[5-9])</string>
 		<key>NAME</key>
-		<string>Download macOS Big Sur Installer</string>
+		<string>Download macOS Catalina Installer</string>
 		<key>POLICY_RUN_COMMAND</key>
-		<string>/Library/Management/erase-install/erase-install.sh --os=11 --overwrite --move</string>
+		<string>/Library/Management/erase-install/erase-install.sh --os=10.15 --overwrite --move</string>
 		<key>REINSTALL_BUTTON_TEXT</key>
 		<string>Download</string>
 		<key>SELFSERVICE_ICON</key>
-		<string>Install macOS Big Sur.png</string>
+		<string>Install macOS Catalina.png</string>
 		<key>TEST_VERSION_INSTALLED_GROUP_NAME</key>
 		<string>%NAME% ineligible</string>
 		<key>TEST_VERSION_INSTALLED_GROUP_TEMPLATE</key>
 		<string>SmartGroup-macOS-download-ineligible.xml</string>
 		<key>UNTESTED_RECIPE_IDENTIFIER</key>
-		<string>local.jamf.macOSBigSur-download</string>
+		<string>local.jamf.macOSCatalina-download</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.0.0</string>

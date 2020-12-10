@@ -15,7 +15,7 @@
 		<key>EXTENSION_ATTRIBUTE_VALUE</key>
 		<string>%LICENSE%</string>
 		<key>FLOATING_LICENSE_URL</key>
-		<string>lic-spss.ethz.ch</string>
+		<string>REPLACE-ME</string>
 		<key>INSTALLED_GROUP_NAME</key>
 		<string>SPSS Statistics %MAJOR_VERSION% installed</string>
 		<key>INSTALLED_GROUP_TEMPLATE</key>
