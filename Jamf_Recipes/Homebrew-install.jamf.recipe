@@ -11,7 +11,7 @@
 		<key>NAME</key>
 		<string>Homebrew</string>
 		<key>PKG_CATEGORY</key>
-		<string>Developnent &amp; Computing</string>
+		<string>Development &amp; Computing</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Untested</string>
 		<key>POLICY_NAME</key>
@@ -53,8 +53,10 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>replace_script</key>
+				<true/>
 				<key>script_category</key>
-				<string>%POLICY_CATEGORY%</string>
+				<string>%PKG_CATEGORY%</string>
 				<key>script_name</key>
 				<string>%SCRIPT_NAME%</string>
 				<key>script_path</key>
