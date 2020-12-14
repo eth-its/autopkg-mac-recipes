@@ -25,7 +25,7 @@ Process:
     Arguments:
       script_category: "%PKG_CATEGORY%"
       script_name: "%script_name%"
-      script_path: "%RECIPE_CACHE_DIR%/%script_name%"
+      script_path: "%RECIPE_CACHE_DIR%/downloads/%script_name%"
       script_priority: "%SCRIPT_PRIORITY%"
       replace_script: True
 
