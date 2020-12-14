@@ -1,7 +1,7 @@
 Description: Uploads a script to the JSS, and creates a Self-Service Policy available to members of a Testing group.
 Identifier: com.github.eth-its-recipes.jamf.homebrew-install
 MinimumVersion: 1.0.0
-ParentRecipe: com.github.grahampugh.recipes.pkg.homebrew-install
+ParentRecipe: com.github.grahampugh.recipes.download.homebrew-install
 
 Input:
   NAME: Homebrew
