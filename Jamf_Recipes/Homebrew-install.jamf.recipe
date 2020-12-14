@@ -18,10 +18,6 @@
 		<string>Homebrew (Testing)</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>Policy-untested-selfservice-script-only.xml</string>
-		<key>SCRIPT_NAME</key>
-		<string>%script_name%</string>
-		<key>SCRIPT_PATH</key>
-		<string>%pathname%</string>
 		<key>SCRIPT_PRIORITY</key>
 		<string>After</string>
 		<key>TESTING_GROUP_NAME</key>
@@ -58,9 +54,9 @@
 				<key>script_category</key>
 				<string>%PKG_CATEGORY%</string>
 				<key>script_name</key>
-				<string>%SCRIPT_NAME%</string>
+				<string>%script_name%</string>
 				<key>script_path</key>
-				<string>%SCRIPT_PATH%</string>
+				<string>%RECIPE_CACHE_DIR%/%script_name%</string>
 				<key>script_priority</key>
 				<string>%SCRIPT_PRIORITY%</string>
 			</dict>

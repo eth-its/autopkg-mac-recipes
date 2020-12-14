@@ -9,8 +9,6 @@ Input:
   POLICY_CATEGORY: Untested
   POLICY_NAME: "Homebrew (Testing)"
   POLICY_TEMPLATE: Policy-untested-selfservice-script-only.xml
-  SCRIPT_NAME: "%script_name%"
-  SCRIPT_PATH: "%pathname%"
   SCRIPT_PRIORITY: After
   TESTING_GROUP_NAME: Testing
   TESTING_GROUP_TEMPLATE: StaticGroup-testing.xml
@@ -26,8 +24,8 @@ Process:
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfScriptUploader
     Arguments:
       script_category: "%PKG_CATEGORY%"
-      script_name: "%SCRIPT_NAME%"
-      script_path: "%SCRIPT_PATH%"
+      script_name: "%script_name%"
+      script_path: "%RECIPE_CACHE_DIR%/%script_name%"
       script_priority: "%SCRIPT_PRIORITY%"
       replace_script: True
 
