@@ -32,7 +32,7 @@ Version: %version%
 Category: %PKG_CATEGORY%
 </string>
 		<key>SELFSERVICE_DISPLAY_NAME</key>
-		<string>%NAME% (Testing)</string>
+		<string>%NAME% %LANGUAGE% (Testing)</string>
 		<key>SELFSERVICE_ICON</key>
 		<string>%NAME%.png</string>
 		<key>TESTING_GROUP_NAME</key>
