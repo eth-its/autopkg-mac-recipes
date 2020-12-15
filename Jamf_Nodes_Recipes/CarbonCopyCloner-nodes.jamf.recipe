@@ -13,9 +13,9 @@
 		<key>NAME</key>
 		<string>Carbon Copy Cloner</string>
 		<key>POLICY_NAME</key>
-		<string>%NAME% %LANGUAGE% (Testing)</string>
+		<string>Carbon Copy Cloner EN (Testing)</string>
 		<key>SELFSERVICE_DISPLAY_NAME</key>
-		<string>%NAME% %LANGUAGE% (Testing)</string>
+		<string>Carbon Copy Cloner EN (Testing)</string>
 		<key>TEST_USERS_GROUP_NAME</key>
 		<string>%NAME% %LANGUAGE% test users</string>
 		<key>TEST_VERSION_INSTALLED_GROUP_NAME</key>
