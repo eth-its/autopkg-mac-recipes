@@ -1,10 +1,10 @@
 Description: Uploads the pkg to the JSS, and creates a Self-Service Policy available to members of a Testing group.
 Identifier: com.github.eth-its-recipes.jamf.macos-bigsur-upgrade
 MinimumVersion: 1.0.0
-ParentRecipe: com.github.grahampugh.recipes.pkg.erase-install
 
 Input:
   NAME: Upgrade to macOS Big Sur
+  UNTESTED_RECIPE_IDENTIFIER: local.jamf.macOS-erase-install
   POLICY_NAME: "%NAME% (Testing)"
   SELFSERVICE_DISPLAY_NAME: "%NAME% (Testing)"
   PKG_CATEGORY: Updates
@@ -18,7 +18,7 @@ Input:
   MODEL_IDENTIFIER_REGEX: ^(iMac14,4|iMac1[5-9]|iMac2[0-9]|iMacPro|MacBook[8-9]|MacBook1[0-9]|MacBookAir[6-9]|MacBookAir1[0-9]|MacBookPro1[1-6]|Macmini[7-9]|MacPro[6-9])
   POLICY_CATEGORY: Untested
   POLICY_TEMPLATE: Policy-untested-selfservice.xml
-  POLICY_RUN_COMMAND: /Library/Management/erase-install/erase-install.sh --os=11.0 --overwrite --move --reinstall
+  POLICY_RUN_COMMAND: /Library/Management/erase-install/erase-install.sh --os=11 --update --reinstall
   SELFSERVICE_DESCRIPTION: |
     WARNING! This will download the latest version of macOS Big Sur and install it on the system volume. All work should be saved and backed up before starting.
   SELFSERVICE_ICON: Install macOS Big Sur.png
@@ -27,6 +27,10 @@ Input:
   UPDATE_PREDICATE: "pkg_uploaded == False"
 
 Process:
+  - Processor: com.github.grahampugh.recipes.preprocessors/LastRecipeRunChecker
+    Arguments:
+      recipeoverride_identifier: "%UNTESTED_RECIPE_IDENTIFIER%"
+
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader
     Arguments:
       category_name: "%PKG_CATEGORY%"

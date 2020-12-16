@@ -5,36 +5,32 @@
 	<key>Description</key>
 	<string>Uploads the pkg to the JSS, and creates a Self-Service Policy available to members of a Testing group.</string>
 	<key>Identifier</key>
-	<string>com.github.eth-its-recipes.jamf.macos-bigsur-upgrade-nodes</string>
+	<string>com.github.eth-its-recipes.jamf.erase-install</string>
 	<key>Input</key>
 	<dict>
 		<key>INSTALL_BUTTON_TEXT</key>
-		<string>Upgrade macOS</string>
-		<key>MAX_OS_VERSION</key>
-		<string>10.15.8</string>
-		<key>MODEL_IDENTIFIER_REGEX</key>
-		<string>^(iMac14,4|iMac1[5-9]|iMac2[0-9]|iMacPro|MacBook[8-9]|MacBook1[0-9]|MacBookAir[6-9]|MacBookAir1[0-9]|MacBookPro1[1-6]|Macmini[7-9]|MacPro[6-9])</string>
+		<string>ERASE!</string>
 		<key>NAME</key>
-		<string>Upgrade to macOS Big Sur</string>
+		<string>Erase and Reinstall macOS</string>
 		<key>PKG_CATEGORY</key>
-		<string>Updates</string>
+		<string>Administration</string>
 		<key>POLICY_CATEGORY</key>
 		<string>Untested</string>
 		<key>POLICY_NAME</key>
 		<string>%NAME% (Testing)</string>
 		<key>POLICY_RUN_COMMAND</key>
-		<string>/Library/Management/erase-install/erase-install.sh --os=11 --update --reinstall</string>
+		<string>/Library/Management/erase-install/erase-install.sh --update --erase --sameos</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>Policy-untested-selfservice.xml</string>
 		<key>REINSTALL_BUTTON_TEXT</key>
-		<string>Upgrade macOS</string>
+		<string>ERASE!</string>
 		<key>SELFSERVICE_DESCRIPTION</key>
-		<string>WARNING! This will download the latest version of macOS Big Sur and install it on the system volume. All work should be saved and backed up before starting.
+		<string>WARNING! This will completely erase the device and reinstall macOS to the latest version.
 </string>
 		<key>SELFSERVICE_DISPLAY_NAME</key>
 		<string>%NAME% (Testing)</string>
 		<key>SELFSERVICE_ICON</key>
-		<string>Install macOS Big Sur.png</string>
+		<string>Erase and Reinstall macOS.png</string>
 		<key>TESTING_GROUP_NAME</key>
 		<string>Testing</string>
 		<key>TESTING_GROUP_TEMPLATE</key>
@@ -47,24 +43,15 @@
 		<string>%NAME% ineligible</string>
 		<key>TEST_VERSION_INSTALLED_GROUP_TEMPLATE</key>
 		<string>SmartGroup-macOS-upgrade-ineligible.xml</string>
-		<key>UNTESTED_RECIPE_IDENTIFIER</key>
-		<string>local.jamf.macOS-erase-install</string>
 		<key>UPDATE_PREDICATE</key>
 		<string>pkg_uploaded == False</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.grahampugh.recipes.pkg.erase-install</string>
 	<key>Process</key>
 	<array>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>recipeoverride_identifier</key>
-				<string>%UNTESTED_RECIPE_IDENTIFIER%</string>
-			</dict>
-			<key>Processor</key>
-			<string>com.github.grahampugh.recipes.preprocessors/LastRecipeRunChecker</string>
-		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
@@ -79,10 +66,6 @@
 			<dict>
 				<key>pkg_category</key>
 				<string>%PKG_CATEGORY%</string>
-				<key>replace_pkg</key>
-				<string>False</string>
-				<key>replace_pkg_metadata</key>
-				<string>True</string>
 			</dict>
 			<key>Processor</key>
 			<string>com.github.grahampugh.jamf-upload.processors/JamfPackageUploader</string>

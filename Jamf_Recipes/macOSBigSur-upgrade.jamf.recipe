@@ -23,7 +23,7 @@
 		<key>POLICY_NAME</key>
 		<string>%NAME% (Testing)</string>
 		<key>POLICY_RUN_COMMAND</key>
-		<string>/Library/Management/erase-install/erase-install.sh --os=11.0 --overwrite --move --reinstall</string>
+		<string>/Library/Management/erase-install/erase-install.sh --os=11 --update --reinstall</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>Policy-untested-selfservice.xml</string>
 		<key>REINSTALL_BUTTON_TEXT</key>
@@ -47,15 +47,24 @@
 		<string>%NAME% ineligible</string>
 		<key>TEST_VERSION_INSTALLED_GROUP_TEMPLATE</key>
 		<string>SmartGroup-macOS-upgrade-ineligible.xml</string>
+		<key>UNTESTED_RECIPE_IDENTIFIER</key>
+		<string>local.jamf.macOS-erase-install</string>
 		<key>UPDATE_PREDICATE</key>
 		<string>pkg_uploaded == False</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
-	<key>ParentRecipe</key>
-	<string>com.github.grahampugh.recipes.pkg.erase-install</string>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>recipeoverride_identifier</key>
+				<string>%UNTESTED_RECIPE_IDENTIFIER%</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.recipes.preprocessors/LastRecipeRunChecker</string>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>

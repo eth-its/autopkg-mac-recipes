@@ -1,9 +1,9 @@
 Description: Uploads the pkg to the JSS, and creates a Self-Service Policy available to members of a Testing group.
-Identifier: com.github.eth-its-recipes.jamf.macos-bigsur-upgrade-nodes
+Identifier: com.github.eth-its-recipes.jamf.macos-catalina-upgrade-nodes
 MinimumVersion: 1.0.0
 
 Input:
-  NAME: Upgrade to macOS Big Sur
+  NAME: Upgrade to macOS Catalina
   UNTESTED_RECIPE_IDENTIFIER: local.jamf.macOS-erase-install
   POLICY_NAME: "%NAME% (Testing)"
   SELFSERVICE_DISPLAY_NAME: "%NAME% (Testing)"
@@ -14,14 +14,14 @@ Input:
   TEST_USERS_GROUP_TEMPLATE: SmartGroup-test-users.xml
   TEST_VERSION_INSTALLED_GROUP_NAME: "%NAME% ineligible"
   TEST_VERSION_INSTALLED_GROUP_TEMPLATE: SmartGroup-macOS-upgrade-ineligible.xml
-  MAX_OS_VERSION: 10.15.8
-  MODEL_IDENTIFIER_REGEX: ^(iMac14,4|iMac1[5-9]|iMac2[0-9]|iMacPro|MacBook[8-9]|MacBook1[0-9]|MacBookAir[6-9]|MacBookAir1[0-9]|MacBookPro1[1-6]|Macmini[7-9]|MacPro[6-9])
+  MAX_OS_VERSION: 10.14.7
+  MODEL_IDENTIFIER_REGEX: ^(iMac1[3-9]|iMac2[0-9]|iMacPro|MacBook[8-9]|MacBook1[0-9]|MacBookAir[5-9]|MacBookAir1[0-9]|MacBookPro9|MacBookPro1[0-6]|MacMini[6-9]|MacPro[5-9])
   POLICY_CATEGORY: Untested
   POLICY_TEMPLATE: Policy-untested-selfservice.xml
-  POLICY_RUN_COMMAND: /Library/Management/erase-install/erase-install.sh --os=11 --update --reinstall
+  POLICY_RUN_COMMAND: /Library/Management/erase-install/erase-install.sh --os=10.15 --update --reinstall
   SELFSERVICE_DESCRIPTION: |
-    WARNING! This will download the latest version of macOS Big Sur and install it on the system volume. All work should be saved and backed up before starting.
-  SELFSERVICE_ICON: Install macOS Big Sur.png
+    WARNING! This will download the latest version of macOS Catalina and install it on the system volume. All work should be saved and backed up before starting.
+  SELFSERVICE_ICON: Install macOS Catalina.png
   INSTALL_BUTTON_TEXT: Upgrade macOS
   REINSTALL_BUTTON_TEXT: Upgrade macOS
   UPDATE_PREDICATE: "pkg_uploaded == False"

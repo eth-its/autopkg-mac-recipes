@@ -5,17 +5,17 @@
 	<key>Description</key>
 	<string>Uploads the pkg to the JSS, and creates a Self-Service Policy available to members of a Testing group.</string>
 	<key>Identifier</key>
-	<string>com.github.eth-its-recipes.jamf.macos-bigsur-upgrade-nodes</string>
+	<string>com.github.eth-its-recipes.jamf.macos-catalina-upgrade</string>
 	<key>Input</key>
 	<dict>
 		<key>INSTALL_BUTTON_TEXT</key>
 		<string>Upgrade macOS</string>
 		<key>MAX_OS_VERSION</key>
-		<string>10.15.8</string>
+		<string>10.14.7</string>
 		<key>MODEL_IDENTIFIER_REGEX</key>
-		<string>^(iMac14,4|iMac1[5-9]|iMac2[0-9]|iMacPro|MacBook[8-9]|MacBook1[0-9]|MacBookAir[6-9]|MacBookAir1[0-9]|MacBookPro1[1-6]|Macmini[7-9]|MacPro[6-9])</string>
+		<string>^(iMac1[3-9]|iMac2[0-9]|iMacPro|MacBook[8-9]|MacBook1[0-9]|MacBookAir[5-9]|MacBookAir1[0-9]|MacBookPro9|MacBookPro1[0-6]|MacMini[6-9]|MacPro[5-9])</string>
 		<key>NAME</key>
-		<string>Upgrade to macOS Big Sur</string>
+		<string>Upgrade to macOS Catalina</string>
 		<key>PKG_CATEGORY</key>
 		<string>Updates</string>
 		<key>POLICY_CATEGORY</key>
@@ -23,18 +23,18 @@
 		<key>POLICY_NAME</key>
 		<string>%NAME% (Testing)</string>
 		<key>POLICY_RUN_COMMAND</key>
-		<string>/Library/Management/erase-install/erase-install.sh --os=11 --update --reinstall</string>
+		<string>/Library/Management/erase-install/erase-install.sh --os=10.15 --update --reinstall</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>Policy-untested-selfservice.xml</string>
 		<key>REINSTALL_BUTTON_TEXT</key>
 		<string>Upgrade macOS</string>
 		<key>SELFSERVICE_DESCRIPTION</key>
-		<string>WARNING! This will download the latest version of macOS Big Sur and install it on the system volume. All work should be saved and backed up before starting.
+		<string>WARNING! This will download the latest version of macOS Catalina and install it on the system volume. All work should be saved and backed up before starting.
 </string>
 		<key>SELFSERVICE_DISPLAY_NAME</key>
 		<string>%NAME% (Testing)</string>
 		<key>SELFSERVICE_ICON</key>
-		<string>Install macOS Big Sur.png</string>
+		<string>Install macOS Catalina.png</string>
 		<key>TESTING_GROUP_NAME</key>
 		<string>Testing</string>
 		<key>TESTING_GROUP_TEMPLATE</key>
@@ -79,10 +79,6 @@
 			<dict>
 				<key>pkg_category</key>
 				<string>%PKG_CATEGORY%</string>
-				<key>replace_pkg</key>
-				<string>False</string>
-				<key>replace_pkg_metadata</key>
-				<string>True</string>
 			</dict>
 			<key>Processor</key>
 			<string>com.github.grahampugh.jamf-upload.processors/JamfPackageUploader</string>
