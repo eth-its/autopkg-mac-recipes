@@ -79,6 +79,10 @@
 			<dict>
 				<key>pkg_category</key>
 				<string>%PKG_CATEGORY%</string>
+				<key>replace_pkg</key>
+				<string>False</string>
+				<key>replace_pkg_metadata</key>
+				<string>True</string>
 			</dict>
 			<key>Processor</key>
 			<string>com.github.grahampugh.jamf-upload.processors/JamfPackageUploader</string>
