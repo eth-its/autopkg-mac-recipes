@@ -1,10 +1,11 @@
 Description: Uploads the pkg to the JSS, and creates a Self-Service Policy available to members of a Testing group.
-Identifier: com.github.eth-its-recipes.jamf.erase-install
+Identifier: com.github.eth-its-recipes.jamf.erase-install-nodes
 MinimumVersion: 1.0.0
 ParentRecipe: com.github.grahampugh.recipes.pkg.erase-install
 
 Input:
   NAME: Erase and Reinstall macOS
+  UNTESTED_RECIPE_IDENTIFIER: local.jamf.macOS-erase-install
   POLICY_NAME: "%NAME% (Testing)"
   SELFSERVICE_DISPLAY_NAME: "%NAME% (Testing)"
   PKG_CATEGORY: Administration
@@ -25,12 +26,18 @@ Input:
   UPDATE_PREDICATE: "pkg_uploaded == False"
 
 Process:
+  - Processor: com.github.grahampugh.recipes.preprocessors/LastRecipeRunChecker
+    Arguments:
+      recipeoverride_identifier: "%UNTESTED_RECIPE_IDENTIFIER%"
+
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader
     Arguments:
       category_name: "%PKG_CATEGORY%"
 
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfPackageUploader
     Arguments:
+      replace_pkg: "False"
+      replace_pkg_metadata: "True"
       pkg_category: "%PKG_CATEGORY%"
 
   - Processor: StopProcessingIf

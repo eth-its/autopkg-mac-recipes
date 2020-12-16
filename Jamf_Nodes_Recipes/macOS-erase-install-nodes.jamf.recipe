@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Uploads the pkg to the JSS, and creates a Self-Service Policy available to members of a Testing group.</string>
 	<key>Identifier</key>
-	<string>com.github.eth-its-recipes.jamf.erase-install</string>
+	<string>com.github.eth-its-recipes.jamf.erase-install-nodes</string>
 	<key>Input</key>
 	<dict>
 		<key>INSTALL_BUTTON_TEXT</key>
@@ -43,6 +43,8 @@
 		<string>%NAME% ineligible</string>
 		<key>TEST_VERSION_INSTALLED_GROUP_TEMPLATE</key>
 		<string>SmartGroup-macOS-erase-install-ineligible.xml</string>
+		<key>UNTESTED_RECIPE_IDENTIFIER</key>
+		<string>local.jamf.macOS-erase-install</string>
 		<key>UPDATE_PREDICATE</key>
 		<string>pkg_uploaded == False</string>
 	</dict>
@@ -52,6 +54,15 @@
 	<string>com.github.grahampugh.recipes.pkg.erase-install</string>
 	<key>Process</key>
 	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>recipeoverride_identifier</key>
+				<string>%UNTESTED_RECIPE_IDENTIFIER%</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.recipes.preprocessors/LastRecipeRunChecker</string>
+		</dict>
 		<dict>
 			<key>Arguments</key>
 			<dict>
@@ -66,6 +77,10 @@
 			<dict>
 				<key>pkg_category</key>
 				<string>%PKG_CATEGORY%</string>
+				<key>replace_pkg</key>
+				<string>False</string>
+				<key>replace_pkg_metadata</key>
+				<string>True</string>
 			</dict>
 			<key>Processor</key>
 			<string>com.github.grahampugh.jamf-upload.processors/JamfPackageUploader</string>
