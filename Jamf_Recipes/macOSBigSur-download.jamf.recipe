@@ -11,7 +11,7 @@
 		<key>INSTALL_BUTTON_TEXT</key>
 		<string>Download</string>
 		<key>MAX_OS_VERSION</key>
-		<real>11.99</real>
+		<string>11.99</string>
 		<key>MIN_OS_VERSION</key>
 		<string>10.12.4</string>
 		<key>MODEL_IDENTIFIER_REGEX</key>

@@ -12,14 +12,14 @@
     </criterion>
     <criterion>
       <name>Operating System Version</name>
-      <priority>0</priority>
+      <priority>1</priority>
       <and_or>or</and_or>
       <search_type>more than</search_type>
       <value>%MAX_OS_VERSION$</value>
     </criterion>
     <criterion>
       <name>Model Identifier</name>
-      <priority>1</priority>
+      <priority>2</priority>
       <and_or>or</and_or>
       <search_type>does not match regex</search_type>
       <value>%MODEL_IDENTIFIER_REGEX%</value>
