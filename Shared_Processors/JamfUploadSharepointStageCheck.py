@@ -55,7 +55,14 @@ class JamfUploadSharepointStageCheck(Processor):
                 "This can be set in the com.github.autopkg preferences"
             ),
         },
-        "LAST_RUN_POLICY_NAME": {"required": False, "description": ("Policy name.")},
+        "LAST_RUN_POLICY_NAME": {
+            "required": False,
+            "description": ("Name of policy in last recipe run."),
+        },
+        "version": {
+            "required": False,
+            "description": ("Package version in last recipe run."),
+        },
     }
     output_variables = {
         "ready_to_stage": {"description": "Outputs True or False."},
@@ -76,7 +83,35 @@ class JamfUploadSharepointStageCheck(Processor):
             raise ProcessorError("Could not connect to SharePoint")
         return site
 
-    def check_content_test(self, site, product_name):
+    def check_jamf_content_list(self, site, product_name, version):
+        """Check the version against the untested version in the 'Jamf Content List' list"""
+        sp_test_listname = "Jamf Content List"
+        sp_list = site.lists[sp_test_listname]
+        sp_product_in_list = False
+        sp_content_list_passed = False
+        for row in sp_list.rows:
+            sp_policy_name = row.Title
+            sp_untested_version = row.Untested_x0020_Version
+            if sp_policy_name == product_name:
+                sp_product_in_list = True
+                self.output(
+                    "Version in Jamf Content List: {}".format(sp_untested_version)
+                )
+                if sp_untested_version == version:
+                    sp_content_list_passed = True
+                else:
+                    self.output(
+                        "Jamf Content List: Versions do not match: "
+                        "SharePoint: '{}'; AutoPkg: '{}".format(
+                            sp_untested_version, version
+                        )
+                    )
+        if not sp_product_in_list:
+            self.output("Jamf Content List: No entry named '{}'".format(product_name))
+        self.output("Jamf Content List passed: {}".format(sp_content_list_passed))
+        return sp_content_list_passed
+
+    def check_jamf_content_test(self, site, product_name):
         """Check against the 'Jamf Content Test' list"""
         sp_test_listname = "Jamf Content Test"
         sp_list = site.lists[sp_test_listname]
@@ -99,7 +134,7 @@ class JamfUploadSharepointStageCheck(Processor):
         self.output("Jamf Content Test passed: {}".format(sp_content_test_passed))
         return sp_content_test_passed
 
-    def check_test_coordination(self, site, product_name):
+    def check_jamf_test_coordination(self, site, product_name):
         """Check against the 'Jamf Test Coordination' list"""
         sp_test_listname = "Jamf Test Coordination"
         sp_list = site.lists[sp_test_listname]
@@ -128,7 +163,7 @@ class JamfUploadSharepointStageCheck(Processor):
         )
         return sp_test_coordination_passed
 
-    def check_test_review(self, site, product_name):
+    def check_jamf_test_review(self, site, product_name):
         """Check against the 'Jamf Test Review' list"""
         sp_test_listname = "Jamf Test Review"
         sp_list = site.lists[sp_test_listname]
@@ -160,6 +195,7 @@ class JamfUploadSharepointStageCheck(Processor):
     def main(self):
         """Do the main thing"""
         untested_policy_name = self.env.get("LAST_RUN_POLICY_NAME")
+        version = self.env.get("version")
         sp_url = self.env.get("SP_URL")
         sp_user = self.env.get("SP_USER")
         sp_pass = self.env.get("SP_PASS")
@@ -167,6 +203,9 @@ class JamfUploadSharepointStageCheck(Processor):
         ready_to_stage = False
 
         self.output("Untested Policy: {}".format(untested_policy_name))
+
+        #  construct the production policy name (remove "(Testing)")
+        prod_policy_name = untested_policy_name.replace(" (Testing)", "")
 
         # verify we have the variables we need
         if not sp_url or not sp_user or not sp_pass:
@@ -177,9 +216,10 @@ class JamfUploadSharepointStageCheck(Processor):
 
         # check each list has the requirements met for staging
         if (
-            self.check_content_test(site, untested_policy_name)
-            and self.check_test_coordination(site, untested_policy_name)
-            and self.check_test_review(site, untested_policy_name)
+            self.check_jamf_content_test(site, untested_policy_name)
+            and self.check_jamf_content_list(site, prod_policy_name, version)
+            and self.check_jamf_test_coordination(site, untested_policy_name)
+            and self.check_jamf_test_review(site, untested_policy_name)
         ):
             ready_to_stage = True
 
