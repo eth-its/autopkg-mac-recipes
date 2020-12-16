@@ -14,7 +14,7 @@
       <name>Operating System Version</name>
       <priority>1</priority>
       <and_or>or</and_or>
-      <search_type>more than</search_type>
+      <search_type>greater than</search_type>
       <value>%MAX_OS_VERSION%</value>
     </criterion>
     <criterion>
