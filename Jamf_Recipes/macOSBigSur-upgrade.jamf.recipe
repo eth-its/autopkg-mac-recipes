@@ -12,6 +12,8 @@
 		<string>Upgrade macOS</string>
 		<key>MAX_OS_VERSION</key>
 		<string>10.15.8</string>
+		<key>MIN_OS_VERSION</key>
+		<string>10.12.4</string>
 		<key>MODEL_IDENTIFIER_REGEX</key>
 		<string>^(iMac14,4|iMac1[5-9]|iMac2[0-9]|iMacPro|MacBook[8-9]|MacBook1[0-9]|MacBookAir[6-9]|MacBookAir1[0-9]|MacBookPro1[1-6]|Macmini[7-9]|MacPro[6-9])</string>
 		<key>NAME</key>

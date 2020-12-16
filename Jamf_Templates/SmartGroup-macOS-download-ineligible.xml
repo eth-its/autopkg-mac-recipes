@@ -8,7 +8,14 @@
       <priority>0</priority>
       <and_or>and</and_or>
       <search_type>less than</search_type>
-      <value>10.15.5</value>
+      <value>%MIN_OS_VERSION$</value>
+    </criterion>
+    <criterion>
+      <name>Operating System Version</name>
+      <priority>0</priority>
+      <and_or>or</and_or>
+      <search_type>more than</search_type>
+      <value>%MAX_OS_VERSION$</value>
     </criterion>
     <criterion>
       <name>Model Identifier</name>

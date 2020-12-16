@@ -11,7 +11,9 @@
 		<key>INSTALL_BUTTON_TEXT</key>
 		<string>Download</string>
 		<key>MAX_OS_VERSION</key>
-		<string>10.15.7</string>
+		<string>10.15.8</string>
+		<key>MIN_OS_VERSION</key>
+		<string>10.12.4</string>
 		<key>MODEL_IDENTIFIER_REGEX</key>
 		<string>^(iMac1[3-9]|iMac2[0-9]|iMacPro|MacBook[8-9]|MacBook1[0-9]|MacBookAir[5-9]|MacBookAir1[0-9]|MacBookPro9|MacBookPro1[0-6]|MacMini[6-9]|MacPro[5-9])</string>
 		<key>NAME</key>

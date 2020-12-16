@@ -14,7 +14,8 @@ Input:
   TEST_USERS_GROUP_TEMPLATE: SmartGroup-test-users.xml
   TEST_VERSION_INSTALLED_GROUP_NAME: "%NAME% ineligible"
   TEST_VERSION_INSTALLED_GROUP_TEMPLATE: SmartGroup-macOS-download-ineligible.xml
-  MAX_OS_VERSION: 10.15.7
+  MIN_OS_VERSION: 10.12.4
+  MAX_OS_VERSION: 10.15.8
   MODEL_IDENTIFIER_REGEX: ^(iMac1[3-9]|iMac2[0-9]|iMacPro|MacBook[8-9]|MacBook1[0-9]|MacBookAir[5-9]|MacBookAir1[0-9]|MacBookPro9|MacBookPro1[0-6]|MacMini[6-9]|MacPro[5-9])
   POLICY_CATEGORY: Untested
   POLICY_TEMPLATE: Policy-untested-selfservice.xml
