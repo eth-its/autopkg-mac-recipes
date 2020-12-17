@@ -72,10 +72,6 @@ class JamfUploadSharepointUpdater(Processor):
         "LICENSE": {"required": False, "description": "Package license type."},
         "MAJOR_VERSION": {"required": False, "description": "Policy major version."},
         "NAME": {"required": True, "description": "Product name."},
-        "LAST_RUN_POLICY_NAME": {
-            "required": False,
-            "description": ("Product untested policy name."),
-        },
         "SELFSERVICE_POLICY_NAME": {
             "required": False,
             "description": ("Product production policy name."),
@@ -205,8 +201,7 @@ class JamfUploadSharepointUpdater(Processor):
         category = self.env.get("PKG_CATEGORY")
         version = self.env.get("version")
         name = self.env.get("NAME")
-        policy_name = self.env.get("LAST_RUN_POLICY_NAME")
-        staged_policy_name = self.env.get("SELFSERVICE_POLICY_NAME")
+        selfservice_policy_name = self.env.get("SELFSERVICE_POLICY_NAME")
         policy_language = self.env.get("POLICY_LANGUAGE")
         policy_license = self.env.get("POLICY_LICENSE")
         major_version = self.env.get("MAJOR_VERSION")
@@ -214,9 +209,10 @@ class JamfUploadSharepointUpdater(Processor):
         sp_user = self.env.get("SP_USER")
         sp_pass = self.env.get("SP_PASS")
 
-        sharepoint_policy_name = f"{policy_name} v{version}"
+        policy_name = f"{selfservice_policy_name} (Testing)"
+        sharepoint_policy_name = f"{selfservice_policy_name} (Testing) v{version}"
 
-        self.output("Title: %s" % staged_policy_name)
+        self.output("Title: %s" % selfservice_policy_name)
         self.output("Policy: %s" % policy_name)
         self.output("Version: %s" % version)
         self.output("SharePoint item: %s" % sharepoint_policy_name)
@@ -224,19 +220,21 @@ class JamfUploadSharepointUpdater(Processor):
         self.output("Current Category: %s" % policy_category)
 
         # section for untested recipes
-        if not staged_policy_name:
+        if not selfservice_policy_name:
             self.output(
                 "UNTESTED recipe type: "
-                f"Sending updates to SharePoint based on Policy Name {staged_policy_name}"
+                f"Sending updates to SharePoint based on Policy Name {selfservice_policy_name}"
             )
 
-            staged_policy_name = name
+            selfservice_policy_name = name
             if major_version:
-                staged_policy_name = staged_policy_name + " " + major_version
+                selfservice_policy_name = selfservice_policy_name + " " + major_version
             if policy_language:
-                staged_policy_name = staged_policy_name + " " + policy_language
+                selfservice_policy_name = (
+                    selfservice_policy_name + " " + policy_language
+                )
             if policy_license:
-                staged_policy_name = staged_policy_name + " " + policy_license
+                selfservice_policy_name = selfservice_policy_name + " " + policy_license
 
             # connect to the sharepoint site
             site = self.connect_sharepoint(sp_url, sp_user, sp_pass)
@@ -284,7 +282,7 @@ class JamfUploadSharepointUpdater(Processor):
                     site,
                     "Jamf Test Coordination",
                     "Final_x0020_Item_x0020_Name",
-                    staged_policy_name,
+                    selfservice_policy_name,
                 )
 
                 # if not released completed, update the entry and set it to obsolete.
@@ -294,7 +292,7 @@ class JamfUploadSharepointUpdater(Processor):
                 ):
                     self.output(
                         "Jamf Test Coordination: Updating existing unreleased "
-                        "entry for '%s'" % staged_policy_name
+                        "entry for '%s'" % selfservice_policy_name
                     )
                     self.update_record(
                         site,
@@ -302,7 +300,7 @@ class JamfUploadSharepointUpdater(Processor):
                         "Release_x0020_Completed",
                         None,
                         "Final_x0020_Item_x0020_Name",
-                        staged_policy_name,
+                        selfservice_policy_name,
                     )
                     self.update_record(
                         site,
@@ -310,7 +308,7 @@ class JamfUploadSharepointUpdater(Processor):
                         "Status",
                         "Obsolete",
                         "Final_x0020_Item_x0020_Name",
-                        staged_policy_name,
+                        selfservice_policy_name,
                     )
 
                 # now create a new entry
@@ -325,7 +323,7 @@ class JamfUploadSharepointUpdater(Processor):
                     site,
                     "Jamf Test Coordination",
                     "Final_x0020_Item_x0020_Name",
-                    staged_policy_name,
+                    selfservice_policy_name,
                     "Title",
                     sharepoint_policy_name,
                 )
@@ -358,19 +356,19 @@ class JamfUploadSharepointUpdater(Processor):
                     site,
                     "Jamf Test Review",
                     "Final_x0020_Content_x0020_Name",
-                    staged_policy_name,
+                    selfservice_policy_name,
                 )
                 # if so, delete the record
                 if app_in_test_review:
                     self.output(
                         "Jamf Test Review: Deleting existing unreleased entry for '%s'"
-                        % staged_policy_name
+                        % selfservice_policy_name
                     )
                     self.delete_record(
                         site,
                         "Jamf Test Review",
                         "Final_x0020_Content_x0020_Name",
-                        staged_policy_name,
+                        selfservice_policy_name,
                     )
 
                 # now create a new entry
@@ -384,7 +382,7 @@ class JamfUploadSharepointUpdater(Processor):
                     site,
                     "Jamf Test Review",
                     "Final_x0020_Content_x0020_Name",
-                    staged_policy_name,
+                    selfservice_policy_name,
                     "Title",
                     sharepoint_policy_name,
                 )
@@ -400,19 +398,22 @@ class JamfUploadSharepointUpdater(Processor):
             # Now write to the Jamf Content List
             # First, check if there is an existing entry for this policy
             app_in_content_list = self.check_list(
-                site, "Jamf Content List", "Title", staged_policy_name
+                site, "Jamf Content List", "Title", selfservice_policy_name
             )
 
             # if not, create the entry
             if not app_in_content_list:
                 self.output(
-                    "Jamf Content List: Adding new entry for '%s'" % staged_policy_name
+                    "Jamf Content List: Adding new entry for '%s'"
+                    % selfservice_policy_name
                 )
-                self.add_record(site, "Jamf Content List", "Title", staged_policy_name)
+                self.add_record(
+                    site, "Jamf Content List", "Title", selfservice_policy_name
+                )
             else:
                 self.output(
                     "Jamf Content List: Updating existing entry for '%s'"
-                    % staged_policy_name
+                    % selfservice_policy_name
                 )
 
             # now update the other keys in the entry
@@ -422,7 +423,7 @@ class JamfUploadSharepointUpdater(Processor):
                 "Untested_x0020_Version",
                 version,
                 "Title",
-                staged_policy_name,
+                selfservice_policy_name,
             )
             self.update_record(
                 site,
@@ -430,7 +431,7 @@ class JamfUploadSharepointUpdater(Processor):
                 "Category",
                 category,
                 "Title",
-                staged_policy_name,
+                selfservice_policy_name,
             )
             self.update_record(
                 site,
@@ -438,7 +439,7 @@ class JamfUploadSharepointUpdater(Processor):
                 "Name_x0020_of_x0020_the_x0020_Po",
                 "Application",
                 "Title",
-                staged_policy_name,
+                selfservice_policy_name,
             )
 
         # section for prod recipes
@@ -473,7 +474,7 @@ class JamfUploadSharepointUpdater(Processor):
                     site,
                     "Jamf Test Coordination",
                     "Final_x0020_Item_x0020_Name",
-                    staged_policy_name,
+                    selfservice_policy_name,
                     "Title",
                     sharepoint_policy_name,
                 )
@@ -518,7 +519,7 @@ class JamfUploadSharepointUpdater(Processor):
                     site,
                     "Jamf Test Review",
                     "Final_x0020_Content_x0020_Name",
-                    staged_policy_name,
+                    selfservice_policy_name,
                     "Title",
                     sharepoint_policy_name,
                 )
@@ -544,19 +545,22 @@ class JamfUploadSharepointUpdater(Processor):
             # add the test report URL
             # First, check if there is an existing entry for this policy
             app_in_content_list = self.check_list(
-                site, "Jamf Content List", "Title", staged_policy_name
+                site, "Jamf Content List", "Title", selfservice_policy_name
             )
 
             # if not, create the entry
             if not app_in_content_list:
                 self.output(
-                    "Jamf Content List: Adding new entry for '%s'" % staged_policy_name
+                    "Jamf Content List: Adding new entry for '%s'"
+                    % selfservice_policy_name
                 )
-                self.add_record(site, "Jamf Content List", "Title", staged_policy_name)
+                self.add_record(
+                    site, "Jamf Content List", "Title", selfservice_policy_name
+                )
             else:
                 self.output(
                     "Jamf Content List: Updating existing entry for '%s'"
-                    % staged_policy_name
+                    % selfservice_policy_name
                 )
 
             # now update the other keys in the entry
@@ -566,7 +570,7 @@ class JamfUploadSharepointUpdater(Processor):
                 "Untested_x0020_Version",
                 "",
                 "Title",
-                staged_policy_name,
+                selfservice_policy_name,
             )
             self.update_record(
                 site,
@@ -574,7 +578,7 @@ class JamfUploadSharepointUpdater(Processor):
                 "Prod_x002e__x0020_Version",
                 version,
                 "Title",
-                staged_policy_name,
+                selfservice_policy_name,
             )
             # Test Report requires special work as it is a dictionary of title and url
             self.update_record(
@@ -586,7 +590,7 @@ class JamfUploadSharepointUpdater(Processor):
                     "href": self.test_report_url(sp_url, sharepoint_policy_name),
                 },
                 "Title",
-                staged_policy_name,
+                selfservice_policy_name,
             )
 
 

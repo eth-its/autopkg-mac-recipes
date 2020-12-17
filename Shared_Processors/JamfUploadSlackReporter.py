@@ -47,10 +47,6 @@ class JamfUploadSlackReporter(Processor):
             "required": False,
             "description": ("Untested product name from a jamf recipe."),
         },
-        "LAST_RUN_POLICY_NAME": {
-            "required": False,
-            "description": ("Product untested policy name from a prod.jamf recipe."),
-        },
         "SELFSERVICE_POLICY_NAME": {
             "required": False,
             "description": ("Staged product name."),
@@ -84,9 +80,8 @@ class JamfUploadSlackReporter(Processor):
         policy_category = self.env.get("POLICY_CATEGORY")
         category = self.env.get("PKG_CATEGORY")
         policy_name = self.env.get("policy_name")
-        untested_policy_name = self.env.get("LAST_RUN_POLICY_NAME")
         name = self.env.get("NAME")
-        staged_policy_name = self.env.get("SELFSERVICE_POLICY_NAME")
+        selfservice_policy_name = self.env.get("SELFSERVICE_POLICY_NAME")
         version = self.env.get("version")
         pkg_name = self.env.get("pkg_name")
         policy_language = self.env.get("POLICY_LANGUAGE")
@@ -102,16 +97,18 @@ class JamfUploadSlackReporter(Processor):
 
         # section for untested recipes
         if policy_category == "Untested":
-            staged_policy_name = name
+            selfservice_policy_name = name
             if major_version:
-                staged_policy_name = staged_policy_name + " " + major_version
+                selfservice_policy_name = selfservice_policy_name + " " + major_version
             if policy_language:
-                staged_policy_name = staged_policy_name + " " + policy_language
+                selfservice_policy_name = (
+                    selfservice_policy_name + " " + policy_language
+                )
             if policy_license:
-                staged_policy_name = staged_policy_name + " " + policy_license
+                selfservice_policy_name = selfservice_policy_name + " " + policy_license
 
             self.output("JSS address: %s" % jss_url)
-            self.output("Title: %s" % staged_policy_name)
+            self.output("Title: %s" % selfservice_policy_name)
             self.output("Policy: %s" % policy_name)
             self.output("Version: %s" % version)
             self.output("Package: %s" % pkg_name)
@@ -122,7 +119,7 @@ class JamfUploadSlackReporter(Processor):
                 slack_text = (
                     "*New Item added to JSS:*\n"
                     + f"URL: {jss_url}\n"
-                    + f"Title: *{staged_policy_name}*\n"
+                    + f"Title: *{selfservice_policy_name}*\n"
                     + f"Version: *{version}*\n"
                     + f"Category: *{category}*\n"
                     + f"Policy Name: *{policy_name}*\n"
@@ -132,7 +129,7 @@ class JamfUploadSlackReporter(Processor):
                 slack_text = (
                     "*New Item added to JSS:*\n"
                     + f"URL: {jss_url}\n"
-                    + f"Title: *{staged_policy_name}*\n"
+                    + f"Title: *{selfservice_policy_name}*\n"
                     + f"Version: *{version}*\n"
                     + f"Category: *{category}*\n"
                     + f"Policy Name: *{policy_name}*\n"
@@ -154,8 +151,10 @@ class JamfUploadSlackReporter(Processor):
 
         # section for prod policies
         else:
+            untested_policy_name = f"{selfservice_policy_name} (Testing)"
+
             self.output(f"JSS address: {jss_url}")
-            self.output(f"Title: {staged_policy_name}")
+            self.output(f"Title: {selfservice_policy_name}")
             self.output(f"Untested policy: {untested_policy_name}")
             self.output(f"Version: {version}")
             self.output(f"Production Category: {category}")
@@ -163,7 +162,7 @@ class JamfUploadSlackReporter(Processor):
             if pkg_name:
                 slack_text = (
                     f"*Item moved to Production:*\nURL: {jss_url}\n"
-                    + f"Title: *{staged_policy_name}*\n"
+                    + f"Title: *{selfservice_policy_name}*\n"
                     + f"Version: *{version}*\n"
                     + f"Category: *{category}*\n"
                     + f"Uploaded Package Name: *{pkg_name}*"
@@ -171,7 +170,7 @@ class JamfUploadSlackReporter(Processor):
             else:
                 slack_text = (
                     f"*Item moved to Production:*\nURL: {jss_url}\n"
-                    + f"Title: *{staged_policy_name}*\n"
+                    + f"Title: *{selfservice_policy_name}*\n"
                     + f"Version: *{version}*\n"
                     + f"Category: *{category}*"
                 )

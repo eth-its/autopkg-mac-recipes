@@ -55,9 +55,9 @@ class JamfUploadSharepointStageCheck(Processor):
                 "This can be set in the com.github.autopkg preferences"
             ),
         },
-        "LAST_RUN_POLICY_NAME": {
+        "SELFSERVICE_POLICY_NAME": {
             "required": False,
-            "description": ("Name of policy in last recipe run."),
+            "description": ("Name of production self service policy."),
         },
         "version": {
             "required": False,
@@ -188,27 +188,24 @@ class JamfUploadSharepointStageCheck(Processor):
                 if sp_ready_for_production and not sp_release_completed:
                     sp_test_review_passed = True
         if not sp_product_in_list:
-            self.output("Jamf Test Review: No entry named '{}'".format(product_name))
-        self.output("Jamf Test Review passed: {}".format(sp_test_review_passed))
+            self.output(f"Jamf Test Review: No entry named '{product_name}'")
+        self.output(f"Jamf Test Review passed: {sp_test_review_passed}")
         return sp_test_review_passed
 
     def main(self):
         """Do the main thing"""
-        untested_policy_name = self.env.get("LAST_RUN_POLICY_NAME")
+        selfservice_policy_name = self.env.get("SELFSERVICE_POLICY_NAME")
         version = self.env.get("version")
         sp_url = self.env.get("SP_URL")
         sp_user = self.env.get("SP_USER")
         sp_pass = self.env.get("SP_PASS")
 
-        sharepoint_policy_name = f"{untested_policy_name} v{version}"
+        sharepoint_policy_name = f"{selfservice_policy_name} (Testing) v{version}"
 
         ready_to_stage = False
 
-        self.output("Untested Policy: {}".format(untested_policy_name))
-        self.output("Untested SharePoint Item: {}".format(sharepoint_policy_name))
-
-        #  construct the production policy name (remove "(Testing)")
-        prod_policy_name = untested_policy_name.replace(" (Testing)", "")
+        self.output(f"Untested Policy: {selfservice_policy_name} (Testing)")
+        self.output(f"Untested SharePoint Item: {sharepoint_policy_name}")
 
         # verify we have the variables we need
         if not sp_url or not sp_user or not sp_pass:
@@ -220,7 +217,7 @@ class JamfUploadSharepointStageCheck(Processor):
         # check each list has the requirements met for staging
         if (
             self.check_jamf_content_test(site, sharepoint_policy_name)
-            and self.check_jamf_content_list(site, prod_policy_name, version)
+            and self.check_jamf_content_list(site, selfservice_policy_name, version)
             and self.check_jamf_test_coordination(site, sharepoint_policy_name)
             and self.check_jamf_test_review(site, sharepoint_policy_name)
         ):
