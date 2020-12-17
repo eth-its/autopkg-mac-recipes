@@ -212,13 +212,6 @@ class JamfUploadSharepointUpdater(Processor):
         policy_name = f"{selfservice_policy_name} (Testing)"
         sharepoint_policy_name = f"{selfservice_policy_name} (Testing) v{version}"
 
-        self.output("Title: %s" % selfservice_policy_name)
-        self.output("Policy: %s" % policy_name)
-        self.output("Version: %s" % version)
-        self.output("SharePoint item: %s" % sharepoint_policy_name)
-        self.output("Production Category: %s" % category)
-        self.output("Current Category: %s" % policy_category)
-
         # section for untested recipes
         if not selfservice_policy_name:
             self.output(
@@ -235,6 +228,14 @@ class JamfUploadSharepointUpdater(Processor):
                 )
             if policy_license:
                 selfservice_policy_name = selfservice_policy_name + " " + policy_license
+
+            self.output("Name: %s" % name)
+            self.output("Title: %s" % selfservice_policy_name)
+            self.output("Policy: %s" % policy_name)
+            self.output("Version: %s" % version)
+            self.output("SharePoint item: %s" % sharepoint_policy_name)
+            self.output("Production Category: %s" % category)
+            self.output("Current Category: %s" % policy_category)
 
             # connect to the sharepoint site
             site = self.connect_sharepoint(sp_url, sp_user, sp_pass)
@@ -444,6 +445,14 @@ class JamfUploadSharepointUpdater(Processor):
 
         # section for prod recipes
         else:
+            self.output("Name: %s" % name)
+            self.output("Title: %s" % selfservice_policy_name)
+            self.output("Policy: %s" % policy_name)
+            self.output("Version: %s" % version)
+            self.output("SharePoint item: %s" % sharepoint_policy_name)
+            self.output("Production Category: %s" % category)
+            self.output("Current Category: %s" % policy_category)
+
             self.output("PROD recipe type: Sending staging instructions to SharePoint")
             # connect to the sharepoint site
             site = self.connect_sharepoint(sp_url, sp_user, sp_pass)
