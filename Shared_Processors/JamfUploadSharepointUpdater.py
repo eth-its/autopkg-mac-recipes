@@ -214,9 +214,12 @@ class JamfUploadSharepointUpdater(Processor):
         sp_user = self.env.get("SP_USER")
         sp_pass = self.env.get("SP_PASS")
 
+        sharepoint_policy_name = f"{policy_name} v{version}"
+
         self.output("Title: %s" % staged_policy_name)
         self.output("Policy: %s" % policy_name)
         self.output("Version: %s" % version)
+        self.output("SharePoint item: %s" % sharepoint_policy_name)
         self.output("Production Category: %s" % category)
         self.output("Current Category: %s" % policy_category)
 
@@ -241,14 +244,14 @@ class JamfUploadSharepointUpdater(Processor):
             # Now write to Jamf Test Coordination list
             # First, check if there is an existing entry for this policy (including version)
             exact_policy_in_test_coordination = self.check_list(
-                site, "Jamf Test Coordination", "Title", policy_name
+                site, "Jamf Test Coordination", "Title", sharepoint_policy_name
             )
 
             # if so, existing tests are no longer valid, so set the entry to 'Needs review'
             if exact_policy_in_test_coordination:
                 self.output(
                     "Jamf Test Coordination: Ensuring existing '%s' entry is not"
-                    "set as Release Completed" % policy_name
+                    "set as Release Completed" % sharepoint_policy_name
                 )
                 self.update_record(
                     site,
@@ -256,7 +259,7 @@ class JamfUploadSharepointUpdater(Processor):
                     "Release_x0020_Completed",
                     None,
                     "Title",
-                    policy_name,
+                    sharepoint_policy_name,
                 )
                 if exact_policy_in_test_coordination.Status not in {
                     "Not assigned",
@@ -264,7 +267,7 @@ class JamfUploadSharepointUpdater(Processor):
                 }:
                     self.output(
                         "Jamf Test Coordination: Updating existing '%s' as Needs review"
-                        % policy_name
+                        % sharepoint_policy_name
                     )
                     self.update_record(
                         site,
@@ -272,7 +275,7 @@ class JamfUploadSharepointUpdater(Processor):
                         "Status",
                         "Needs review",
                         "Title",
-                        policy_name,
+                        sharepoint_policy_name,
                     )
             else:
                 # check if there is an entry with the same final policy name that is
@@ -312,29 +315,33 @@ class JamfUploadSharepointUpdater(Processor):
 
                 # now create a new entry
                 self.output(
-                    "Jamf Test Coordination: Adding record for '%s'" % policy_name
+                    "Jamf Test Coordination: Adding record for '%s'"
+                    % sharepoint_policy_name
                 )
-                self.add_record(site, "Jamf Test Coordination", "Title", policy_name)
+                self.add_record(
+                    site, "Jamf Test Coordination", "Title", sharepoint_policy_name
+                )
                 self.update_record(
                     site,
                     "Jamf Test Coordination",
                     "Final_x0020_Item_x0020_Name",
                     staged_policy_name,
                     "Title",
-                    policy_name,
+                    sharepoint_policy_name,
                 )
 
             # Now write to Jamf Test Review list
             # First, check if there is an existing entry for this policy (including version)
             exact_policy_in_test_review = self.check_list(
-                site, "Jamf Test Review", "Title", policy_name
+                site, "Jamf Test Review", "Title", sharepoint_policy_name
             )
 
             # if so, existing tests are no longer valid, so set the entry to
             # Release Completed=False'
             if exact_policy_in_test_review:
                 self.output(
-                    "Jamf Test Review: Updating existing entry for '%s'" % policy_name
+                    "Jamf Test Review: Updating existing entry for '%s'"
+                    % sharepoint_policy_name
                 )
                 self.update_record(
                     site,
@@ -342,7 +349,7 @@ class JamfUploadSharepointUpdater(Processor):
                     "Release_x0020_Completed",
                     None,
                     "Title",
-                    policy_name,
+                    sharepoint_policy_name,
                 )
             else:
                 # check if there is an entry with the same final policy name that is not
@@ -367,15 +374,19 @@ class JamfUploadSharepointUpdater(Processor):
                     )
 
                 # now create a new entry
-                self.output("Jamf Test Review: Adding record for '%s'" % policy_name)
-                self.add_record(site, "Jamf Test Review", "Title", policy_name)
+                self.output(
+                    "Jamf Test Review: Adding record for '%s'" % sharepoint_policy_name
+                )
+                self.add_record(
+                    site, "Jamf Test Review", "Title", sharepoint_policy_name
+                )
                 self.update_record(
                     site,
                     "Jamf Test Review",
                     "Final_x0020_Content_x0020_Name",
                     staged_policy_name,
                     "Title",
-                    policy_name,
+                    sharepoint_policy_name,
                 )
                 self.update_record(
                     site,
@@ -383,7 +394,7 @@ class JamfUploadSharepointUpdater(Processor):
                     "Release_x0020_Completed",
                     None,
                     "Title",
-                    policy_name,
+                    sharepoint_policy_name,
                 )
 
             # Now write to the Jamf Content List
@@ -441,27 +452,30 @@ class JamfUploadSharepointUpdater(Processor):
 
             # First, check if there is an existing entry for this policy (including version)
             exact_policy_in_test_coordination = self.check_list(
-                site, "Jamf Test Coordination", "Title", policy_name
+                site, "Jamf Test Coordination", "Title", sharepoint_policy_name
             )
 
             # if not, we should create one
             if exact_policy_in_test_coordination:
                 self.output(
                     "Jamf Test Coordination: Updating existing entry for '%s'"
-                    % policy_name
+                    % sharepoint_policy_name
                 )
             else:
                 self.output(
-                    "Jamf Test Coordination: Adding record for '%s'" % policy_name
+                    "Jamf Test Coordination: Adding record for '%s'"
+                    % sharepoint_policy_name
                 )
-                self.add_record(site, "Jamf Test Coordination", "Title", policy_name)
+                self.add_record(
+                    site, "Jamf Test Coordination", "Title", sharepoint_policy_name
+                )
                 self.update_record(
                     site,
                     "Jamf Test Coordination",
                     "Final_x0020_Item_x0020_Name",
                     staged_policy_name,
                     "Title",
-                    policy_name,
+                    sharepoint_policy_name,
                 )
             self.update_record(
                 site,
@@ -469,34 +483,44 @@ class JamfUploadSharepointUpdater(Processor):
                 "Release_x0020_Completed",
                 True,
                 "Title",
-                policy_name,
+                sharepoint_policy_name,
             )
             self.update_record(
-                site, "Jamf Test Coordination", "Status", "Done", "Title", policy_name,
+                site,
+                "Jamf Test Coordination",
+                "Status",
+                "Done",
+                "Title",
+                sharepoint_policy_name,
             )
 
             # Now write to Jamf Test Review list
             # Here we need to set Release Completed to True
             # First, check if there is an existing entry for this policy (including version)
             exact_policy_in_test_review = self.check_list(
-                site, "Jamf Test Review", "Title", policy_name
+                site, "Jamf Test Review", "Title", sharepoint_policy_name
             )
 
             # if not, we should create one
             if exact_policy_in_test_review:
                 self.output(
-                    "Jamf Test Review: Updating existing entry for '%s'" % policy_name
+                    "Jamf Test Review: Updating existing entry for '%s'"
+                    % sharepoint_policy_name
                 )
             else:
-                self.output("Jamf Test Review: Adding record for '%s'" % policy_name)
-                self.add_record(site, "Jamf Test Review", "Title", policy_name)
+                self.output(
+                    "Jamf Test Review: Adding record for '%s'" % sharepoint_policy_name
+                )
+                self.add_record(
+                    site, "Jamf Test Review", "Title", sharepoint_policy_name
+                )
                 self.update_record(
                     site,
                     "Jamf Test Review",
                     "Final_x0020_Content_x0020_Name",
                     staged_policy_name,
                     "Title",
-                    policy_name,
+                    sharepoint_policy_name,
                 )
             self.update_record(
                 site,
@@ -504,7 +528,7 @@ class JamfUploadSharepointUpdater(Processor):
                 "Release_x0020_Completed",
                 True,
                 "Title",
-                policy_name,
+                sharepoint_policy_name,
             )
             self.update_record(
                 site,
@@ -512,7 +536,7 @@ class JamfUploadSharepointUpdater(Processor):
                 "Ready_x0020_for_x0020_Production",
                 True,
                 "Title",
-                policy_name,
+                sharepoint_policy_name,
             )
 
             # Now write to the Jamf Content List
@@ -559,7 +583,7 @@ class JamfUploadSharepointUpdater(Processor):
                 "Test_x0020_Report",
                 {
                     "text": "Test Report",
-                    "href": self.test_report_url(sp_url, policy_name),
+                    "href": self.test_report_url(sp_url, sharepoint_policy_name),
                 },
                 "Title",
                 staged_policy_name,

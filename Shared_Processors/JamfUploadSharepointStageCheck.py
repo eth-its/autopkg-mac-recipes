@@ -200,9 +200,12 @@ class JamfUploadSharepointStageCheck(Processor):
         sp_user = self.env.get("SP_USER")
         sp_pass = self.env.get("SP_PASS")
 
+        sharepoint_policy_name = f"{untested_policy_name} v{version}"
+
         ready_to_stage = False
 
         self.output("Untested Policy: {}".format(untested_policy_name))
+        self.output("Untested SharePoint Item: {}".format(sharepoint_policy_name))
 
         #  construct the production policy name (remove "(Testing)")
         prod_policy_name = untested_policy_name.replace(" (Testing)", "")
@@ -216,10 +219,10 @@ class JamfUploadSharepointStageCheck(Processor):
 
         # check each list has the requirements met for staging
         if (
-            self.check_jamf_content_test(site, untested_policy_name)
+            self.check_jamf_content_test(site, sharepoint_policy_name)
             and self.check_jamf_content_list(site, prod_policy_name, version)
-            and self.check_jamf_test_coordination(site, untested_policy_name)
-            and self.check_jamf_test_review(site, untested_policy_name)
+            and self.check_jamf_test_coordination(site, sharepoint_policy_name)
+            and self.check_jamf_test_review(site, sharepoint_policy_name)
         ):
             ready_to_stage = True
 
