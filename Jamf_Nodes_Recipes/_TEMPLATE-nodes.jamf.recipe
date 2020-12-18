@@ -44,7 +44,7 @@ If the icon does not match NAME.png, SELFSERVICE_ICON should also be overridden.
 		<key>TEST_VERSION_INSTALLED_GROUP_TEMPLATE</key>
 		<string>SmartGroup-test-version-installed.xml</string>
 		<key>UPDATE_PREDICATE</key>
-		<string>pkg_uploaded == False</string>
+		<string>pkg_metadata_updated == False</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.0.0</string>
@@ -79,8 +79,6 @@ If the icon does not match NAME.png, SELFSERVICE_ICON should also be overridden.
 				<string>%PKG_CATEGORY%</string>
 				<key>replace_pkg</key>
 				<string>False</string>
-				<key>replace_pkg_metadata</key>
-				<string>True</string>
 			</dict>
 			<key>Processor</key>
 			<string>com.github.grahampugh.jamf-upload.processors/JamfPackageUploader</string>
