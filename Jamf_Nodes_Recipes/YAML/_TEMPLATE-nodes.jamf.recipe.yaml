@@ -23,7 +23,7 @@ Input:
   REINSTALL_BUTTON_TEXT: "Install %version%"
   POLICY_CATEGORY: Untested
   POLICY_TEMPLATE: Policy-untested-selfservice.xml
-  UPDATE_PREDICATE: "pkg_uploaded == False"
+  UPDATE_PREDICATE: "pkg_metadata_updated == False"
   POLICY_RUN_COMMAND: "echo 'Installation of %NAME% complete'"
 
 Process:
@@ -40,7 +40,6 @@ Process:
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfPackageUploader
     Arguments:
       replace_pkg: "False"
-      replace_pkg_metadata: "True"
       pkg_category: "%PKG_CATEGORY%"
 
   - Processor: StopProcessingIf
