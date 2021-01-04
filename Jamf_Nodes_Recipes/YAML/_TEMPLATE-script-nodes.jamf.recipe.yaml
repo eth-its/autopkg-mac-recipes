@@ -22,7 +22,7 @@ Input:
   INSTALL_BUTTON_TEXT: "Install %version%"
   REINSTALL_BUTTON_TEXT: "Install %version%"
   POLICY_CATEGORY: Untested
-  POLICY_TEMPLATE: Policy-untested-selfservice.xml
+  POLICY_TEMPLATE: Policy-untested-selfservice-script.xml
   UPDATE_PREDICATE: "pkg_uploaded == False"
   SCRIPT_NAME: "%NAME%-postinstall.sh"
   SCRIPT_PATH: "%NAME%-postinstall.sh"

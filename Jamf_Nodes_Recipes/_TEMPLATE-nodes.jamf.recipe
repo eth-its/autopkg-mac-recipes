@@ -79,6 +79,8 @@ If the icon does not match NAME.png, SELFSERVICE_ICON should also be overridden.
 				<string>%PKG_CATEGORY%</string>
 				<key>replace_pkg</key>
 				<string>False</string>
+				<key>replace_pkg_metadata</key>
+				<string>True</string>
 			</dict>
 			<key>Processor</key>
 			<string>com.github.grahampugh.jamf-upload.processors/JamfPackageUploader</string>
