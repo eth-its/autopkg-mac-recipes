@@ -12,8 +12,8 @@ if [[ -d "/Applications/Utilities/ETH Printers.app" ]]; then
 fi
 
 # also delete any version of the app that was placed in a subfolder
-if [[ -d "/Applications/Utilities/ETH Printers" ]]; then
-    rm -Rf "/Applications/Utilities/ETH Printers"
+if [[ -d "/Applications/Utilities/ETH Printers.localized" ]]; then
+    rm -Rf "/Applications/Utilities/ETH Printers.localized"
 fi
 
 # forget package

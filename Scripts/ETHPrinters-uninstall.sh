@@ -59,10 +59,10 @@ else
 fi
 
 # also delete any version of the app that was placed in a subfolder
-if [[ -d "/Applications/Utilities/ETH Printers" ]]; then
-    rm -Rf "/Applications/Utilities/ETH Printers"
+if [[ -d "/Applications/Utilities/ETH Printers.localized" ]]; then
+    rm -Rf "/Applications/Utilities/ETH Printers.localized"
     echo "Checking if /Applications/Utilities/ETH Printers is actually deleted..."
-    if [[ -d "/Applications/Utilities/ETH Printers" ]]; then
+    if [[ -d "/Applications/Utilities/ETH Printers.localized" ]]; then
         echo "/Applications/Utilities/ETH Printers failed to delete"
     else
         echo "/Applications/Utilities/ETH Printers deleted successfully"
