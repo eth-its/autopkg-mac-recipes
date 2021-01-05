@@ -1,0 +1,11 @@
+Description: Creates all production policies for a particular title.
+Identifier: com.github.eth-its-recipes.jamf.erase-install-prod
+MinimumVersion: 2.0.0
+
+Input:
+  NAME: Erase and Reinstall macOS
+  UNTESTED_RECIPE_IDENTIFIER: local.jamf.erase-install
+  INSTALLED_GROUP_TEMPLATE: SmartGroup-macOS-erase-install-ineligible.xml
+  TRIGGER_POLICY_RUN_COMMAND: /Library/Management/erase-install/erase-install.sh --update --erase --sameos
+  INSTALL_BUTTON_TEXT: ERASE!
+  REINSTALL_BUTTON_TEXT: ERASE!

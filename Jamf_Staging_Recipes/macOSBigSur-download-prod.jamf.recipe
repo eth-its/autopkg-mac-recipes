@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Creates all production policies for a particular title.</string>
+	<key>Identifier</key>
+	<string>com.github.eth-its-recipes.jamf.macos-bigsur-download-prod</string>
+	<key>Input</key>
+	<dict>
+		<key>INSTALLED_GROUP_TEMPLATE</key>
+		<string>SmartGroup-macOS-download-ineligible.xml</string>
+		<key>INSTALL_BUTTON_TEXT</key>
+		<string>Download</string>
+		<key>MAX_OS_VERSION</key>
+		<string>11.99</string>
+		<key>MIN_OS_VERSION</key>
+		<string>10.12.4</string>
+		<key>MODEL_IDENTIFIER_REGEX</key>
+		<string>^(iMac14,4|iMac1[5-9]|iMac2[0-9]|iMacPro|MacBook[8-9]|MacBook1[0-9]|MacBookAir[6-9]|MacBookAir1[0-9]|MacBookPro1[1-6]|Macmini[7-9]|MacPro[6-9])</string>
+		<key>NAME</key>
+		<string>Download macOS Big Sur Installer</string>
+		<key>REINSTALL_BUTTON_TEXT</key>
+		<string>Download</string>
+		<key>TRIGGER_POLICY_RUN_COMMAND</key>
+		<string>/Library/Management/erase-install/erase-install.sh --os=11 --update --move</string>
+		<key>UNTESTED_RECIPE_IDENTIFIER</key>
+		<string>local.jamf.macos-bigsur-download</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.0.0</string>
+</dict>
+</plist>

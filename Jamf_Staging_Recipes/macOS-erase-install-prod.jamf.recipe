@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Creates all production policies for a particular title.</string>
+	<key>Identifier</key>
+	<string>com.github.eth-its-recipes.jamf.erase-install-prod</string>
+	<key>Input</key>
+	<dict>
+		<key>INSTALLED_GROUP_TEMPLATE</key>
+		<string>SmartGroup-macOS-erase-install-ineligible.xml</string>
+		<key>INSTALL_BUTTON_TEXT</key>
+		<string>ERASE!</string>
+		<key>NAME</key>
+		<string>Erase and Reinstall macOS</string>
+		<key>REINSTALL_BUTTON_TEXT</key>
+		<string>ERASE!</string>
+		<key>TRIGGER_POLICY_RUN_COMMAND</key>
+		<string>/Library/Management/erase-install/erase-install.sh --update --erase --sameos</string>
+		<key>UNTESTED_RECIPE_IDENTIFIER</key>
+		<string>local.jamf.erase-install</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.0.0</string>
+</dict>
+</plist>
