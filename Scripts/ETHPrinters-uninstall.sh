@@ -58,6 +58,17 @@ else
     echo "$app_name deleted successfully"
 fi
 
+# also delete any version of the app that was placed in a subfolder
+if [[ -d "/Applications/Utilities/ETH Printers" ]]; then
+    rm -Rf "/Applications/Utilities/ETH Printers"
+    echo "Checking if /Applications/Utilities/ETH Printers is actually deleted..."
+    if [[ -d "/Applications/Utilities/ETH Printers" ]]; then
+        echo "/Applications/Utilities/ETH Printers failed to delete"
+    else
+        echo "/Applications/Utilities/ETH Printers deleted successfully"
+    fi
+fi
+
 # Try to Forget the packages if we can find a match
 # Loop through the remaining parameters
 pkg_1="%PKG_ID%"
