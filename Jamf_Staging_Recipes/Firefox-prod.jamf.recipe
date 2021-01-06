@@ -10,8 +10,8 @@
 	<dict>
 		<key>NAME</key>
 		<string>Firefox</string>
-		<key>POLICY_RUN_COMMAND</key>
-		<string>chown -R "$(stat -f%Su /dev/console)" "/Applications/%NAME%.app" &amp;&amp; echo "Corrected permissions for %NAME%."</string>
+		<key>TRIGGER_POLICY_RUN_COMMAND</key>
+		<string>chown -R "$(stat -f%Su /dev/console):staff" "/Applications/%NAME%.app" &amp;&amp; echo "Corrected permissions for %NAME%."</string>
 		<key>UNTESTED_RECIPE_IDENTIFIER</key>
 		<string>local.jamf.Firefox</string>
 	</dict>

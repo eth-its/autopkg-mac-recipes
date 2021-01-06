@@ -19,7 +19,7 @@
 		<key>POLICY_NAME</key>
 		<string>%NAME% (Testing)</string>
 		<key>POLICY_RUN_COMMAND</key>
-		<string>chown -R "$(stat -f%Su /dev/console)" "/Applications/%NAME%.app" &amp;amp;&amp;amp; echo "Corrected permissions for %NAME%."</string>
+		<string>chown -R "$(stat -f%Su /dev/console):staff" "/Applications/%NAME%.app" &amp;&amp; echo "Corrected permissions for %NAME%."</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>Policy-untested-selfservice.xml</string>
 		<key>REINSTALL_BUTTON_TEXT</key>

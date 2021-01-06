@@ -11,7 +11,7 @@
 		<key>NAME</key>
 		<string>Visual Studio Code</string>
 		<key>POLICY_RUN_COMMAND</key>
-		<string>chown -R "$(stat -f%Su /dev/console)" "/Applications/%NAME%.app" &amp;&amp; echo "Corrected permissions for %NAME%."</string>
+		<string>chown -R "$(stat -f%Su /dev/console):staff" "/Applications/%NAME%.app" &amp;&amp; echo "Corrected permissions for %NAME%."</string>
 		<key>UNTESTED_RECIPE_IDENTIFIER</key>
 		<string>local.jamf.VisualStudioCode</string>
 	</dict>
