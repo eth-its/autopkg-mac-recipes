@@ -15,7 +15,7 @@
 		<key>SCRIPT_PRIORITY</key>
 		<string>Before</string>
 		<key>TRIGGER_POLICY_TEMPLATE</key>
-		<string>Policy-script-triggeronly.xml</string>
+		<string>Policy-prod-triggeronly-script.xml</string>
 		<key>UNTESTED_RECIPE_IDENTIFIER</key>
 		<string>local.jamf.ETHPrinters</string>
 	</dict>

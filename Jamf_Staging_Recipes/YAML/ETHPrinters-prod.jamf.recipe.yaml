@@ -8,4 +8,4 @@ Input:
   UNTESTED_RECIPE_IDENTIFIER: local.jamf.ETHPrinters
   SCRIPT_NAME: ETHPrinters-preinstall.sh
   SCRIPT_PRIORITY: Before
-  TRIGGER_POLICY_TEMPLATE: Policy-script-triggeronly.xml
+  TRIGGER_POLICY_TEMPLATE: Policy-prod-triggeronly-script.xml
