@@ -14,7 +14,7 @@ Input:
   SCRIPT_NAME: "%NAME%-uninstall.sh"
   SCRIPT_PATH: Application-uninstall.sh
   PARAMETER4_TITLE: Major Version
-  PARAMETER4_VALUE: '%MAJOR_VERSION%'
+  PARAMETER4_VALUE: "%MAJOR_VERSION%"
   SCRIPT_PRIORITY: After
   PKG_ID: "None"
   PKG_ID_2: "None"
@@ -47,7 +47,7 @@ Input:
   UNINSTALL_TRIGGER_NAME: "%NAME% %MAJOR_VERSION%-uninstall"
   INSTALL_BUTTON_TEXT: Uninstall
   REINSTALL_BUTTON_TEXT: Uninstall
-  SELFSERVICE_FORCE_DESCRIPTION: 'false'
+  SELFSERVICE_FORCE_DESCRIPTION: "false"
 
 Process:
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader
@@ -83,7 +83,8 @@ Process:
     Arguments:
       computergroup_template: "%AUTOINSTALL_GROUP_TEMPLATE%"
       computergroup_name: "%AUTOINSTALL_GROUP_NAME%"
-      replace_group: False
+      replace_group: True
+    Comment: "** TEMPORARILY SET TO TRUE TO FIX AUTO-INSTALL GROUPS **"
 
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader
     Arguments:
