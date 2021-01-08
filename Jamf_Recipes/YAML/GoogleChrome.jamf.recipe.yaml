@@ -45,6 +45,8 @@ Process:
       replace_pkg: "%REPLACE_PKG%"
       pkg_category: "%PKG_CATEGORY%"
 
+  - Processor: com.github.grahampugh.recipes.commonprocessors/WritePkgResultToJson
+
   - Processor: StopProcessingIf
     Arguments:
       predicate: "%UPDATE_PREDICATE%"
