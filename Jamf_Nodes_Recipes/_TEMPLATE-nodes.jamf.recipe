@@ -60,6 +60,15 @@ If the icon does not match NAME.png, SELFSERVICE_ICON should also be overridden.
 			<string>com.github.grahampugh.recipes.preprocessors/LastRecipeRunChecker</string>
 		</dict>
 		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>predicate</key>
+				<string>%UPDATE_PREDICATE%</string>
+			</dict>
+			<key>Processor</key>
+			<string>StopProcessingIf</string>
+		</dict>
+		<dict>
 			<key>Processor</key>
 			<string>com.github.grahampugh.recipes.commonprocessors/VersionRegexGenerator</string>
 		</dict>
@@ -84,15 +93,6 @@ If the icon does not match NAME.png, SELFSERVICE_ICON should also be overridden.
 			</dict>
 			<key>Processor</key>
 			<string>com.github.grahampugh.jamf-upload.processors/JamfPackageUploader</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>predicate</key>
-				<string>%UPDATE_PREDICATE%</string>
-			</dict>
-			<key>Processor</key>
-			<string>StopProcessingIf</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
