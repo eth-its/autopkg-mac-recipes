@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Uploads a script to the Jamf Pro Server and creates a Self Service Policy and Smart Group.</string>
+	<key>Identifier</key>
+	<string>com.github.eth-its-recipes.jamf.VisualStudioCode-uninstall</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Visual Studio Code</string>
+		<key>PKG_ID</key>
+		<string>com.microsoft.VSCode</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.0.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.eth-its-recipes.jamf.template-script-uninstall</string>
+</dict>
+</plist>
