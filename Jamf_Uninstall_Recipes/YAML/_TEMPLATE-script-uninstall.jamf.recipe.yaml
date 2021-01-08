@@ -45,7 +45,7 @@ Input:
   SCRIPT_PRIORITY: After
   INSTALL_BUTTON_TEXT: Uninstall
   REINSTALL_BUTTON_TEXT: Uninstall
-  SELFSERVICE_FORCE_DESCRIPTION: 'false'
+  SELFSERVICE_FORCE_DESCRIPTION: "false"
 
 Process:
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader
@@ -76,7 +76,8 @@ Process:
     Arguments:
       computergroup_template: "%AUTOINSTALL_GROUP_TEMPLATE%"
       computergroup_name: "%AUTOINSTALL_GROUP_NAME%"
-      replace_group: False
+      replace_group: True
+    Comment: "** TEMPORARILY SET TO TRUE TO FIX AUTO-INSTALL GROUPS **"
 
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader
     Arguments:

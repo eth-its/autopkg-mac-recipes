@@ -227,8 +227,10 @@ If the icon does not match NAME.png, SELFSERVICE_ICON should also be overridden.
 				<key>computergroup_template</key>
 				<string>%AUTOINSTALL_GROUP_TEMPLATE%</string>
 				<key>replace_group</key>
-				<string>False</string>
+				<string>True</string>
 			</dict>
+			<key>Comment</key>
+			<string>** TEMPORARILY SET TO TRUE TO FIX AUTO-INSTALL GROUPS **</string>
 			<key>Processor</key>
 			<string>com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader</string>
 		</dict>

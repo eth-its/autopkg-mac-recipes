@@ -111,7 +111,8 @@ Process:
     Arguments:
       computergroup_name: "%AUTOINSTALL_GROUP_NAME%"
       computergroup_template: "%AUTOINSTALL_GROUP_TEMPLATE%"
-      replace_group: "False"
+      replace_group: "True"
+    Comment: "** TEMPORARILY SET TO TRUE TO FIX AUTO-INSTALL GROUPS **"
 
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader
     Arguments:
