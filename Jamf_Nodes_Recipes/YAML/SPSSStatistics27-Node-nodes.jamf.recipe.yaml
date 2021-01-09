@@ -1,5 +1,5 @@
 Description: Uploads the pkg to the JSS, and creates a Self-Service Policy available to members of a Testing group.
-Identifier: com.github.eth-its-recipes.jamf.SPSSStatistics-Node-nodes
+Identifier: com.github.eth-its-recipes.jamf.SPSSStatistics27-Node-nodes
 MinimumVersion: 2.0.0
 
 Input:

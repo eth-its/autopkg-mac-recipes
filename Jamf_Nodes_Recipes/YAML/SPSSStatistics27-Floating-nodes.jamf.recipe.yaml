@@ -1,9 +1,9 @@
 Description: Uploads the pkg to the JSS, and creates a Self-Service Policy available to members of a Testing group.
-Identifier: com.github.eth-its-recipes.jamf.SPSSStatistics-Floating-nodes
+Identifier: com.github.eth-its-recipes.jamf.SPSSStatistics27-Floating-nodes
 MinimumVersion: 2.0.0
 
 Input:
-  UNTESTED_RECIPE_IDENTIFIER: local.jamf.SPSSStatistics-Floating
+  UNTESTED_RECIPE_IDENTIFIER: local.jamf.SPSSStatistics27-Floating
   NAME: SPSS Statistics
   LICENSE: Floating
   MAJOR_VERSION: "27"

@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Uploads the pkg to the JSS, and creates a Self-Service Policy available to members of a Testing group.</string>
 	<key>Identifier</key>
-	<string>com.github.eth-its-recipes.jamf.SPSSStatistics-Floating-nodes</string>
+	<string>com.github.eth-its-recipes.jamf.SPSSStatistics27-Node-nodes</string>
 	<key>Input</key>
 	<dict>
 		<key>EXTENSION_ATTRIBUTE_NAME</key>
@@ -14,16 +14,14 @@
 		<string>SPSSStatistics-EA.sh</string>
 		<key>EXTENSION_ATTRIBUTE_VALUE</key>
 		<string>%LICENSE%</string>
-		<key>FLOATING_LICENSE_URL</key>
-		<string>REPLACE-ME</string>
 		<key>INSTALLED_GROUP_NAME</key>
-		<string>SPSS Statistics %MAJOR_VERSION% installed</string>
+		<string>SPSS Statistics %MAJOR_VERSION% %LICENSE% installed</string>
 		<key>INSTALLED_GROUP_TEMPLATE</key>
 		<string>SmartGroup-installed.xml</string>
 		<key>INSTALL_BUTTON_TEXT</key>
 		<string>Install %version%</string>
 		<key>LICENSE</key>
-		<string>Floating</string>
+		<string>Node</string>
 		<key>LICENSE_INSTALLED_GROUP_NAME</key>
 		<string>SPSS Statistics %MAJOR_VERSION% %LICENSE% License activated</string>
 		<key>LICENSE_INSTALLED_GROUP_TEMPLATE</key>
@@ -61,9 +59,9 @@
 		<key>REINSTALL_BUTTON_TEXT</key>
 		<string>Install %version%</string>
 		<key>SCRIPT_NAME</key>
-		<string>SPSSStatistics-floating-license-activation.sh</string>
+		<string>SPSSStatistics-node-license-activation.sh</string>
 		<key>SCRIPT_PATH</key>
-		<string>SPSSStatistics-floating-license-activation.sh</string>
+		<string>SPSSStatistics-node-license-activation.sh</string>
 		<key>SCRIPT_PRIORITY</key>
 		<string>After</string>
 		<key>SELFSERVICE_DESCRIPTION</key>
@@ -87,7 +85,7 @@ Use a simple drag and drop interface to access a wide range of capabilities and 
 		<key>TEST_USERS_GROUP_TEMPLATE</key>
 		<string>SmartGroup-test-users.xml</string>
 		<key>TEST_VERSION_INSTALLED_GROUP_NAME</key>
-		<string>%NAME% %MAJOR_VERSION% test version installed</string>
+		<string>%NAME% %MAJOR_VERSION% %LICENSE% test version installed</string>
 		<key>TEST_VERSION_INSTALLED_GROUP_TEMPLATE</key>
 		<string>SmartGroup-test-version-installed.xml</string>
 		<key>TRIGGER_NAME</key>
