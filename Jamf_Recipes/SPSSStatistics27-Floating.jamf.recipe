@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Uploads the pkg to the JSS, and creates a Self-Service Policy available to members of a Testing group.</string>
 	<key>Identifier</key>
-	<string>com.github.eth-its-recipes.jamf.SPSSStatistics-Node</string>
+	<string>com.github.eth-its-recipes.jamf.SPSSStatistics27-Floating</string>
 	<key>Input</key>
 	<dict>
 		<key>EXTENSION_ATTRIBUTE_NAME</key>
@@ -14,14 +14,16 @@
 		<string>SPSSStatistics-EA.sh</string>
 		<key>EXTENSION_ATTRIBUTE_VALUE</key>
 		<string>%LICENSE%</string>
+		<key>FLOATING_LICENSE_URL</key>
+		<string>REPLACE-ME</string>
 		<key>INSTALLED_GROUP_NAME</key>
-		<string>SPSS Statistics %MAJOR_VERSION% installed</string>
+		<string>SPSS Statistics %MAJOR_VERSION% %LICENSE% installed</string>
 		<key>INSTALLED_GROUP_TEMPLATE</key>
 		<string>SmartGroup-installed.xml</string>
 		<key>INSTALL_BUTTON_TEXT</key>
 		<string>Install %version%</string>
 		<key>LICENSE</key>
-		<string>Node</string>
+		<string>Floating</string>
 		<key>LICENSE_INSTALLED_GROUP_NAME</key>
 		<string>SPSS Statistics %MAJOR_VERSION% %LICENSE% License activated</string>
 		<key>LICENSE_INSTALLED_GROUP_TEMPLATE</key>
@@ -40,6 +42,10 @@
 		<string>Activates the SPSS Statistics %MAJOR_VERSION% %LICENSE% License</string>
 		<key>LICENSE_SET_SELFSERVICE_DISPLAY_NAME</key>
 		<string>Activate SPSS Statistics %MAJOR_VERSION% %LICENSE% License</string>
+		<key>LIST_LANGUAGE</key>
+		<string>ML</string>
+		<key>LIST_NAME</key>
+		<string>IBM SPSS</string>
 		<key>MAJOR_VERSION</key>
 		<string>27</string>
 		<key>MESSAGE_FINISH</key>
@@ -59,9 +65,9 @@
 		<key>REINSTALL_BUTTON_TEXT</key>
 		<string>Install %version%</string>
 		<key>SCRIPT_NAME</key>
-		<string>SPSSStatistics-node-license-activation.sh</string>
+		<string>SPSSStatistics-floating-license-activation.sh</string>
 		<key>SCRIPT_PATH</key>
-		<string>SPSSStatistics-node-license-activation.sh</string>
+		<string>SPSSStatistics-floating-license-activation.sh</string>
 		<key>SCRIPT_PRIORITY</key>
 		<string>After</string>
 		<key>SELFSERVICE_DESCRIPTION</key>
@@ -82,7 +88,7 @@ Category: %PKG_CATEGORY%
 		<key>TEST_USERS_GROUP_TEMPLATE</key>
 		<string>SmartGroup-test-users.xml</string>
 		<key>TEST_VERSION_INSTALLED_GROUP_NAME</key>
-		<string>%NAME% %MAJOR_VERSION% test version installed</string>
+		<string>%NAME% %MAJOR_VERSION% %LICENSE% test version installed</string>
 		<key>TEST_VERSION_INSTALLED_GROUP_TEMPLATE</key>
 		<string>SmartGroup-test-version-installed.xml</string>
 		<key>TRIGGER_NAME</key>
@@ -95,8 +101,6 @@ Category: %PKG_CATEGORY%
 		<string>echo 'Installation of %POLICY_NAME% complete'</string>
 		<key>TRIGGER_POLICY_TEMPLATE</key>
 		<string>Policy-script-triggeronly.xml</string>
-		<key>UNTESTED_RECIPE_IDENTIFIER</key>
-		<string>local.jamf.SPSSStatistics-Floating</string>
 		<key>UPDATE_PREDICATE</key>
 		<string>pkg_uploaded == False</string>
 		<key>USERS_GROUP_NAME</key>
@@ -106,17 +110,10 @@ Category: %PKG_CATEGORY%
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.0.0</string>
+	<key>ParentRecipe</key>
+	<string>ch.ethz.id.pkg.SPSSStatistics27</string>
 	<key>Process</key>
 	<array>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>recipeoverride_identifier</key>
-				<string>%UNTESTED_RECIPE_IDENTIFIER%</string>
-			</dict>
-			<key>Processor</key>
-			<string>com.github.grahampugh.recipes.preprocessors/LastRecipeRunChecker</string>
-		</dict>
 		<dict>
 			<key>Processor</key>
 			<string>com.github.grahampugh.recipes.commonprocessors/VersionRegexGenerator</string>
@@ -135,13 +132,13 @@ Category: %PKG_CATEGORY%
 			<dict>
 				<key>pkg_category</key>
 				<string>%PKG_CATEGORY%</string>
-				<key>replace_pkg</key>
-				<string>False</string>
-				<key>replace_pkg_metadata</key>
-				<string>True</string>
 			</dict>
 			<key>Processor</key>
 			<string>com.github.grahampugh.jamf-upload.processors/JamfPackageUploader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.recipes.commonprocessors/WritePkgResultToJson</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
