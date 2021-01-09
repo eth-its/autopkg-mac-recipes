@@ -152,5 +152,3 @@ Process:
       policy_template: "%LICENSE_SET_POLICY_TEMPLATE%"
       policy_name: "%LICENSE_SET_POLICY_NAME%"
       replace_policy: "True"
-
-  - Processor: com.github.grahampugh.recipes.postprocessors/LastRecipeRunResult

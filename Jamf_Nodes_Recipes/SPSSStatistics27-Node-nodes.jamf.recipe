@@ -326,10 +326,6 @@ Use a simple drag and drop interface to access a wide range of capabilities and 
 			<key>Processor</key>
 			<string>com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader</string>
 		</dict>
-		<dict>
-			<key>Processor</key>
-			<string>com.github.grahampugh.recipes.postprocessors/LastRecipeRunResult</string>
-		</dict>
 	</array>
 </dict>
 </plist>
