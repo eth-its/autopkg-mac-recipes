@@ -99,7 +99,7 @@ Use a simple drag and drop interface to access a wide range of capabilities and 
 		<key>TRIGGER_POLICY_TEMPLATE</key>
 		<string>Policy-script-triggeronly.xml</string>
 		<key>UNTESTED_RECIPE_IDENTIFIER</key>
-		<string>local.jamf.SPSSStatistics-Floating</string>
+		<string>local.jamf.SPSSStatistics27-Floating</string>
 		<key>UPDATE_PREDICATE</key>
 		<string>pkg_uploaded == False</string>
 		<key>USERS_GROUP_NAME</key>
