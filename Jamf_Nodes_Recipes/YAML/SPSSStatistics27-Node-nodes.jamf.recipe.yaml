@@ -61,6 +61,10 @@ Process:
     Arguments:
       recipeoverride_identifier: "%UNTESTED_RECIPE_IDENTIFIER%"
 
+  - Processor: StopProcessingIf
+    Arguments:
+      predicate: "%UPDATE_PREDICATE%"
+
   - Processor: com.github.grahampugh.recipes.commonprocessors/VersionRegexGenerator
 
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader
@@ -72,10 +76,6 @@ Process:
       replace_pkg: "False"
       replace_pkg_metadata: "True"
       pkg_category: "%PKG_CATEGORY%"
-
-  - Processor: StopProcessingIf
-    Arguments:
-      predicate: "%UPDATE_PREDICATE%"
 
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader
     Arguments:

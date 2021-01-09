@@ -121,6 +121,15 @@ Use a simple drag and drop interface to access a wide range of capabilities and 
 			<string>com.github.grahampugh.recipes.preprocessors/LastRecipeRunChecker</string>
 		</dict>
 		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>predicate</key>
+				<string>%UPDATE_PREDICATE%</string>
+			</dict>
+			<key>Processor</key>
+			<string>StopProcessingIf</string>
+		</dict>
+		<dict>
 			<key>Processor</key>
 			<string>com.github.grahampugh.recipes.commonprocessors/VersionRegexGenerator</string>
 		</dict>
@@ -145,15 +154,6 @@ Use a simple drag and drop interface to access a wide range of capabilities and 
 			</dict>
 			<key>Processor</key>
 			<string>com.github.grahampugh.jamf-upload.processors/JamfPackageUploader</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>predicate</key>
-				<string>%UPDATE_PREDICATE%</string>
-			</dict>
-			<key>Processor</key>
-			<string>StopProcessingIf</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
