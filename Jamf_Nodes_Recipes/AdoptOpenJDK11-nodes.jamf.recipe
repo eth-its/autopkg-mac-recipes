@@ -18,6 +18,8 @@
 		<string>AdoptOpenJDK 11</string>
 		<key>SELFSERVICE_ICON</key>
 		<string>AdoptOpenJDK.png</string>
+		<key>TEST_VERSION_INSTALLED_GROUP_TEMPLATE</key>
+		<string>SmartGroup-test-version-installed-EA.xml</string>
 		<key>UNTESTED_RECIPE_IDENTIFIER</key>
 		<string>local.jamf.AdoptOpenJDK11</string>
 	</dict>
