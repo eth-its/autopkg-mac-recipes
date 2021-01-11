@@ -197,6 +197,8 @@ Use a simple drag and drop interface to access a wide range of capabilities and 
 				<string>%EXTENSION_ATTRIBUTE_NAME%</string>
 				<key>ea_script_path</key>
 				<string>%EXTENSION_ATTRIBUTE_SCRIPT%</string>
+				<key>replace_ea</key>
+				<string>True</string>
 			</dict>
 			<key>Processor</key>
 			<string>com.github.grahampugh.jamf-upload.processors/JamfExtensionAttributeUploader</string>
