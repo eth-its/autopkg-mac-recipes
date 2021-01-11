@@ -1,5 +1,5 @@
 Description: Creates a Self-Service Policy available to members of a Testing group.
-Identifier: com.github.eth-its-recipes.jamf.Fantastical-nodes
+Identifier: com.github.eth-its-recipes.jamf.AdoptOpenJDK11-nodes
 ParentRecipe: com.github.eth-its-recipes.jamf.template-nodes
 MinimumVersion: 2.0.0
 

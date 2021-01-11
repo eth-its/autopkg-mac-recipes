@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Creates a Self-Service Policy available to members of a Testing group.</string>
 	<key>Identifier</key>
-	<string>com.github.eth-its-recipes.jamf.Fantastical-nodes</string>
+	<string>com.github.eth-its-recipes.jamf.AdoptOpenJDK11-nodes</string>
 	<key>Input</key>
 	<dict>
 		<key>EXTENSION_ATTRIBUTE_NAME</key>
