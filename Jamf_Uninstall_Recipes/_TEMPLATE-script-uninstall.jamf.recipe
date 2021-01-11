@@ -12,7 +12,7 @@ Do not add things like language or license to the NAME key.
 	<key>Description</key>
 	<string>Uploads a script to the Jamf Pro Server and creates a Self Service Policy and Smart Group.</string>
 	<key>Identifier</key>
-	<string>com.github.eth-its-recipes.jamf.template-script-uninstall</string>
+	<string>com.github.eth-its-recipes.jamf.template-script-parameter4-uninstall</string>
 	<key>Input</key>
 	<dict>
 		<key>AUTOINSTALL_ALL_SOFTWARE_GROUP_NAME</key>
@@ -31,6 +31,8 @@ Do not add things like language or license to the NAME key.
 		<string>Uninstall</string>
 		<key>JSS_INVENTORY_NAME</key>
 		<string>%NAME%.app</string>
+		<key>PARAMETER4_LABEL</key>
+		<string>Parameter 4</string>
 		<key>PKG_ID</key>
 		<string>None</string>
 		<key>PKG_ID_2</key>
@@ -110,6 +112,8 @@ Do not add things like language or license to the NAME key.
 				<string>%UNINSTALL_POLICY_CATEGORY%</string>
 				<key>script_name</key>
 				<string>%SCRIPT_NAME%</string>
+				<key>script_parameter4</key>
+				<string>%PARAMETER4_LABEL%</string>
 				<key>script_path</key>
 				<string>%SCRIPT_PATH%</string>
 				<key>script_priority</key>

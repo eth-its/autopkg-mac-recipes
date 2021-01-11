@@ -6,13 +6,14 @@ Comment: |
   Do not add things like language or license to the NAME key.
 
 Description: Uploads a script to the Jamf Pro Server and creates a Self Service Policy and Smart Group.
-Identifier: com.github.eth-its-recipes.jamf.template-script-uninstall
+Identifier: com.github.eth-its-recipes.jamf.template-script-parameter4-uninstall
 MinimumVersion: 2.0.0
 
 Input:
   JSS_INVENTORY_NAME: "%NAME%.app"
   SCRIPT_NAME: "%NAME%-uninstall.sh"
   SCRIPT_PATH: Application-uninstall.sh
+  PARAMETER4_LABEL: "Parameter 4"
   PKG_ID: "None"
   PKG_ID_2: "None"
   PKG_ID_3: "None"
@@ -45,7 +46,7 @@ Input:
   SCRIPT_PRIORITY: After
   INSTALL_BUTTON_TEXT: Uninstall
   REINSTALL_BUTTON_TEXT: Uninstall
-  SELFSERVICE_FORCE_DESCRIPTION: 'false'
+  SELFSERVICE_FORCE_DESCRIPTION: "false"
 
 Process:
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader
@@ -58,6 +59,7 @@ Process:
       script_name: "%SCRIPT_NAME%"
       script_path: "%SCRIPT_PATH%"
       script_priority: "%SCRIPT_PRIORITY%"
+      script_parameter4: "%PARAMETER4_LABEL%"
       replace_script: True
 
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader

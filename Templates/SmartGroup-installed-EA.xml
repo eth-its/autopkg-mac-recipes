@@ -8,7 +8,7 @@
             <priority>0</priority>
             <and_or>and</and_or>
             <search_type>does not match regex</search_type>
-            <value>^$</value>
+            <value>^None$</value>
         </criterion>
         <criterion>
             <name>Computer Group</name>
