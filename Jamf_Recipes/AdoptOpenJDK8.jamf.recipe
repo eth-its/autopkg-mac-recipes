@@ -9,11 +9,11 @@
 	<key>Input</key>
 	<dict>
 		<key>EXTENSION_ATTRIBUTE_NAME</key>
-		<string>AdoptOpenJDK11Version</string>
+		<string>AdoptOpenJDK8Version</string>
 		<key>EXTENSION_ATTRIBUTE_SCRIPT</key>
 		<string>AdoptOpenJDK-EA.sh</string>
 		<key>EXTENSION_ATTRIBUTE_VALUE</key>
-		<string>1.8</string>
+		<string>8</string>
 		<key>INSTALL_BUTTON_TEXT</key>
 		<string>Install %version%</string>
 		<key>NAME</key>
