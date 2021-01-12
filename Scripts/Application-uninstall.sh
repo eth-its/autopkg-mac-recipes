@@ -23,7 +23,7 @@ function silent_app_quit() {
         # double-check
         n=0
         while [[ $n -lt 10 ]]; do
-            if pgrep -f "$check_app_name" ; then
+            if pgrep -f "/$check_app_name" ; then
                 (( n=n+1 ))
                 sleep 1
 				echo "Graceful close attempt # $n"
@@ -32,9 +32,9 @@ function silent_app_quit() {
                 break
             fi
         done
-        if pgrep -f "$check_app_name" ; then
+        if pgrep -f "/$check_app_name" ; then
             echo "$app_name failed to quit - killing."
-            /usr/bin/pkill -f "$check_app_name"
+            /usr/bin/pkill -f "/$check_app_name"
         fi
     fi
 }
