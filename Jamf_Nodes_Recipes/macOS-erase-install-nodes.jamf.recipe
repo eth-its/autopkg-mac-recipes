@@ -64,6 +64,15 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
+				<key>predicate</key>
+				<string>%UPDATE_PREDICATE%</string>
+			</dict>
+			<key>Processor</key>
+			<string>StopProcessingIf</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
 				<key>category_name</key>
 				<string>%PKG_CATEGORY%</string>
 			</dict>
@@ -82,15 +91,6 @@
 			</dict>
 			<key>Processor</key>
 			<string>com.github.grahampugh.jamf-upload.processors/JamfPackageUploader</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>predicate</key>
-				<string>%UPDATE_PREDICATE%</string>
-			</dict>
-			<key>Processor</key>
-			<string>StopProcessingIf</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
