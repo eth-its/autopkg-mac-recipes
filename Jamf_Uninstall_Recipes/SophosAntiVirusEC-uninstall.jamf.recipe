@@ -10,6 +10,10 @@
 	<dict>
 		<key>EXTENSION_ATTRIBUTE_NAME</key>
 		<string>SophosGroupPath</string>
+		<key>EXTENSION_ATTRIBUTE_SEARCH_TYPE</key>
+		<string>does not match regex</string>
+		<key>EXTENSION_ATTRIBUTE_SEARCH_VALUE</key>
+		<string>^$</string>
 		<key>INSTALLED_GROUP_TEMPLATE</key>
 		<string>SmartGroup-installed-EA.xml</string>
 		<key>NAME</key>

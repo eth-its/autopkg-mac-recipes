@@ -7,5 +7,7 @@ Input:
   NAME: Adobe Flash Player
   SCRIPT_PATH: AdobeFlashPlayer-uninstall.sh
   SCRIPT_NAME: AdobeFlashPlayer-uninstall.sh
-  EXTENSION_ATTRIBUTE_NAME: AdobeFlashVersion
   INSTALLED_FOR_AUTOUNINSTALL_GROUP_TEMPLATE: SmartGroup-installed-for-autouninstall-EA.xml
+  EXTENSION_ATTRIBUTE_NAME: AdobeFlashVersion
+  EXTENSION_ATTRIBUTE_SEARCH_TYPE: does not match regex
+  EXTENSION_ATTRIBUTE_SEARCH_VALUE: "^$"
