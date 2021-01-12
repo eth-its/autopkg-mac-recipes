@@ -19,53 +19,39 @@
 
 # Inputted variables
 app_name="Fiji"
+check_app_name="Fiji.app" 
 
-function silent_app_quit() {
-    # silently kill the application.
-    # add .app to end of string if not supplied
-    app_name="${app_name/\.app/}"            # remove any .app
-    check_app_name="${app_name/\(/\\(}"       # escape any brackets for the pgrep
-    check_app_name="${check_app_name/\)/\\)}"  # escape any brackets for the pgrep
-    check_app_name="${check_app_name}.app"     # add the .app back
-    if pgrep -f "/${check_app_name}" ; then
-        echo "Closing $app_name"
-        /usr/bin/osascript -e "quit app \"$app_name\"" &
-        sleep 1
+# silently kill the application.
+if pgrep -f "/${check_app_name}" ; then
+    echo "Closing $app_name"
+    /usr/bin/osascript -e "quit app \"$app_name\"" &
+    sleep 1
 
-        # double-check
-        n=0
-        while [[ $n -lt 10 ]]; do
-            if pgrep -f "$check_app_name" ; then
-                (( n=n+1 ))
-                sleep 1
-				echo "Graceful close attempt # $n"
-            else
-                echo "$app_name closed."
-                break
-            fi
-        done
+    # double-check
+    n=0
+    while [[ $n -lt 10 ]]; do
         if pgrep -f "$check_app_name" ; then
-            echo "$app_name failed to quit - killing."
-            # /usr/bin/pkill -f "$check_app_name"
+            (( n=n+1 ))
+            sleep 1
+            echo "Graceful close attempt # $n"
+        else
+            echo "$app_name closed."
+            break
         fi
+    done
+    if pgrep -f "$check_app_name" ; then
+        echo "$app_name failed to quit - killing."
+        /usr/bin/pkill -f "/$check_app_name"
     fi
-}
-
-if [[ -z "${app_name}" ]]; then
-    echo "No application specified!"
-    exit 1
 fi
-
-# quit the app if running
-silent_app_quit "$app_name"
 
 # Now remove the app
 echo "Removing application: ${app_name}"
 
-find /Applications -type d -name Fiji* -maxdepth 1 -exec rm -rf {} +
+find /Applications -type d -name "Fiji*" -maxdepth 1 -exec rm -rf {} +
 
 echo "Checking if $app_name is actually deleted..."
-[[ $(find /Applications -type d -name Fiji* -maxdepth 1) ]] && echo "$app_name failed to delete" || echo "$app_name deleted successfully"
+[[ $(find /Applications -type d -name "Fiji*" -maxdepth 1) ]] && echo "$app_name failed to delete" || echo "$app_name deleted successfully"
 
 # Delete the versioning file
 echo "Removing /Library/Application Support/Fiji/AdaptedInfo.plist"
