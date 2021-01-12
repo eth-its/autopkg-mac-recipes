@@ -8,6 +8,8 @@
 	<string>com.github.eth-its-recipes.jamf.AdobeAir-autouninstall</string>
 	<key>Input</key>
 	<dict>
+		<key>EXTENSION_ATTRIBUTE_NAME</key>
+		<string>AdobeAIRVersion</string>
 		<key>INSTALLED_FOR_AUTOUNINSTALL_GROUP_TEMPLATE</key>
 		<string>SmartGroup-installed-for-autouninstall-EA.xml</string>
 		<key>NAME</key>
