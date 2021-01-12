@@ -18,7 +18,7 @@
 #######################################################################
 
 # Inputted variables
-appName="Fiji"
+app_name="Fiji"
 
 function silent_app_quit() {
     # silently kill the application.
@@ -46,26 +46,26 @@ function silent_app_quit() {
         done
         if pgrep -f "$check_app_name" ; then
             echo "$app_name failed to quit - killing."
-            /usr/bin/pkill -f "$check_app_name"
+            # /usr/bin/pkill -f "$check_app_name"
         fi
     fi
 }
 
-if [[ -z "${appName}" ]]; then
+if [[ -z "${app_name}" ]]; then
     echo "No application specified!"
     exit 1
 fi
 
 # quit the app if running
-silent_app_quit "$appName"
+silent_app_quit "$app_name"
 
 # Now remove the app
-echo "Removing application: ${appName}"
+echo "Removing application: ${app_name}"
 
 find /Applications -type d -name Fiji* -maxdepth 1 -exec rm -rf {} +
 
-echo "Checking if $appName is actually deleted..."
-[[ $(find /Applications -type d -name Fiji* -maxdepth 1) ]] && echo "$appName failed to delete" || echo "$appName deleted successfully"
+echo "Checking if $app_name is actually deleted..."
+[[ $(find /Applications -type d -name Fiji* -maxdepth 1) ]] && echo "$app_name failed to delete" || echo "$app_name deleted successfully"
 
 # Delete the versioning file
 echo "Removing /Library/Application Support/Fiji/AdaptedInfo.plist"
@@ -75,4 +75,4 @@ rm -f "/Library/Application Support/Fiji/AdaptedInfo.plist" && echo "AdaptedInfo
 echo "Forgetting package org.fiji..."
 /usr/sbin/pkgutil --forget "org.fiji"
 
-echo "$appName deletion complete"
+echo "$app_name deletion complete"
