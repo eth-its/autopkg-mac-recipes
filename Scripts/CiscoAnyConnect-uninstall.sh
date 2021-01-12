@@ -62,7 +62,6 @@ else
 	echo "no Cisco uninstaller found"
 fi
 
-# Removing any plugins from Office
 # Forget packages
 echo "Forgetting packages"
 pkgutilcmd="/usr/sbin/pkgutil"
