@@ -1,19 +1,18 @@
 #!/bin/bash
 
 filter="$4"
-has_jvm=1
 
-if [[ $filter == "8" ]]; then 
-    filter_name="jdk8"
-elif [[ $filter == "11" ]]; then
-    filter_name="jdk-11"
+if [[ $filter -lt 9 ]]; then 
+    filter_check="1.$filter"
 else
-    echo "No JVM version chosen"
-    exit 1
+    filter_check="$filter"
 fi
 
+has_jvm=1
+
 while [[ $has_jvm == 1 ]]; do
-    jvm_path=$(find /Library/Java/JavaVirtualMachines -name "$filter_name*" -maxdepth 1 | head -n 1)
+    echo "Checking for JVM..."
+    jvm_path=$(/usr/libexec/java_home -X -v "$filter_check" | grep -B6 -m7 AdoptOpenJDK | head -n 1 | sed 's|<[^>]*>||g' | sed 's|^[[:space:]]*||' | sed 's|\/Contents\/Home||')
     if [[ -d "$jvm_path" ]]; then
         echo "Deleting '$jvm_path'"
         rm -Rf "$jvm_path"
