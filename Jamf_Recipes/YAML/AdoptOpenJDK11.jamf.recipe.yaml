@@ -16,6 +16,12 @@ Input:
   EXTENSION_ATTRIBUTE_NAME: "AdoptOpenJDK11Version"
   EXTENSION_ATTRIBUTE_SCRIPT: AdoptOpenJDK-EA.sh
   EXTENSION_ATTRIBUTE_VALUE: "11"
+  SCRIPT_PATH: AdoptOpenJDK-uninstall.sh
+  SCRIPT_NAME: AdoptOpenJDK-uninstall.sh
+  SCRIPT_PRIORITY: Before
+  SCRIPT_CATEGORY: Uninstallers
+  PARAMETER4_LABEL: JDK major version
+  PARAMETER4_VALUE: "11"
   TEST_VERSION_INSTALLED_GROUP_NAME: "%NAME% test version installed"
   TEST_VERSION_INSTALLED_GROUP_TEMPLATE: SmartGroup-test-version-installed-EA.xml
   TESTING_GROUP_NAME: Testing
@@ -25,7 +31,7 @@ Input:
   POLICY_CATEGORY: Untested
   INSTALL_BUTTON_TEXT: "Install %version%"
   REINSTALL_BUTTON_TEXT: "Install %version%"
-  POLICY_TEMPLATE: Policy-untested-selfservice.xml
+  POLICY_TEMPLATE: Policy-untested-selfservice-script.xml
   SELFSERVICE_ICON: AdoptOpenJDK.png
   POLICY_RUN_COMMAND: "echo 'Installation of %NAME% complete'"
   UPDATE_PREDICATE: "pkg_uploaded != True"
@@ -50,6 +56,19 @@ Process:
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader
     Arguments:
       category_name: "%POLICY_CATEGORY%"
+
+  - Processor: com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader
+    Arguments:
+      category_name: "%SCRIPT_CATEGORY%"
+
+  - Processor: com.github.grahampugh.jamf-upload.processors/JamfScriptUploader
+    Arguments:
+      script_category: "%SCRIPT_CATEGORY%"
+      script_name: "%SCRIPT_NAME%"
+      script_path: "%SCRIPT_PATH%"
+      script_priority: "%SCRIPT_PRIORITY%"
+      script_parameter4: "%PARAMETER4_LABEL%"
+      replace_script: True
 
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfExtensionAttributeUploader
     Arguments:

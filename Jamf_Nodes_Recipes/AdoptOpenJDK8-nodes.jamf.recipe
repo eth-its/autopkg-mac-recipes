@@ -16,6 +16,18 @@
 		<string>8</string>
 		<key>NAME</key>
 		<string>AdoptOpenJDK 8</string>
+		<key>PARAMETER4_LABEL</key>
+		<string>JDK major version</string>
+		<key>PARAMETER4_VALUE</key>
+		<string>8</string>
+		<key>SCRIPT_CATEGORY</key>
+		<string>Uninstallers</string>
+		<key>SCRIPT_NAME</key>
+		<string>AdoptOpenJDK-uninstall.sh</string>
+		<key>SCRIPT_PATH</key>
+		<string>AdoptOpenJDK-uninstall.sh</string>
+		<key>SCRIPT_PRIORITY</key>
+		<string>Before</string>
 		<key>SELFSERVICE_ICON</key>
 		<string>AdoptOpenJDK.png</string>
 		<key>TEST_VERSION_INSTALLED_GROUP_TEMPLATE</key>
@@ -26,6 +38,6 @@
 	<key>MinimumVersion</key>
 	<string>2.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.eth-its-recipes.jamf.template-EA-nodes</string>
+	<string>com.github.eth-its-recipes.jamf.template-EA-script-nodes</string>
 </dict>
 </plist>

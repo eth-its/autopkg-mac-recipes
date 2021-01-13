@@ -1,6 +1,6 @@
 Description: Creates a Self-Service Policy available to members of a Testing group.
 Identifier: com.github.eth-its-recipes.jamf.AdoptOpenJDK11-nodes
-ParentRecipe: com.github.eth-its-recipes.jamf.template-EA-nodes
+ParentRecipe: com.github.eth-its-recipes.jamf.template-EA-script-nodes
 MinimumVersion: 2.0.0
 
 Input:
@@ -11,3 +11,9 @@ Input:
   EXTENSION_ATTRIBUTE_VALUE: "11"
   SELFSERVICE_ICON: AdoptOpenJDK.png
   TEST_VERSION_INSTALLED_GROUP_TEMPLATE: SmartGroup-test-version-installed-EA.xml
+  SCRIPT_PATH: AdoptOpenJDK-uninstall.sh
+  SCRIPT_NAME: AdoptOpenJDK-uninstall.sh
+  SCRIPT_PRIORITY: Before
+  SCRIPT_CATEGORY: Uninstallers
+  PARAMETER4_LABEL: JDK major version
+  PARAMETER4_VALUE: "11"
