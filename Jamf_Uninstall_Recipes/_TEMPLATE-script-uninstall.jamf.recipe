@@ -68,7 +68,7 @@ Do not add things like language or license to the NAME key.
 		<key>TRIGGER_UNINSTALL_POLICY_NAME</key>
 		<string>Trigger-uninstall %NAME%</string>
 		<key>TRIGGER_UNINSTALL_POLICY_TEMPLATE</key>
-		<string>Policy-uninstall-triggeronly-script.xml</string>
+		<string>Policy-uninstall-triggeronly.xml</string>
 		<key>UNINSTALL_POLICY_CATEGORY</key>
 		<string>Uninstallers</string>
 		<key>UNINSTALL_POLICY_NAME</key>
