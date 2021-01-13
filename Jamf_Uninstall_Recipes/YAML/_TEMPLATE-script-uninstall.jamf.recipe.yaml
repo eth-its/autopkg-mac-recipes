@@ -37,7 +37,7 @@ Input:
   UNINSTALL_POLICY_TEMPLATE: Policy-uninstall-selfservice.xml
   TRIGGER_UNINSTALL_POLICY_CATEGORY: Triggered Uninstallers
   TRIGGER_UNINSTALL_POLICY_NAME: "Trigger-uninstall %NAME%"
-  TRIGGER_UNINSTALL_POLICY_TEMPLATE: Policy-uninstall-triggeronly.xml
+  TRIGGER_UNINSTALL_POLICY_TEMPLATE: Policy-uninstall-triggeronly-script-parameter4.xml
   UNINSTALL_SELFSERVICE_DESCRIPTION: "Uninstalls %NAME%"
   UNINSTALL_SELFSERVICE_DISPLAY_NAME: "Uninstall %NAME%"
   UNINSTALL_SELFSERVICE_INSTALL_BUTTON: Uninstall

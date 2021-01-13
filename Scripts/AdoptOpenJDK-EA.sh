@@ -1,7 +1,10 @@
 #!/bin/bash
 
 filter=%EXTENSION_ATTRIBUTE_VALUE%
-# filter=$1  # TEMP
+
+temp_file="/Users/Shared/jamf_java_versions_extension_attribute_check.plist"
+rm -f "$temp_file" ||:
+
 
 if [[ $filter == "8" ]]; then 
     filter_name="1.8"
@@ -12,10 +15,10 @@ else
 fi
 
 if [[ $filter_name ]]; then
-    temp_file="/tmp/jamf_java_versions_extension_attribute_check.plist"
-    /usr/libexec/java_home -X -v $filter_name > "$temp_file"
-    latest_jvm=$(/usr/libexec/PlistBuddy -c "Print :0:JVMVersion" "$temp_file" 2>/dev/null)
-    rm -f "$temp_file"
+    # get the JVM version using java_home
+    latest_jvm=$(/usr/libexec/java_home -X -v $filter_name | grep -A1 -m2 JVMVersion | tail -n 1 | sed 's|<[^>]*>||g' | sed 's|^[[:space:]]*||')
+else
+    latest_jvm="None"
 fi
 
 [[ $latest_jvm == "" ]] && latest_jvm="None"
