@@ -31,7 +31,7 @@ Input:
   POLICY_CATEGORY: Untested
   INSTALL_BUTTON_TEXT: "Install %version%"
   REINSTALL_BUTTON_TEXT: "Install %version%"
-  POLICY_TEMPLATE: Policy-untested-selfservice-script.xml
+  POLICY_TEMPLATE: Policy-untested-selfservice-script-parameter4.xml
   SELFSERVICE_ICON: AdoptOpenJDK.png
   POLICY_RUN_COMMAND: "echo 'Installation of %NAME% complete'"
   UPDATE_PREDICATE: "pkg_uploaded != True"

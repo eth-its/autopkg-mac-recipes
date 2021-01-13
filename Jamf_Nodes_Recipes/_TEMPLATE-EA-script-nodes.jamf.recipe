@@ -19,8 +19,6 @@ If the icon does not match NAME.png, SELFSERVICE_ICON should also be overridden.
 		<string>Install %version%</string>
 		<key>PARAMETER4_LABEL</key>
 		<string>Parameter 4</string>
-		<key>PARAMETER4_VALUE</key>
-		<string></string>
 		<key>POLICY_CATEGORY</key>
 		<string>Untested</string>
 		<key>POLICY_NAME</key>

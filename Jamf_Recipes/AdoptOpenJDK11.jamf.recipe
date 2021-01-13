@@ -31,7 +31,7 @@
 		<key>POLICY_RUN_COMMAND</key>
 		<string>echo 'Installation of %NAME% complete'</string>
 		<key>POLICY_TEMPLATE</key>
-		<string>Policy-untested-selfservice-script.xml</string>
+		<string>Policy-untested-selfservice-script-parameter4.xml</string>
 		<key>REINSTALL_BUTTON_TEXT</key>
 		<string>Install %version%</string>
 		<key>SCRIPT_CATEGORY</key>

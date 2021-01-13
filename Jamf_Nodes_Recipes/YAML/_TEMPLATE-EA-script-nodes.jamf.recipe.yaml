@@ -16,7 +16,6 @@ Input:
   SCRIPT_PRIORITY: After
   SCRIPT_CATEGORY: Productivity
   PARAMETER4_LABEL: Parameter 4
-  PARAMETER4_VALUE: ""
   TESTING_GROUP_NAME: Testing
   TESTING_GROUP_TEMPLATE: StaticGroup-testing.xml
   TEST_USERS_GROUP_NAME: "%NAME% test users"

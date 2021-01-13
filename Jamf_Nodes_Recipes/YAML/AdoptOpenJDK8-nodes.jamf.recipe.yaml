@@ -17,3 +17,4 @@ Input:
   SCRIPT_CATEGORY: Uninstallers
   PARAMETER4_LABEL: JDK major version
   PARAMETER4_VALUE: "8"
+  POLICY_TEMPLATE: Policy-untested-selfservice-script-parameter4.xml
