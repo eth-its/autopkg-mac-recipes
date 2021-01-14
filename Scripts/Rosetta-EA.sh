@@ -5,7 +5,7 @@ EA to determine whether Rosetta is installed.
 Possible results:
 "installed"    - arm64 Mac - Rosetta is installed
 "missing"      - arm64 Mac - Rosetta is not installed
-"incompatible" - Intel Mac - Rosetta cannot be installed
+"ineligible" - Intel Mac - Rosetta cannot be installed
 DOC
 
 # is this an ARM Mac?
@@ -18,7 +18,7 @@ if [ "$arch" == "arm64" ]; then
         result="missing"
     fi
 else
-    result="incompatible"
+    result="ineligible"
 fi
 
 echo "<result>$result</result>"

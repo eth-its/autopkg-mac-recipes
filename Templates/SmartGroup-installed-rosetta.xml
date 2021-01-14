@@ -17,5 +17,12 @@
             <search_type>%EXTENSION_ATTRIBUTE_SEARCH_TYPE%</search_type>
             <value>%EXTENSION_ATTRIBUTE_SEARCH_VALUE_2%</value>
         </criterion>
+        <criterion>
+            <name>%EXTENSION_ATTRIBUTE_NAME%</name>
+            <priority>2</priority>
+            <and_or>or</and_or>
+            <search_type>matches regex</search_type>
+            <value>^$</value>
+        </criterion>
     </criteria>
 </computer_group>
