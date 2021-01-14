@@ -9,12 +9,29 @@ Input:
   POLICY_CATEGORY: Administration
   POLICY_NAME: "0001 - Install Rosetta 2"
   POLICY_TEMPLATE: Policy-all-computers-once-per-computer.xml
+  EXTENSION_ATTRIBUTE_NAME: Rosetta 2
+  EXTENSION_ATTRIBUTE_SCRIPT: Rosetta-EA.sh
+  EXTENSION_ATTRIBUTE_VALUE: "installed"
+  EXTENSION_ATTRIBUTE_VALUE_2: "ineligible"
+  AUTOINSTALL_GROUP_NAME: "%NAME% auto-install"
+  AUTOINSTALL_GROUP_TEMPLATE: SmartGroup-rosetta-autoinstall.xml
+  INSTALLED_GROUP_NAME: "%NAME% installed or ineligible"
+  INSTALLED_GROUP_TEMPLATE: SmartGroup-installed-rosetta.xml
+  AUTOINSTALL_POLICY_NAME: "Auto-install %NAME%"
+  AUTOINSTALL_POLICY_TEMPLATE: Policy-prod-autoinstall-script-only.xml
+  AUTOINSTALL_POLICY_CATEGORY: Auto-installers
+  AUTOINSTALL_POLICY_FREQUENCY: Once every day
+  TRIGGER_POLICY_RUN_COMMAND: "echo 'Installation of %NAME% complete'"
   UPDATE_PREDICATE: "pkg_uploaded == False"
 
 Process:
   - Processor: com.github.grahampugh.recipes.preprocessors/LastRecipeRunChecker
     Arguments:
       recipeoverride_identifier: "%UNTESTED_RECIPE_IDENTIFIER%"
+
+  - Processor: StopProcessingIf
+    Arguments:
+      predicate: "%UPDATE_PREDICATE%"
 
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader
     Arguments:
@@ -25,9 +42,31 @@ Process:
       replace_pkg: "False"
       replace_pkg_metadata: "True"
 
-  - Processor: StopProcessingIf
+  - Processor: com.github.grahampugh.jamf-upload.processors/JamfExtensionAttributeUploader
     Arguments:
-      predicate: "%UPDATE_PREDICATE%"
+      ea_script_path: "%EXTENSION_ATTRIBUTE_SCRIPT%"
+      ea_name: "%EXTENSION_ATTRIBUTE_NAME%"
+      replace_ea: "True"
+
+  - Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader
+    Arguments:
+      computergroup_name: "%INSTALLED_GROUP_NAME%"
+      computergroup_template: "%INSTALLED_GROUP_TEMPLATE%"
+      replace_group: "True"
+
+  - Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader
+    Arguments:
+      computergroup_name: "%AUTOINSTALL_GROUP_NAME%"
+      computergroup_template: "%AUTOINSTALL_GROUP_TEMPLATE%"
+      replace_group: "True"
+
+  - Processor: com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader
+    Comment: Auto-install policy
+    Arguments:
+      policy_template: "%AUTOINSTALL_POLICY_TEMPLATE%"
+      policy_name: "%AUTOINSTALL_POLICY_NAME%"
+      icon: ""
+      replace_policy: "True"
 
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader
     Arguments:

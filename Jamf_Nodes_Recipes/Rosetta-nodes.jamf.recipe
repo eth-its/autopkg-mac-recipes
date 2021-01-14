@@ -8,6 +8,30 @@
 	<string>com.github.eth-its-recipes.jamf.rosetta-nodes</string>
 	<key>Input</key>
 	<dict>
+		<key>AUTOINSTALL_GROUP_NAME</key>
+		<string>%NAME% auto-install</string>
+		<key>AUTOINSTALL_GROUP_TEMPLATE</key>
+		<string>SmartGroup-rosetta-autoinstall.xml</string>
+		<key>AUTOINSTALL_POLICY_CATEGORY</key>
+		<string>Auto-installers</string>
+		<key>AUTOINSTALL_POLICY_FREQUENCY</key>
+		<string>Once every day</string>
+		<key>AUTOINSTALL_POLICY_NAME</key>
+		<string>Auto-install %NAME%</string>
+		<key>AUTOINSTALL_POLICY_TEMPLATE</key>
+		<string>Policy-prod-autoinstall-script-only.xml</string>
+		<key>EXTENSION_ATTRIBUTE_NAME</key>
+		<string>Rosetta 2</string>
+		<key>EXTENSION_ATTRIBUTE_SCRIPT</key>
+		<string>Rosetta-EA.sh</string>
+		<key>EXTENSION_ATTRIBUTE_VALUE</key>
+		<string>installed</string>
+		<key>EXTENSION_ATTRIBUTE_VALUE_2</key>
+		<string>ineligible</string>
+		<key>INSTALLED_GROUP_NAME</key>
+		<string>%NAME% installed or ineligible</string>
+		<key>INSTALLED_GROUP_TEMPLATE</key>
+		<string>SmartGroup-installed-rosetta.xml</string>
 		<key>NAME</key>
 		<string>Rosetta 2</string>
 		<key>PKG_CATEGORY</key>
@@ -18,6 +42,8 @@
 		<string>0001 - Install Rosetta 2</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>Policy-all-computers-once-per-computer.xml</string>
+		<key>TRIGGER_POLICY_RUN_COMMAND</key>
+		<string>echo 'Installation of %NAME% complete'</string>
 		<key>UNTESTED_RECIPE_IDENTIFIER</key>
 		<string>local.jamf.rosetta</string>
 		<key>UPDATE_PREDICATE</key>
@@ -35,6 +61,15 @@
 			</dict>
 			<key>Processor</key>
 			<string>com.github.grahampugh.recipes.preprocessors/LastRecipeRunChecker</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>predicate</key>
+				<string>%UPDATE_PREDICATE%</string>
+			</dict>
+			<key>Processor</key>
+			<string>StopProcessingIf</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
@@ -59,11 +94,58 @@
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>predicate</key>
-				<string>%UPDATE_PREDICATE%</string>
+				<key>ea_name</key>
+				<string>%EXTENSION_ATTRIBUTE_NAME%</string>
+				<key>ea_script_path</key>
+				<string>%EXTENSION_ATTRIBUTE_SCRIPT%</string>
+				<key>replace_ea</key>
+				<string>True</string>
 			</dict>
 			<key>Processor</key>
-			<string>StopProcessingIf</string>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfExtensionAttributeUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>computergroup_name</key>
+				<string>%INSTALLED_GROUP_NAME%</string>
+				<key>computergroup_template</key>
+				<string>%INSTALLED_GROUP_TEMPLATE%</string>
+				<key>replace_group</key>
+				<string>True</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>computergroup_name</key>
+				<string>%AUTOINSTALL_GROUP_NAME%</string>
+				<key>computergroup_template</key>
+				<string>%AUTOINSTALL_GROUP_TEMPLATE%</string>
+				<key>replace_group</key>
+				<string>True</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>icon</key>
+				<string></string>
+				<key>policy_name</key>
+				<string>%AUTOINSTALL_POLICY_NAME%</string>
+				<key>policy_template</key>
+				<string>%AUTOINSTALL_POLICY_TEMPLATE%</string>
+				<key>replace_policy</key>
+				<string>True</string>
+			</dict>
+			<key>Comment</key>
+			<string>Auto-install policy</string>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>
