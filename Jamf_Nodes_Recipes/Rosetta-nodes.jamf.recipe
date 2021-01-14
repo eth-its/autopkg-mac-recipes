@@ -26,9 +26,9 @@
 		<string>Rosetta-EA.sh</string>
 		<key>EXTENSION_ATTRIBUTE_SEARCH_TYPE</key>
 		<string>is</string>
-		<key>EXTENSION_ATTRIBUTE_VALUE</key>
+		<key>EXTENSION_ATTRIBUTE_SEARCH_VALUE</key>
 		<string>installed</string>
-		<key>EXTENSION_ATTRIBUTE_VALUE_2</key>
+		<key>EXTENSION_ATTRIBUTE_SEARCH_VALUE_2</key>
 		<string>ineligible</string>
 		<key>INSTALLED_GROUP_NAME</key>
 		<string>%NAME% installed or ineligible</string>
