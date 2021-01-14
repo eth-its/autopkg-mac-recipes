@@ -9,12 +9,6 @@
 # The first parameter is used to kill the app. It should be the app name or path
 # as required by the pkill command.
 #
-# Date: @@DATE
-# Version: @@VERSION
-# Origin: @@ORIGIN
-# Source name: @@PATH
-# Released by JSS User: @@USER
-#
 #######################################################################
 
 # Inputted variables

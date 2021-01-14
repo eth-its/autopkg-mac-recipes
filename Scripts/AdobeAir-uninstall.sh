@@ -6,7 +6,7 @@ installer="/Applications/Utilities/Adobe AIR Uninstaller.app"
 
 if [[ -d "$installer" ]]; then
     echo "Uninstalling Adobe AIR"
-    "$installer/Contents/MacOS/Adobe AIR Installer" -uninstall
+    "$installer/Contents/MacOS/Adobe AIR Installer" -uninstall ||:
 fi
 
 if [[ -d "$installer" ]]; then
