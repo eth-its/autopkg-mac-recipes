@@ -20,7 +20,7 @@ Input:
   INSTALLED_GROUP_NAME: "%NAME% installed or ineligible"
   INSTALLED_GROUP_TEMPLATE: SmartGroup-installed-rosetta.xml
   AUTOINSTALL_POLICY_NAME: "Auto-install %NAME%"
-  AUTOINSTALL_POLICY_TEMPLATE: Policy-prod-autoinstall-script-only.xml
+  AUTOINSTALL_POLICY_TEMPLATE: Policy-prod-autoinstall-package.xml
   AUTOINSTALL_POLICY_CATEGORY: Auto-installers
   AUTOINSTALL_POLICY_FREQUENCY: Once every day
   TRIGGER_POLICY_RUN_COMMAND: "echo 'Installation of %NAME% complete'"

@@ -19,7 +19,7 @@
 		<key>AUTOINSTALL_POLICY_NAME</key>
 		<string>Auto-install %NAME%</string>
 		<key>AUTOINSTALL_POLICY_TEMPLATE</key>
-		<string>Policy-prod-autoinstall-script-only.xml</string>
+		<string>Policy-prod-autoinstall-package.xml</string>
 		<key>EXTENSION_ATTRIBUTE_NAME</key>
 		<string>Rosetta 2</string>
 		<key>EXTENSION_ATTRIBUTE_SCRIPT</key>
