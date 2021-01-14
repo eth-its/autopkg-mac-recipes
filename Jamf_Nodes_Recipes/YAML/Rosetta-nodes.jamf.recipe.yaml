@@ -11,6 +11,7 @@ Input:
   POLICY_TEMPLATE: Policy-all-computers-once-per-computer.xml
   EXTENSION_ATTRIBUTE_NAME: Rosetta 2
   EXTENSION_ATTRIBUTE_SCRIPT: Rosetta-EA.sh
+  EXTENSION_ATTRIBUTE_SEARCH_TYPE: is
   EXTENSION_ATTRIBUTE_VALUE: "installed"
   EXTENSION_ATTRIBUTE_VALUE_2: "ineligible"
   AUTOINSTALL_GROUP_NAME: "%NAME% auto-install"

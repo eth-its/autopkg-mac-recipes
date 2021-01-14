@@ -24,6 +24,8 @@
 		<string>Rosetta 2</string>
 		<key>EXTENSION_ATTRIBUTE_SCRIPT</key>
 		<string>Rosetta-EA.sh</string>
+		<key>EXTENSION_ATTRIBUTE_SEARCH_TYPE</key>
+		<string>is</string>
 		<key>EXTENSION_ATTRIBUTE_VALUE</key>
 		<string>installed</string>
 		<key>EXTENSION_ATTRIBUTE_VALUE_2</key>
