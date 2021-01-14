@@ -25,6 +25,8 @@ Do not add things like language or license to the NAME key.
 		<string>SmartGroup-autouninstall.xml</string>
 		<key>AUTOUNINSTALL_POLICY_CATEGORY</key>
 		<string>Auto-uninstallers</string>
+		<key>AUTOUNINSTALL_POLICY_FREQUENCY</key>
+		<string>Once per day</string>
 		<key>AUTOUNINSTALL_POLICY_NAME</key>
 		<string>Auto-uninstall %NAME%</string>
 		<key>AUTOUNINSTALL_POLICY_TEMPLATE</key>
