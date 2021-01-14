@@ -11,7 +11,7 @@
 		<key>AUTOINSTALL_GROUP_NAME</key>
 		<string>%NAME% auto-install</string>
 		<key>AUTOINSTALL_GROUP_TEMPLATE</key>
-		<string>SmartGroup-autoinstall.xml</string>
+		<string>SmartGroup-autoinstall-rosetta.xml</string>
 		<key>AUTOINSTALL_POLICY_CATEGORY</key>
 		<string>Auto-installers</string>
 		<key>AUTOINSTALL_POLICY_FREQUENCY</key>
