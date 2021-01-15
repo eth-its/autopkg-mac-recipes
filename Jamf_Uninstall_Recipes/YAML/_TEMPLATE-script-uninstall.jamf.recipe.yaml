@@ -75,6 +75,8 @@ Process:
       script_parameter7: "%PARAMETER7_LABEL%"
       script_parameter8: "%PARAMETER8_LABEL%"
       script_parameter9: "%PARAMETER9_LABEL%"
+      script_parameter10: "%PARAMETER10_LABEL%"
+      script_parameter11: "%PARAMETER11_LABEL%"
       replace_script: True
 
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader

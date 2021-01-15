@@ -2,7 +2,7 @@
 
 #######################################################################
 #
-# %NAME% Uninstaller Script for Jamf Pro
+# Application Uninstaller Script for Jamf Pro
 #
 # This script can delete apps that are sandboxed and live in /Applications
 #

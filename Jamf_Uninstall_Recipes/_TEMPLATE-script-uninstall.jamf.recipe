@@ -31,6 +31,14 @@ Do not add things like language or license to the NAME key.
 		<string>Uninstall</string>
 		<key>JSS_INVENTORY_NAME</key>
 		<string>%NAME%.app</string>
+		<key>PARAMETER10_LABEL</key>
+		<string>Parameter 10</string>
+		<key>PARAMETER10_VALUE</key>
+		<string>None</string>
+		<key>PARAMETER11_LABEL</key>
+		<string>Parameter 11</string>
+		<key>PARAMETER11_VALUE</key>
+		<string>None</string>
 		<key>PARAMETER4_LABEL</key>
 		<string>Parameter 4</string>
 		<key>PARAMETER4_VALUE</key>
@@ -80,7 +88,7 @@ Do not add things like language or license to the NAME key.
 		<key>TRIGGER_UNINSTALL_POLICY_NAME</key>
 		<string>Trigger-uninstall %NAME%</string>
 		<key>TRIGGER_UNINSTALL_POLICY_TEMPLATE</key>
-		<string>Policy-uninstall-triggeronly-script-parameter4.xml</string>
+		<string>Policy-uninstall-triggeronly-script-parameters.xml</string>
 		<key>UNINSTALL_POLICY_CATEGORY</key>
 		<string>Uninstallers</string>
 		<key>UNINSTALL_POLICY_NAME</key>
@@ -124,6 +132,10 @@ Do not add things like language or license to the NAME key.
 				<string>%UNINSTALL_POLICY_CATEGORY%</string>
 				<key>script_name</key>
 				<string>%SCRIPT_NAME%</string>
+				<key>script_parameter10</key>
+				<string>%PARAMETER10_LABEL%</string>
+				<key>script_parameter11</key>
+				<string>%PARAMETER11_LABEL%</string>
 				<key>script_parameter4</key>
 				<string>%PARAMETER4_LABEL%</string>
 				<key>script_parameter5</key>
