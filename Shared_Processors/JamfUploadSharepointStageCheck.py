@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/local/autopkg/python
 
 """
 Copyright 2019 Graham Pugh
@@ -19,10 +19,10 @@ limitations under the License.
 from __future__ import absolute_import
 import ssl
 
-from six.moves import urllib
+import urllib.request
 from ntlm3.HTTPNtlmAuthHandler import HTTPNtlmAuthHandler
 from sharepoint import SharePointSite
-from autopkglib import Processor, ProcessorError  # pylint: disable=import-error
+from autopkglib import Processor, ProcessorError  # type: ignore
 
 ssl._create_default_https_context = ssl._create_unverified_context
 

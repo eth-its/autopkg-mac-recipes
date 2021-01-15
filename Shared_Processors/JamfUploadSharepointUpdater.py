@@ -21,10 +21,10 @@ from __future__ import absolute_import
 
 import ssl
 
-import urllib.request
+import urllib
 from sharepoint import SharePointSite
 from ntlm3 import HTTPNtlmAuthHandler
-from autopkglib import Processor  # pylint: disable=import-error
+from autopkglib import Processor  # type: ignore
 
 ssl._create_default_https_context = ssl._create_unverified_context
 __all__ = ["JamfUploadSharepointUpdater"]
@@ -202,8 +202,8 @@ class JamfUploadSharepointUpdater(Processor):
         version = self.env.get("version")
         name = self.env.get("NAME")
         selfservice_policy_name = self.env.get("SELFSERVICE_POLICY_NAME")
-        policy_language = self.env.get("POLICY_LANGUAGE")
-        policy_license = self.env.get("POLICY_LICENSE")
+        policy_language = self.env.get("LANGUAGE")
+        policy_license = self.env.get("LICENSE")
         major_version = self.env.get("MAJOR_VERSION")
         sp_url = self.env.get("SP_URL")
         sp_user = self.env.get("SP_USER")
@@ -449,8 +449,7 @@ class JamfUploadSharepointUpdater(Processor):
             sharepoint_policy_name = f"{selfservice_policy_name} (Testing) v{version}"
 
             self.output("Name: %s" % name)
-            self.output("Title: %s" % selfservice_policy_name)
-            self.output("Policy: %s" % policy_name)
+            self.output("Policy: %s" % selfservice_policy_name)
             self.output("Version: %s" % version)
             self.output("SharePoint item: %s" % sharepoint_policy_name)
             self.output("Production Category: %s" % category)
