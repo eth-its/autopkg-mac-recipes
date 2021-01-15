@@ -35,15 +35,25 @@ Do not add things like language or license to the NAME key.
 		<string>Parameter 4</string>
 		<key>PARAMETER4_VALUE</key>
 		<string>%NAME%</string>
-		<key>PKG_ID</key>
+		<key>PARAMETER5_LABEL</key>
+		<string>Parameter 5</string>
+		<key>PARAMETER5_VALUE</key>
 		<string>None</string>
-		<key>PKG_ID_2</key>
+		<key>PARAMETER6_LABEL</key>
+		<string>Parameter 6</string>
+		<key>PARAMETER6_VALUE</key>
 		<string>None</string>
-		<key>PKG_ID_3</key>
+		<key>PARAMETER7_LABEL</key>
+		<string>Parameter 7</string>
+		<key>PARAMETER7_VALUE</key>
 		<string>None</string>
-		<key>PKG_ID_4</key>
+		<key>PARAMETER8_LABEL</key>
+		<string>Parameter 8</string>
+		<key>PARAMETER8_VALUE</key>
 		<string>None</string>
-		<key>PKG_ID_5</key>
+		<key>PARAMETER9_LABEL</key>
+		<string>Parameter 9</string>
+		<key>PARAMETER9_VALUE</key>
 		<string>None</string>
 		<key>REINSTALL_BUTTON_TEXT</key>
 		<string>Uninstall</string>
@@ -116,6 +126,16 @@ Do not add things like language or license to the NAME key.
 				<string>%SCRIPT_NAME%</string>
 				<key>script_parameter4</key>
 				<string>%PARAMETER4_LABEL%</string>
+				<key>script_parameter5</key>
+				<string>%PARAMETER5_LABEL%</string>
+				<key>script_parameter6</key>
+				<string>%PARAMETER6_LABEL%</string>
+				<key>script_parameter7</key>
+				<string>%PARAMETER7_LABEL%</string>
+				<key>script_parameter8</key>
+				<string>%PARAMETER8_LABEL%</string>
+				<key>script_parameter9</key>
+				<string>%PARAMETER9_LABEL%</string>
 				<key>script_path</key>
 				<string>%SCRIPT_PATH%</string>
 				<key>script_priority</key>

@@ -10,7 +10,9 @@
 	<dict>
 		<key>NAME</key>
 		<string>Fantastical</string>
-		<key>PKG_ID</key>
+		<key>PARAMETER5_LABEL</key>
+		<string>Package Receipt</string>
+		<key>PARAMETER5_VALUE</key>
 		<string>com.flexibits.fantastical2.mac</string>
 		<key>SELFSERVICE_DESCRIPTION</key>
 		<string>Uninstalls %NAME%</string>

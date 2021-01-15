@@ -5,4 +5,5 @@ ParentRecipe: com.github.eth-its-recipes.jamf.template-script-uninstall
 
 Input:
   NAME: Firefox
-  PKG_ID: org.mozilla.firefox.pkg
+  PARAMETER5_LABEL: Package Receipt
+  PARAMETER5_VALUE: org.mozilla.firefox.pkg

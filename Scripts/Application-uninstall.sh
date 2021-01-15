@@ -79,20 +79,22 @@ fi
 
 # also check to see if an additional app was ever created due to BundleID mismatch
 if [[ -d "/Applications/${app_name}/${app_name}.app" ]]; then
+    echo "Folder will be deleted: /Applications/${app_name}/"
     /bin/rm -Rf "/Applications/${app_name}" ||:
 fi
 if [[ -d "/Applications/${app_name}.localized/${app_name}.app" ]]; then
+    echo "Folder will be deleted: /Applications/${app_name}.localized/"
     /bin/rm -Rf "/Applications/${app_name}.localized" ||:
 fi
 
 
 # Try to Forget the packages if we can find a match
 # Loop through the remaining parameters
-pkg_1="%PKG_ID%"
-pkg_2="%PKG_ID_2%"
-pkg_3="%PKG_ID_3%"
-pkg_4="%PKG_ID_4%"
-pkg_5="%PKG_ID_5%"
+pkg_1="$5"
+pkg_2="$6"
+pkg_3="$7"
+pkg_4="$8"
+pkg_5="$9"
 for (( i = 1; i < 5; i++ )); do
     pkg_id=pkg_$i
     if [[ ${!pkg_id} != "None" ]]; then

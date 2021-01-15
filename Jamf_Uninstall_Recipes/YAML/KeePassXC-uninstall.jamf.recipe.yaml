@@ -5,6 +5,7 @@ ParentRecipe: com.github.eth-its-recipes.jamf.template-script-uninstall
 
 Input:
   NAME: KeePassXC
-  SELFSERVICE_DESCRIPTION: "Uninstalls %NAME%"
-  PKG_ID: org.keepassxc.keepassxc
-  PKG_ID_2: org.keepassx.keepassxc
+  PARAMETER5_LABEL: Package Receipt
+  PARAMETER5_VALUE: org.keepassxc.keepassxc
+  PARAMETER6_LABEL: Additional Package Receipt
+  PARAMETER6_VALUE: org.keepassx.keepassxc

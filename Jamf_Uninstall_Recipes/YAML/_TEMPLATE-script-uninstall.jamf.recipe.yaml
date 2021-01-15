@@ -14,12 +14,17 @@ Input:
   SCRIPT_NAME: Application-uninstall.sh
   SCRIPT_PATH: Application-uninstall.sh
   PARAMETER4_LABEL: "Parameter 4"
+  PARAMETER5_LABEL: "Parameter 5"
+  PARAMETER6_LABEL: "Parameter 6"
+  PARAMETER7_LABEL: "Parameter 7"
+  PARAMETER8_LABEL: "Parameter 8"
+  PARAMETER9_LABEL: "Parameter 9"
   PARAMETER4_VALUE: "%NAME%"
-  PKG_ID: "None"
-  PKG_ID_2: "None"
-  PKG_ID_3: "None"
-  PKG_ID_4: "None"
-  PKG_ID_5: "None"
+  PARAMETER5_VALUE: "None"
+  PARAMETER6_VALUE: "None"
+  PARAMETER7_VALUE: "None"
+  PARAMETER8_VALUE: "None"
+  PARAMETER9_VALUE: "None"
   SELFSERVICE_ICON: "%NAME%.png"
   AUTOINSTALL_ALL_SOFTWARE_GROUP_NAME: Software Gets Auto-installed
   AUTOUPDATE_ALL_SOFTWARE_GROUP_NAME: Software Gets Auto-updated
@@ -61,6 +66,11 @@ Process:
       script_path: "%SCRIPT_PATH%"
       script_priority: "%SCRIPT_PRIORITY%"
       script_parameter4: "%PARAMETER4_LABEL%"
+      script_parameter5: "%PARAMETER5_LABEL%"
+      script_parameter6: "%PARAMETER6_LABEL%"
+      script_parameter7: "%PARAMETER7_LABEL%"
+      script_parameter8: "%PARAMETER8_LABEL%"
+      script_parameter9: "%PARAMETER9_LABEL%"
       replace_script: True
 
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader

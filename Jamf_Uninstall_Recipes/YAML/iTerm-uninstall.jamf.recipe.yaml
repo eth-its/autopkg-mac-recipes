@@ -5,4 +5,5 @@ ParentRecipe: com.github.eth-its-recipes.jamf.template-script-uninstall
 
 Input:
   NAME: iTerm
-  PKG_ID: com.googlecode.iterm2
+  PARAMETER5_LABEL: Package Receipt
+  PARAMETER5_VALUE: com.googlecode.iterm2

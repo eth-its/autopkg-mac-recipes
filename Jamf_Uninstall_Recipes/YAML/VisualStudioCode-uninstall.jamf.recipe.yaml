@@ -5,4 +5,5 @@ ParentRecipe: com.github.eth-its-recipes.jamf.template-script-uninstall
 
 Input:
   NAME: Visual Studio Code
-  PKG_ID: com.microsoft.VSCode
+  PARAMETER5_LABEL: Package Receipt
+  PARAMETER5_VALUE: com.microsoft.VSCode
