@@ -33,6 +33,8 @@ Do not add things like language or license to the NAME key.
 		<string>%NAME%.app</string>
 		<key>PARAMETER4_LABEL</key>
 		<string>Parameter 4</string>
+		<key>PARAMETER4_VALUE</key>
+		<string>%NAME%</string>
 		<key>PKG_ID</key>
 		<string>None</string>
 		<key>PKG_ID_2</key>
@@ -46,7 +48,7 @@ Do not add things like language or license to the NAME key.
 		<key>REINSTALL_BUTTON_TEXT</key>
 		<string>Uninstall</string>
 		<key>SCRIPT_NAME</key>
-		<string>%NAME%-uninstall.sh</string>
+		<string>Application-uninstall.sh</string>
 		<key>SCRIPT_PATH</key>
 		<string>Application-uninstall.sh</string>
 		<key>SCRIPT_PRIORITY</key>
@@ -68,7 +70,7 @@ Do not add things like language or license to the NAME key.
 		<key>TRIGGER_UNINSTALL_POLICY_NAME</key>
 		<string>Trigger-uninstall %NAME%</string>
 		<key>TRIGGER_UNINSTALL_POLICY_TEMPLATE</key>
-		<string>Policy-uninstall-triggeronly.xml</string>
+		<string>Policy-uninstall-triggeronly-script-parameter4.xml</string>
 		<key>UNINSTALL_POLICY_CATEGORY</key>
 		<string>Uninstallers</string>
 		<key>UNINSTALL_POLICY_NAME</key>

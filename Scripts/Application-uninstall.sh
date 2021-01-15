@@ -40,7 +40,7 @@ function silent_app_quit() {
 }
 
 # Inputted variables
-app_name="%JSS_INVENTORY_NAME%"
+app_name="$4"
 
 if [[ -z "${app_name}" ]]; then
     echo "No application specified!"
@@ -68,7 +68,7 @@ fi
 
 echo "Application will be deleted: $app_to_trash"
 # Remove the application
-/bin/rm -rf "${app_to_trash}"
+/bin/rm -Rf "${app_to_trash}"
 
 echo "Checking if $app_name is actually deleted..."
 if [[ -d "${app_to_trash}" ]]; then
@@ -76,6 +76,15 @@ if [[ -d "${app_to_trash}" ]]; then
 else
     echo "$app_name deleted successfully"
 fi
+
+# also check to see if an additional app was ever created due to BundleID mismatch
+if [[ -d "/Applications/${app_name}/${app_name}.app" ]]; then
+    /bin/rm -Rf "/Applications/${app_name}" ||:
+fi
+if [[ -d "/Applications/${app_name}.localized/${app_name}.app" ]]; then
+    /bin/rm -Rf "/Applications/${app_name}.localized" ||:
+fi
+
 
 # Try to Forget the packages if we can find a match
 # Loop through the remaining parameters

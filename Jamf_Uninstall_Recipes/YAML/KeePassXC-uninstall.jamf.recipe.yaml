@@ -1,0 +1,10 @@
+Description: Uploads a script to the Jamf Pro Server and creates a Self Service Policy and Smart Group.
+Identifier: com.github.eth-its-recipes.jamf.KeePassXC-uninstall
+MinimumVersion: 2.0.0
+ParentRecipe: com.github.eth-its-recipes.jamf.template-script-uninstall
+
+Input:
+  NAME: KeePassXC
+  SELFSERVICE_DESCRIPTION: "Uninstalls %NAME%"
+  PKG_ID: org.keepassxc.keepassxc
+  PKG_ID_2: org.keepassx.keepassxc

@@ -11,9 +11,10 @@ MinimumVersion: 2.0.0
 
 Input:
   JSS_INVENTORY_NAME: "%NAME%.app"
-  SCRIPT_NAME: "%NAME%-uninstall.sh"
+  SCRIPT_NAME: Application-uninstall.sh
   SCRIPT_PATH: Application-uninstall.sh
   PARAMETER4_LABEL: "Parameter 4"
+  PARAMETER4_VALUE: "%NAME%"
   PKG_ID: "None"
   PKG_ID_2: "None"
   PKG_ID_3: "None"
@@ -37,7 +38,7 @@ Input:
   UNINSTALL_POLICY_TEMPLATE: Policy-uninstall-selfservice.xml
   TRIGGER_UNINSTALL_POLICY_CATEGORY: Triggered Uninstallers
   TRIGGER_UNINSTALL_POLICY_NAME: "Trigger-uninstall %NAME%"
-  TRIGGER_UNINSTALL_POLICY_TEMPLATE: Policy-uninstall-triggeronly.xml
+  TRIGGER_UNINSTALL_POLICY_TEMPLATE: Policy-uninstall-triggeronly-script-parameter4.xml
   UNINSTALL_SELFSERVICE_DESCRIPTION: "Uninstalls %NAME%"
   UNINSTALL_SELFSERVICE_DISPLAY_NAME: "Uninstall %NAME%"
   UNINSTALL_SELFSERVICE_INSTALL_BUTTON: Uninstall
