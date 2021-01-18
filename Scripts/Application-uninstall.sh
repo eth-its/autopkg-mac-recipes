@@ -16,7 +16,7 @@ function silent_app_quit() {
     check_app_name="${check_app_name/\)/\\)}"  # escape any brackets for the pgrep
     check_app_name="${check_app_name}.app"     # add the .app back
     if pgrep -f "/${check_app_name}" ; then
-        echo "Closing $app_name"
+        echo "Closing $check_app_name"
         /usr/bin/osascript -e "quit app \"$app_name\"" &
         sleep 1
 
@@ -33,7 +33,7 @@ function silent_app_quit() {
             fi
         done
         if pgrep -f "/$check_app_name" ; then
-            echo "$app_name failed to quit - killing."
+            echo "$check_app_name failed to quit - killing."
             /usr/bin/pkill -f "/$check_app_name"
         fi
     fi
@@ -54,16 +54,11 @@ silent_app_quit "$app_name"
 # Now remove the app
 echo "Removing application: ${app_name}"
 
-# Add .app to end when providing just a name e.g. "TeamViewer"
-if [[ ! $app_name == *".app"* ]]; then
-	app_name=$app_name".app"
-fi
-
 # Add standard path if none provided
 if [[ ! $app_name == *"/"* ]]; then
-	app_to_trash="/Applications/$app_name"
+	app_to_trash="/Applications/$app_name.app"
 else
-	app_to_trash="$app_name"
+	app_to_trash="$app_name.app"
 fi
 
 echo "Application will be deleted: $app_to_trash"
@@ -81,10 +76,14 @@ fi
 if [[ -d "/Applications/${app_name}/${app_name}.app" ]]; then
     echo "Folder will be deleted: /Applications/${app_name}/"
     /bin/rm -Rf "/Applications/${app_name}" ||:
+else
+    echo "Folder not found: /Applications/${app_name}/"
 fi
 if [[ -d "/Applications/${app_name}.localized/${app_name}.app" ]]; then
     echo "Folder will be deleted: /Applications/${app_name}.localized/"
     /bin/rm -Rf "/Applications/${app_name}.localized" ||:
+else
+    echo "Folder not found: /Applications/${app_name}.localized/"
 fi
 
 
@@ -97,7 +96,7 @@ pkg_4="$8"
 pkg_5="$9"
 for (( i = 1; i < 5; i++ )); do
     pkg_id=pkg_$i
-    if [[ ${!pkg_id} != "None" ]]; then
+    if [[ ${!pkg_id} != "None" && ${!pkg_id} != "" ]]; then
         echo "Forgetting package ${!pkg_id}..."
         /usr/sbin/pkgutil --pkgs | /usr/bin/grep -i "${!pkg_id}" | /usr/bin/xargs /usr/bin/sudo /usr/sbin/pkgutil --forget
     fi
