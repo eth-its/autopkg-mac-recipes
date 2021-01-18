@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Uploads the pkg to the JSS, and creates a Self-Service Policy available to members of a Testing group.</string>
+	<key>Identifier</key>
+	<string>com.github.eth-its-recipes.jamf.KeePassXC</string>
+	<key>Input</key>
+	<dict>
+		<key>INSTALL_BUTTON_TEXT</key>
+		<string>Install %version%</string>
+		<key>NAME</key>
+		<string>KeePassXC</string>
+		<key>PARAMETER4_LABEL</key>
+		<string>Trigger name</string>
+		<key>PARAMETER4_VALUE</key>
+		<string>%NAME%-uninstall</string>
+		<key>PKG_CATEGORY</key>
+		<string>Security</string>
+		<key>POLICY_CATEGORY</key>
+		<string>Untested</string>
+		<key>POLICY_NAME</key>
+		<string>%NAME% (Testing)</string>
+		<key>POLICY_RUN_COMMAND</key>
+		<string>chown -R "$(stat -f%Su /dev/console):staff" "/Applications/%NAME%.app" &amp;&amp; echo "Corrected permissions for %NAME%."</string>
+		<key>POLICY_TEMPLATE</key>
+		<string>Policy-untested-selfservice-script-parameter4.xml</string>
+		<key>REINSTALL_BUTTON_TEXT</key>
+		<string>Install %version%</string>
+		<key>SCRIPT_CATEGORY</key>
+		<string>Administration</string>
+		<key>SCRIPT_NAME</key>
+		<string>jamf-policy-trigger.sh</string>
+		<key>SCRIPT_PATH</key>
+		<string>jamf-policy-trigger.sh</string>
+		<key>SCRIPT_PRIORITY</key>
+		<string>Before</string>
+		<key>SELFSERVICE_DESCRIPTION</key>
+		<string>**KeePass Cross-Platform Community Edition**
+
+KeePassXC can store your passwords safely and auto-type them into your everyday websites and applications.
+
+KeePassXC is a community fork of KeePassX, the cross-platform port of KeePass for Windows. Every feature works cross-platform and was thoroughly tested on multiple systems to provide users with the same look and feel on every supported operating system. This includes the beloved Auto-Type feature.
+
+Version: %version%
+Category: %PKG_CATEGORY%
+</string>
+		<key>SELFSERVICE_DISPLAY_NAME</key>
+		<string>%NAME% (Testing)</string>
+		<key>SELFSERVICE_ICON</key>
+		<string>%NAME%.png</string>
+		<key>TESTING_GROUP_NAME</key>
+		<string>Testing</string>
+		<key>TESTING_GROUP_TEMPLATE</key>
+		<string>StaticGroup-testing.xml</string>
+		<key>TEST_USERS_GROUP_NAME</key>
+		<string>%NAME% test users</string>
+		<key>TEST_USERS_GROUP_TEMPLATE</key>
+		<string>SmartGroup-test-users.xml</string>
+		<key>TEST_VERSION_INSTALLED_GROUP_NAME</key>
+		<string>%NAME% test version installed</string>
+		<key>TEST_VERSION_INSTALLED_GROUP_TEMPLATE</key>
+		<string>SmartGroup-test-version-installed.xml</string>
+		<key>UPDATE_PREDICATE</key>
+		<string>pkg_uploaded != True</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.0.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.crystalllized.pkg.KeePassXC</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.recipes.commonprocessors/VersionRegexGenerator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>category_name</key>
+				<string>%PKG_CATEGORY%</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_category</key>
+				<string>%PKG_CATEGORY%</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfPackageUploader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.recipes.commonprocessors/WritePkgResultToJson</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>predicate</key>
+				<string>%UPDATE_PREDICATE%</string>
+			</dict>
+			<key>Processor</key>
+			<string>StopProcessingIf</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>category_name</key>
+				<string>%SCRIPT_CATEGORY%</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>replace_script</key>
+				<true/>
+				<key>script_category</key>
+				<string>%SCRIPT_CATEGORY%</string>
+				<key>script_name</key>
+				<string>%SCRIPT_NAME%</string>
+				<key>script_parameter4</key>
+				<string>%PARAMETER4_LABEL%</string>
+				<key>script_path</key>
+				<string>%SCRIPT_PATH%</string>
+				<key>script_priority</key>
+				<string>%SCRIPT_PRIORITY%</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfScriptUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>category_name</key>
+				<string>%POLICY_CATEGORY%</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfCategoryUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>computergroup_name</key>
+				<string>%TESTING_GROUP_NAME%</string>
+				<key>computergroup_template</key>
+				<string>%TESTING_GROUP_TEMPLATE%</string>
+				<key>replace_group</key>
+				<string>False</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>computergroup_name</key>
+				<string>%TEST_USERS_GROUP_NAME%</string>
+				<key>computergroup_template</key>
+				<string>%TEST_USERS_GROUP_TEMPLATE%</string>
+				<key>replace_group</key>
+				<string>False</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>computergroup_name</key>
+				<string>%TEST_VERSION_INSTALLED_GROUP_NAME%</string>
+				<key>computergroup_template</key>
+				<string>%TEST_VERSION_INSTALLED_GROUP_TEMPLATE%</string>
+				<key>replace_group</key>
+				<string>True</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>icon</key>
+				<string>%SELFSERVICE_ICON%</string>
+				<key>policy_name</key>
+				<string>%POLICY_NAME%</string>
+				<key>policy_template</key>
+				<string>%POLICY_TEMPLATE%</string>
+				<key>replace_policy</key>
+				<string>True</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>com.github.grahampugh.recipes.postprocessors/LastRecipeRunResult</string>
+		</dict>
+	</array>
+</dict>
+</plist>

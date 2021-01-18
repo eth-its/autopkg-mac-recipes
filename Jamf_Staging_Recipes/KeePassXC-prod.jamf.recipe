@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Uploads the pkg to the JSS, and creates a Self-Service Policy available to members of a Testing group.</string>
+	<key>Identifier</key>
+	<string>com.github.eth-its-recipes.jamf.KeePassXC-prod</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>KeePassXC</string>
+		<key>PARAMETER4_VALUE</key>
+		<string>%NAME%-uninstall</string>
+		<key>SCRIPT_NAME</key>
+		<string>jamf-policy-trigger.sh</string>
+		<key>SCRIPT_PRIORITY</key>
+		<string>Before</string>
+		<key>TRIGGER_POLICY_TEMPLATE</key>
+		<string>Policy-prod-triggeronly-script-parameter4.xml</string>
+		<key>UNTESTED_RECIPE_IDENTIFIER</key>
+		<string>local.jamf.KeePassXC</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.0.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.eth-its-recipes.jamf.template-prod</string>
+</dict>
+</plist>
