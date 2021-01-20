@@ -76,7 +76,7 @@
 			<key>Comment</key>
 			<string>Get list of versions of a product. Outputs path to latest version.</string>
 			<key>Processor</key>
-			<string>com.github.eth-its-recipes.processors/ITShopUpdateChecker</string>
+			<string>com.github.eth-its-recipes.processors/InternalUpdateChecker</string>
 		</dict>
 		<dict>
 			<key>Arguments</key>

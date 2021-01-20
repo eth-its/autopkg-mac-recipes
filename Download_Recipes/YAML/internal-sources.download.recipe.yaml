@@ -35,7 +35,7 @@ Process:
       title_col: "%TITLE_COLUMN_NUMBER%"
       version_col: "%VERSION_COLUMN_NUMBER%"
     Comment: Get list of versions of a product. Outputs path to latest version.
-    Processor: com.github.eth-its-recipes.processors/ITShopUpdateChecker
+    Processor: com.github.eth-its-recipes.processors/InternalUpdateChecker
 
   - Arguments:
       CHECK_FILESIZE_ONLY: true
