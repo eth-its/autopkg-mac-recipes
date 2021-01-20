@@ -132,14 +132,6 @@ Process:
       replace_group: "True"
 
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader
-    Comment: Untested Self Service policy
-    Arguments:
-      policy_template: "%POLICY_TEMPLATE%"
-      policy_name: "%POLICY_NAME%"
-      icon: "%SELFSERVICE_ICON%"
-      replace_policy: "True"
-
-  - Processor: com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader
     Comment: Trigger policy for activating the license
     Arguments:
       policy_template: "%TRIGGER_POLICY_TEMPLATE%"
@@ -151,6 +143,14 @@ Process:
     Arguments:
       policy_template: "%LICENSE_SET_POLICY_TEMPLATE%"
       policy_name: "%LICENSE_SET_POLICY_NAME%"
+      replace_policy: "True"
+
+  - Processor: com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader
+    Comment: Untested Self Service policy
+    Arguments:
+      policy_template: "%POLICY_TEMPLATE%"
+      policy_name: "%POLICY_NAME%"
+      icon: "%SELFSERVICE_ICON%"
       replace_policy: "True"
 
   - Processor: com.github.grahampugh.recipes.postprocessors/LastRecipeRunResult

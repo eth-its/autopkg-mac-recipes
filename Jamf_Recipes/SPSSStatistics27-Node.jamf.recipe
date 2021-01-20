@@ -281,23 +281,6 @@ Category: %PKG_CATEGORY%
 		<dict>
 			<key>Arguments</key>
 			<dict>
-				<key>icon</key>
-				<string>%SELFSERVICE_ICON%</string>
-				<key>policy_name</key>
-				<string>%POLICY_NAME%</string>
-				<key>policy_template</key>
-				<string>%POLICY_TEMPLATE%</string>
-				<key>replace_policy</key>
-				<string>True</string>
-			</dict>
-			<key>Comment</key>
-			<string>Untested Self Service policy</string>
-			<key>Processor</key>
-			<string>com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader</string>
-		</dict>
-		<dict>
-			<key>Arguments</key>
-			<dict>
 				<key>policy_name</key>
 				<string>%TRIGGER_POLICY_NAME%</string>
 				<key>policy_template</key>
@@ -322,6 +305,23 @@ Category: %PKG_CATEGORY%
 			</dict>
 			<key>Comment</key>
 			<string>Self Service policy for activating the license</string>
+			<key>Processor</key>
+			<string>com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>icon</key>
+				<string>%SELFSERVICE_ICON%</string>
+				<key>policy_name</key>
+				<string>%POLICY_NAME%</string>
+				<key>policy_template</key>
+				<string>%POLICY_TEMPLATE%</string>
+				<key>replace_policy</key>
+				<string>True</string>
+			</dict>
+			<key>Comment</key>
+			<string>Untested Self Service policy</string>
 			<key>Processor</key>
 			<string>com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader</string>
 		</dict>
