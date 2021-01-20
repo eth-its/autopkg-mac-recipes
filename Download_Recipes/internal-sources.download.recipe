@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Checks Internal Repositories for an update. The internal repo is an SMB mount that is pre-mounted. Requires override of LIST_NAME.</string>
+	<key>Identifier</key>
+	<string>com.github.eth-its-recipes.download.internal-sources</string>
+	<key>Input</key>
+	<dict>
+		<key>LANGUAGE_COLUMN_NUMBER</key>
+		<string>4</string>
+		<key>LICENSE_FILE_COLUMN_NUMBER</key>
+		<string>9</string>
+		<key>LICENSE_FILE_SOURCE</key>
+		<string>/Volumes/maclic/PRD/Mac/licensefiles</string>
+		<key>LICENSE_KEY_COLUMN_NUMBER</key>
+		<string>8</string>
+		<key>LIST_DELIMITER</key>
+		<string>;</string>
+		<key>LIST_LANGUAGE</key>
+		<string>ML</string>
+		<key>LIST_NAME</key>
+		<string>Something</string>
+		<key>LIST_SOURCE</key>
+		<string>/Volumes/maclic/PRD/Mac/ListofSoftwareItemsForMacPackaging-v5.csv</string>
+		<key>MAJOR_VERSION</key>
+		<string></string>
+		<key>PATH_COLUMN_NUMBER</key>
+		<string>6</string>
+		<key>SOFTWARE_REPO</key>
+		<string>/Volumes/mac</string>
+		<key>STOP_PREDICATE</key>
+		<string>file_exists == True</string>
+		<key>TITLE_COLUMN_NUMBER</key>
+		<string>1</string>
+		<key>VERSION_COLUMN_NUMBER</key>
+		<string>2</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>LIST_LANGUAGE</key>
+				<string>%LIST_LANGUAGE%</string>
+				<key>LIST_NAME</key>
+				<string>%LIST_NAME%</string>
+				<key>MAJOR_VERSION</key>
+				<string>%MAJOR_VERSION%</string>
+				<key>RECIPE_CACHE_DIR</key>
+				<string>%RECIPE_CACHE_DIR%</string>
+				<key>lang_col</key>
+				<string>%LANGUAGE_COLUMN_NUMBER%</string>
+				<key>license_col</key>
+				<string>%LICENSE_KEY_COLUMN_NUMBER%</string>
+				<key>license_file_col</key>
+				<string>%LICENSE_FILE_COLUMN_NUMBER%</string>
+				<key>license_file_source</key>
+				<string>%LICENSE_FILE_SOURCE%</string>
+				<key>list_delimiter</key>
+				<string>%LIST_DELIMITER%</string>
+				<key>list_source</key>
+				<string>%LIST_SOURCE%</string>
+				<key>mounted_repo</key>
+				<string>%SOFTWARE_REPO%</string>
+				<key>path_col</key>
+				<string>%PATH_COLUMN_NUMBER%</string>
+				<key>title_col</key>
+				<string>%TITLE_COLUMN_NUMBER%</string>
+				<key>version_col</key>
+				<string>%VERSION_COLUMN_NUMBER%</string>
+			</dict>
+			<key>Comment</key>
+			<string>Get list of versions of a product. Outputs path to latest version.</string>
+			<key>Processor</key>
+			<string>com.github.eth-its-recipes.processors/ITShopUpdateChecker</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>CHECK_FILESIZE_ONLY</key>
+				<true/>
+				<key>url</key>
+				<string>file://%file_path%</string>
+			</dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+	</array>
+</dict>
+</plist>
