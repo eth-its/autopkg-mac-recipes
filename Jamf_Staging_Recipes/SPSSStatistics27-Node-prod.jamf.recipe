@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Uploads the pkg to the JSS, and creates a Self-Service Policy available to members of a Testing group.</string>
+	<key>Identifier</key>
+	<string>com.github.eth-its-recipes.jamf.SPSSStatistics27-Node-prod</string>
+	<key>Input</key>
+	<dict>
+		<key>AUTOINSTALL_GROUP_NAME</key>
+		<string>%NAME% %MAJOR_VERSION% %LICENSE% auto-install</string>
+		<key>AUTOINSTALL_POLICY_NAME</key>
+		<string>Auto-install %NAME% %MAJOR_VERSION% %LICENSE%</string>
+		<key>AUTOUPDATE_GROUP_NAME</key>
+		<string>%NAME% %MAJOR_VERSION% %LICENSE% auto-update</string>
+		<key>AUTOUPDATE_POLICY_NAME</key>
+		<string>Auto-update %NAME% %MAJOR_VERSION% %LICENSE%</string>
+		<key>INSTALLED_GROUP_NAME</key>
+		<string>%NAME% %MAJOR_VERSION% %LICENSE% installed</string>
+		<key>LICENSE</key>
+		<string>Node</string>
+		<key>MAJOR_VERSION</key>
+		<string>27</string>
+		<key>NAME</key>
+		<string>SPSS Statistics</string>
+		<key>PROD_VERSION_INSTALLED_GROUP_NAME</key>
+		<string>%NAME% %MAJOR_VERSION% %LICENSE% current version installed</string>
+		<key>SELFSERVICE_DISPLAY_NAME</key>
+		<string>%NAME% %MAJOR_VERSION% %LICENSE%</string>
+		<key>SELFSERVICE_POLICY_NAME</key>
+		<string>%NAME% %MAJOR_VERSION% %LICENSE%</string>
+		<key>TEST_USERS_GROUP_NAME</key>
+		<string>%NAME% %MAJOR_VERSION% %LICENSE% test users</string>
+		<key>TRIGGER_NAME</key>
+		<string>Activate-SPSS-%MAJOR_VERSION%-%LICENSE%-License</string>
+		<key>TRIGGER_POLICY_NAME</key>
+		<string>Install %NAME% %MAJOR_VERSION% %LICENSE%</string>
+		<key>TRIGGER_POLICY_RUN_COMMAND</key>
+		<string>jamf policy -event '%TRIGGER_NAME%'</string>
+		<key>UNTESTED_RECIPE_IDENTIFIER</key>
+		<string>local.jamf.SPSSStatistics27-Node</string>
+		<key>UNTESTED_VERSION_INSTALLED_GROUP_NAME</key>
+		<string>%NAME% %MAJOR_VERSION% %LICENSE% test version installed</string>
+		<key>UPDATE_POLICY_NAME</key>
+		<string>Update %NAME% %MAJOR_VERSION% %LICENSE%</string>
+		<key>UPDATE_SELFSERVICE_DISPLAY_NAME</key>
+		<string>Update %NAME% %MAJOR_VERSION% %LICENSE%</string>
+		<key>USERS_GROUP_NAME</key>
+		<string>%NAME% %MAJOR_VERSION% %LICENSE% users</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.0.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.eth-its-recipes.jamf.template-prod</string>
+</dict>
+</plist>
