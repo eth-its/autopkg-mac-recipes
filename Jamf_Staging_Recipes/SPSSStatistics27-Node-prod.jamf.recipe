@@ -39,7 +39,7 @@
 		<key>TRIGGER_POLICY_RUN_COMMAND</key>
 		<string>jamf policy -event '%TRIGGER_NAME%'</string>
 		<key>UNTESTED_RECIPE_IDENTIFIER</key>
-		<string>local.jamf.SPSSStatistics27-Node</string>
+		<string>local.jamf.SPSSStatistics27-Floating</string>
 		<key>UNTESTED_VERSION_INSTALLED_GROUP_NAME</key>
 		<string>%NAME% %MAJOR_VERSION% %LICENSE% test version installed</string>
 		<key>UPDATE_POLICY_NAME</key>
