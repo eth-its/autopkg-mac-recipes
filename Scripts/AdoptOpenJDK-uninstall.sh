@@ -12,7 +12,7 @@ has_jvm=1
 
 while [[ $has_jvm == 1 ]]; do
     echo "Checking for JVM..."
-    jvm_path=$(/usr/libexec/java_home -X -v "$filter_check" | grep -B6 -m7 AdoptOpenJDK | head -n 1 | sed 's|<[^>]*>||g' | sed 's|^[[:space:]]*||' | sed 's|\/Contents\/Home||')
+    jvm_path=$( /usr/libexec/java_home -X -v "$filter_check" | grep -B6 -m7 AdoptOpenJDK | head -n 1 | sed 's|<[^>]*>||g' | sed 's|^[[:space:]]*||' | sed 's|\/Contents\/Home||' | grep "$filter_check." )
     if [[ -d "$jvm_path" ]]; then
         echo "Deleting '$jvm_path'"
         rm -Rf "$jvm_path"
