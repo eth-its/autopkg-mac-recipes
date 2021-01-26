@@ -25,7 +25,7 @@
 		<key>REINSTALL_BUTTON_TEXT</key>
 		<string>Install %version%</string>
 		<key>SELFSERVICE_DESCRIPTION</key>
-		<string>‎Fantastical is a password manager application.
+		<string>‎Bitwarden is a password manager application.
 
 Version: %version%
 Category: %PKG_CATEGORY%
