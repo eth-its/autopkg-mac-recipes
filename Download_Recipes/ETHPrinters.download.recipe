@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Checks /Volumes/AutoPkg_Local_Sources for update. Requires: override of NAME and PATH. Requires: autopkg repo-add https://github.com/facebook/Recipes-for-AutoPkg.git</string>
+	<key>Identifier</key>
+	<string>com.github.eth-its-recipes.download.ETHPrinters</string>
+	<key>Input</key>
+	<dict>
+		<key>EXCEPTION</key>
+		<string></string>
+		<key>LIST_NAME</key>
+		<string>Printers</string>
+		<key>LOCAL_REPO</key>
+		<string>/Volumes/AutoPkg_Local_Sources</string>
+		<key>VENDOR</key>
+		<string>ETH</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>EXCEPTION</key>
+				<string>%EXCEPTION%</string>
+				<key>root_path</key>
+				<string>%LOCAL_REPO%/%VENDOR%/%LIST_NAME%</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.eth-its-recipes.processors/SubDirectoryList</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>RECIPE_CACHE_DIR</key>
+				<string>%RECIPE_CACHE_DIR%</string>
+				<key>found_files</key>
+				<string>%found_filenames%</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.eth-its-recipes.processors/LocalRepoUpdateChecker</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>url</key>
+				<string>file://%root_path%/%version%/%latest_file%.zip</string>
+			</dict>
+			<key>Comment</key>
+			<string>Downloads the file from the source repo to the AutoPkg cache</string>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest version of ETH Printers and creates a package.</string>
+	<key>Identifier</key>
+	<string>com.github.eth-its-recipes.pkg.ETHPrinters</string>
+	<key>Input</key>
+	<dict>
+		<key>EXCEPTION</key>
+		<string></string>
+		<key>LIST_NAME</key>
+		<string>Printers</string>
+		<key>LOCAL_REPO</key>
+		<string>/Volumes/AutoPkg_Local_Sources</string>
+		<key>NAME</key>
+		<string>ETH Printers</string>
+		<key>VENDOR</key>
+		<string>ETH</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.eth-its-recipes.download.ETHPrinters</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>archive_path</key>
+				<string>%pathname%</string>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/unzip</string>
+				<key>purge_destination</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%RECIPE_CACHE_DIR%/ETH_Printers-%version%.pkg</string>
+				<key>source_pkg</key>
+				<string>%RECIPE_CACHE_DIR%/unzip/*.pkg</string>
+			</dict>
+			<key>Processor</key>
+			<string>PkgCopier</string>
+		</dict>
+	</array>
+</dict>
+</plist>

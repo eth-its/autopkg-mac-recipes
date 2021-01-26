@@ -59,7 +59,7 @@ Category: %PKG_CATEGORY%
 	<key>MinimumVersion</key>
 	<string>2.0.0</string>
 	<key>ParentRecipe</key>
-	<string>ch.ethz.id.pkg.ETHPrinters</string>
+	<string>com.github.eth-its-recipes.pkg.ETHPrinters</string>
 	<key>Process</key>
 	<array>
 		<dict>
