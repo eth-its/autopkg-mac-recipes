@@ -20,6 +20,8 @@
 		<string>%NAME% %MAJOR_VERSION% %LICENSE% installed</string>
 		<key>LICENSE</key>
 		<string>Node</string>
+		<key>LICENSE_SET_POLICY_TRIGGER_NAME</key>
+		<string>Activate-SPSS-%MAJOR_VERSION%-%LICENSE%-License</string>
 		<key>MAJOR_VERSION</key>
 		<string>27</string>
 		<key>NAME</key>
@@ -33,11 +35,11 @@
 		<key>TEST_USERS_GROUP_NAME</key>
 		<string>%NAME% %MAJOR_VERSION% %LICENSE% test users</string>
 		<key>TRIGGER_NAME</key>
-		<string>Activate-SPSS-%MAJOR_VERSION%-%LICENSE%-License</string>
+		<string>SPSSStatistics %MAJOR_VERSION% %LICENSE%-install</string>
 		<key>TRIGGER_POLICY_NAME</key>
 		<string>Install %NAME% %MAJOR_VERSION% %LICENSE%</string>
 		<key>TRIGGER_POLICY_RUN_COMMAND</key>
-		<string>jamf policy -event '%TRIGGER_NAME%'</string>
+		<string>jamf policy -event '%LICENSE_SET_POLICY_TRIGGER_NAME%'</string>
 		<key>UNTESTED_RECIPE_IDENTIFIER</key>
 		<string>local.jamf.SPSSStatistics27-Floating</string>
 		<key>UNTESTED_VERSION_INSTALLED_GROUP_NAME</key>
