@@ -7,6 +7,7 @@ Input:
   NAME: EndNote
   LANGUAGE: EN
   MAJOR_VERSION: "20"
+  JSS_INVENTORY_NAME: "%NAME% %MAJOR_VERSION%.app"
   UNINSTALL_POLICY_NAME: "Uninstall %NAME% %MAJOR_VERSION% %LANGUAGE%"
   SCRIPT_PATH: EndNote-uninstall.sh
   SCRIPT_NAME: EndNote-uninstall.sh

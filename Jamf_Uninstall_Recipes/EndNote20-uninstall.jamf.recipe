@@ -12,6 +12,8 @@
 		<string>%NAME% %MAJOR_VERSION% %LANGUAGE% auto-install</string>
 		<key>INSTALLED_GROUP_NAME</key>
 		<string>%NAME% %MAJOR_VERSION% %LANGUAGE% installed</string>
+		<key>JSS_INVENTORY_NAME</key>
+		<string>%NAME% %MAJOR_VERSION%.app</string>
 		<key>LANGUAGE</key>
 		<string>EN</string>
 		<key>MAJOR_VERSION</key>
