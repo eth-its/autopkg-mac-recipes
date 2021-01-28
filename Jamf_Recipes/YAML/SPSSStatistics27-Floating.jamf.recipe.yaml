@@ -4,7 +4,7 @@ ParentRecipe: com.github.eth-its-recipes.pkg.SPSSStatistics27
 MinimumVersion: 2.0.0
 
 Input:
-  LIST_NAME: IBM SPSS
+  LIST_NAME: IBM SPSS Node
   LIST_LANGUAGE: ML
   NAME: SPSS Statistics
   POLICY_NAME: "SPSS Statistics %MAJOR_VERSION% %LICENSE% (Testing)"
