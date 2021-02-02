@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Uploads a script to the Jamf Pro Server and creates a Self Service Policy and Smart Group.</string>
+	<key>Identifier</key>
+	<string>com.github.eth-its-recipes.jamf.Papers-uninstall</string>
+	<key>Input</key>
+	<dict>
+		<key>AUTOINSTALL_GROUP_NAME</key>
+		<string>%NAME% EN auto-install</string>
+		<key>INSTALLED_GROUP_NAME</key>
+		<string>%NAME% EN installed</string>
+		<key>LANGUAGE</key>
+		<string>EN</string>
+		<key>NAME</key>
+		<string>Papers</string>
+		<key>PARAMETER5_LABEL</key>
+		<string>Package Receipt</string>
+		<key>PARAMETER5_VALUE</key>
+		<string>com.ReadCube.Papers</string>
+		<key>PARAMETER6_LABEL</key>
+		<string>Additional Package Receipt</string>
+		<key>PARAMETER6_VALUE</key>
+		<string>com.mekentosj.papers3</string>
+		<key>SELFSERVICE_DISPLAY_NAME</key>
+		<string>Uninstall %NAME% EN</string>
+		<key>TEST_USERS_GROUP_NAME</key>
+		<string>%NAME% EN test users</string>
+		<key>TRIGGER_UNINSTALL_POLICY_NAME</key>
+		<string>Trigger-uninstall %NAME% EN</string>
+		<key>UNINSTALL_POLICY_NAME</key>
+		<string>Uninstall %NAME% EN</string>
+		<key>UNINSTALL_SELFSERVICE_DISPLAY_NAME</key>
+		<string>Uninstall %NAME% EN</string>
+		<key>USERS_GROUP_NAME</key>
+		<string>%NAME% EN users</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.0.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.eth-its-recipes.jamf.template-script-uninstall</string>
+</dict>
+</plist>
