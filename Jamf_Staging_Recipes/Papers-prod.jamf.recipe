@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Uploads the pkg to the JSS, and creates a Self-Service Policy available to members of a Testing group.</string>
+	<key>Identifier</key>
+	<string>com.github.eth-its-recipes.jamf.Papers-prod</string>
+	<key>Input</key>
+	<dict>
+		<key>AUTOINSTALL_GROUP_NAME</key>
+		<string>%NAME% %LANGUAGE% auto-install</string>
+		<key>AUTOINSTALL_POLICY_NAME</key>
+		<string>Auto-install %NAME% %LANGUAGE%</string>
+		<key>AUTOUPDATE_GROUP_NAME</key>
+		<string>%NAME% %LANGUAGE% auto-update</string>
+		<key>AUTOUPDATE_POLICY_NAME</key>
+		<string>Auto-update %NAME% %LANGUAGE%</string>
+		<key>INSTALLED_GROUP_NAME</key>
+		<string>%NAME% %LANGUAGE% installed</string>
+		<key>NAME</key>
+		<string>Papers</string>
+		<key>PARAMETER4_VALUE</key>
+		<string>%NAME%-uninstall</string>
+		<key>PROD_VERSION_INSTALLED_GROUP_NAME</key>
+		<string>%NAME% %LANGUAGE% current version installed</string>
+		<key>SCRIPT_NAME</key>
+		<string>jamf-policy-trigger.sh</string>
+		<key>SCRIPT_PRIORITY</key>
+		<string>Before</string>
+		<key>SELFSERVICE_DISPLAY_NAME</key>
+		<string>%NAME% %LANGUAGE%</string>
+		<key>SELFSERVICE_POLICY_NAME</key>
+		<string>%NAME% %LANGUAGE%</string>
+		<key>TEST_USERS_GROUP_NAME</key>
+		<string>%NAME% %LANGUAGE% test users</string>
+		<key>TRIGGER_POLICY_NAME</key>
+		<string>Install %NAME% %LANGUAGE%</string>
+		<key>TRIGGER_POLICY_TEMPLATE</key>
+		<string>Policy-prod-triggeronly-script-parameter4.xml</string>
+		<key>UNTESTED_RECIPE_IDENTIFIER</key>
+		<string>local.jamf.Papers</string>
+		<key>UNTESTED_VERSION_INSTALLED_GROUP_NAME</key>
+		<string>%NAME% %LANGUAGE% test version installed</string>
+		<key>UPDATE_POLICY_NAME</key>
+		<string>Update %NAME% %LANGUAGE%</string>
+		<key>UPDATE_SELFSERVICE_DISPLAY_NAME</key>
+		<string>Update %NAME% %LANGUAGE%</string>
+		<key>USERS_GROUP_NAME</key>
+		<string>%NAME% %LANGUAGE% users</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.0.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.eth-its-recipes.jamf.template-prod</string>
+</dict>
+</plist>
