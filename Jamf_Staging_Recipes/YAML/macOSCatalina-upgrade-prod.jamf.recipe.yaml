@@ -5,7 +5,7 @@ ParentRecipe: com.github.eth-its-recipes.jamf.template-macos-prod
 
 Input:
   NAME: Upgrade to macOS Catalina
-  UNTESTED_RECIPE_IDENTIFIER: local.jamf.macos-catalina-upgrade
+  UNTESTED_RECIPE_IDENTIFIER: local.jamf.macOSCatalina-upgrade
   INSTALLED_GROUP_TEMPLATE: SmartGroup-macOS-upgrade-ineligible.xml
   MIN_OS_VERSION: "10.12.4"
   MAX_OS_VERSION: "10.14.7"

@@ -25,7 +25,7 @@
 		<key>TRIGGER_POLICY_RUN_COMMAND</key>
 		<string>/Library/Management/erase-install/erase-install.sh --os=11 --update --move</string>
 		<key>UNTESTED_RECIPE_IDENTIFIER</key>
-		<string>local.jamf.macos-catalina-download</string>
+		<string>local.jamf.macOSCatalina-download</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.0.0</string>
