@@ -19,7 +19,7 @@
 		<key>TRIGGER_POLICY_RUN_COMMAND</key>
 		<string>/Library/Management/erase-install/erase-install.sh --update --erase --sameos</string>
 		<key>UNTESTED_RECIPE_IDENTIFIER</key>
-		<string>local.jamf.erase-install</string>
+		<string>local.jamf.macOS-erase-install</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.0.0</string>
