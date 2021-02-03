@@ -5,7 +5,7 @@ ParentRecipe: com.github.eth-its-recipes.jamf.template-macos-prod
 
 Input:
   NAME: Upgrade to macOS Big Sur
-  UNTESTED_RECIPE_IDENTIFIER: local.jamf.macOSBigSur-upgrade
+  UNTESTED_RECIPE_IDENTIFIER: local.jamf.macOS-erase-install
   INSTALLED_GROUP_TEMPLATE: SmartGroup-macOS-upgrade-ineligible.xml
   MIN_OS_VERSION: "10.12.4"
   MAX_OS_VERSION: "10.15.8"
