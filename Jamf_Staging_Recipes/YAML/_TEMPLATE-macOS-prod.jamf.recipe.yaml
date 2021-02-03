@@ -22,7 +22,7 @@ Input:
   TRIGGER_POLICY_CATEGORY: Triggered Installers
   TRIGGER_POLICY_RUN_COMMAND: /Library/Management/erase-install/erase-install.sh
   SELFSERVICE_POLICY_NAME: "%NAME%"
-  SELFSERVICE_POLICY_TEMPLATE: Policy-prod-selfservice-install.xml
+  SELFSERVICE_POLICY_TEMPLATE: Policy-prod-selfservice-install-macOS.xml
   INSTALL_BUTTON_TEXT: ERASE!
   REINSTALL_BUTTON_TEXT: ERASE!
   TRIGGER_NAME: "%NAME%-install"

@@ -31,7 +31,7 @@
 		<key>POLICY_RUN_COMMAND</key>
 		<string>/Library/Management/erase-install/erase-install.sh --os=10.15 --update --reinstall</string>
 		<key>POLICY_TEMPLATE</key>
-		<string>Policy-untested-selfservice.xml</string>
+		<string>Policy-untested-selfservice-macOS.xml</string>
 		<key>REINSTALL_BUTTON_TEXT</key>
 		<string>Upgrade macOS</string>
 		<key>SELFSERVICE_DESCRIPTION</key>

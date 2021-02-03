@@ -35,7 +35,7 @@ If the icon does not match NAME.png, SELFSERVICE_ICON should also be overridden.
 		<key>SELFSERVICE_POLICY_NAME</key>
 		<string>%NAME%</string>
 		<key>SELFSERVICE_POLICY_TEMPLATE</key>
-		<string>Policy-prod-selfservice-install.xml</string>
+		<string>Policy-prod-selfservice-install-macOS.xml</string>
 		<key>TEST_USERS_GROUP_NAME</key>
 		<string>%NAME% test users</string>
 		<key>TRIGGER_NAME</key>
