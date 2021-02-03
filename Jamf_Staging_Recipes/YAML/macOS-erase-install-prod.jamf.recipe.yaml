@@ -1,6 +1,7 @@
 Description: Creates all production policies for a particular title.
 Identifier: com.github.eth-its-recipes.jamf.erase-install-prod
 MinimumVersion: 2.0.0
+ParentRecipe: com.github.eth-its-recipes.jamf.template-macos-prod
 
 Input:
   NAME: Erase and Reinstall macOS
