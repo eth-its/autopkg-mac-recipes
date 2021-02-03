@@ -13,3 +13,4 @@ Input:
   TRIGGER_POLICY_RUN_COMMAND: /Library/Management/erase-install/erase-install.sh --os=11 --update --move
   INSTALL_BUTTON_TEXT: Download
   REINSTALL_BUTTON_TEXT: Download
+  SELFSERVICE_ICON: Install macOS Big Sur.png

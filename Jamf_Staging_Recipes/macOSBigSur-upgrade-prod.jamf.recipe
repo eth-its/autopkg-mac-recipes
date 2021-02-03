@@ -22,6 +22,8 @@
 		<string>Upgrade to macOS Big Sur</string>
 		<key>REINSTALL_BUTTON_TEXT</key>
 		<string>Upgrade macOS</string>
+		<key>SELFSERVICE_ICON</key>
+		<string>Install macOS Big Sur.png</string>
 		<key>TRIGGER_POLICY_RUN_COMMAND</key>
 		<string>/Library/Management/erase-install/erase-install.sh --os=11 --update --reinstall</string>
 		<key>UNTESTED_RECIPE_IDENTIFIER</key>

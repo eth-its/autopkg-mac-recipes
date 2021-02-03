@@ -22,6 +22,8 @@
 		<string>Download macOS Big Sur Installer</string>
 		<key>REINSTALL_BUTTON_TEXT</key>
 		<string>Download</string>
+		<key>SELFSERVICE_ICON</key>
+		<string>Install macOS Big Sur.png</string>
 		<key>TRIGGER_POLICY_RUN_COMMAND</key>
 		<string>/Library/Management/erase-install/erase-install.sh --os=11 --update --move</string>
 		<key>UNTESTED_RECIPE_IDENTIFIER</key>

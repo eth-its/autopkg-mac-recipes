@@ -16,6 +16,8 @@
 		<string>Erase and Reinstall macOS</string>
 		<key>REINSTALL_BUTTON_TEXT</key>
 		<string>ERASE!</string>
+		<key>SELFSERVICE_ICON</key>
+		<string>Erase and Reinstall macOS.png</string>
 		<key>TRIGGER_POLICY_RUN_COMMAND</key>
 		<string>/Library/Management/erase-install/erase-install.sh --update --erase --sameos</string>
 		<key>UNTESTED_RECIPE_IDENTIFIER</key>
