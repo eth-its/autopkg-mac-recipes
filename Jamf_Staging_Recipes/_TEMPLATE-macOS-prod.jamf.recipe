@@ -16,9 +16,9 @@ If the icon does not match NAME.png, SELFSERVICE_ICON should also be overridden.
 	<string>com.github.eth-its-recipes.jamf.template-macos-prod</string>
 	<key>Input</key>
 	<dict>
-		<key>INSTALLED_GROUP_NAME</key>
+		<key>INELIGIBLE_GROUP_NAME</key>
 		<string>%NAME% ineligible</string>
-		<key>INSTALLED_GROUP_TEMPLATE</key>
+		<key>INELIGIBLE_GROUP_TEMPLATE</key>
 		<string>SmartGroup-macOS-erase-install-ineligible.xml</string>
 		<key>INSTALL_BUTTON_TEXT</key>
 		<string>ERASE!</string>
@@ -109,9 +109,9 @@ If the icon does not match NAME.png, SELFSERVICE_ICON should also be overridden.
 			<key>Arguments</key>
 			<dict>
 				<key>computergroup_name</key>
-				<string>%INSTALLED_GROUP_NAME%</string>
+				<string>%INELIGIBLE_GROUP_NAME%</string>
 				<key>computergroup_template</key>
-				<string>%INSTALLED_GROUP_TEMPLATE%</string>
+				<string>%INELIGIBLE_GROUP_TEMPLATE%</string>
 				<key>replace_group</key>
 				<string>True</string>
 			</dict>

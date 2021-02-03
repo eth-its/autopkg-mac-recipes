@@ -6,7 +6,7 @@ ParentRecipe: com.github.eth-its-recipes.jamf.template-macos-prod
 Input:
   NAME: Erase and Reinstall macOS
   UNTESTED_RECIPE_IDENTIFIER: local.jamf.macOS-erase-install
-  INSTALLED_GROUP_TEMPLATE: SmartGroup-macOS-erase-install-ineligible.xml
+  INELIGIBLE_GROUP_TEMPLATE: SmartGroup-macOS-erase-install-ineligible.xml
   TRIGGER_POLICY_RUN_COMMAND: /Library/Management/erase-install/erase-install.sh --update --erase --sameos
   INSTALL_BUTTON_TEXT: ERASE!
   REINSTALL_BUTTON_TEXT: ERASE!

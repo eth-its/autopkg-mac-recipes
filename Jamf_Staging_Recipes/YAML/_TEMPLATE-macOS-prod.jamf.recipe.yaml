@@ -15,8 +15,8 @@ Input:
   TEST_USERS_GROUP_NAME: "%NAME% test users"
   USERS_GROUP_NAME: "%NAME% users"
   USERS_GROUP_TEMPLATE: SmartGroup-users.xml
-  INSTALLED_GROUP_NAME: "%NAME% ineligible"
-  INSTALLED_GROUP_TEMPLATE: SmartGroup-macOS-erase-install-ineligible.xml
+  INELIGIBLE_GROUP_NAME: "%NAME% ineligible"
+  INELIGIBLE_GROUP_TEMPLATE: SmartGroup-macOS-erase-install-ineligible.xml
   TRIGGER_POLICY_NAME: "Trigger %NAME%"
   TRIGGER_POLICY_TEMPLATE: Policy-prod-triggeronly.xml
   TRIGGER_POLICY_CATEGORY: Triggered Installers
@@ -55,8 +55,8 @@ Process:
 
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfComputerGroupUploader
     Arguments:
-      computergroup_name: "%INSTALLED_GROUP_NAME%"
-      computergroup_template: "%INSTALLED_GROUP_TEMPLATE%"
+      computergroup_name: "%INELIGIBLE_GROUP_NAME%"
+      computergroup_template: "%INELIGIBLE_GROUP_TEMPLATE%"
       replace_group: "True"
 
   - Processor: com.github.grahampugh.jamf-upload.processors/JamfPolicyUploader

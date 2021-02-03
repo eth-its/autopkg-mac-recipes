@@ -8,7 +8,7 @@
 	<string>com.github.eth-its-recipes.jamf.macos-bigsur-download-prod</string>
 	<key>Input</key>
 	<dict>
-		<key>INSTALLED_GROUP_TEMPLATE</key>
+		<key>INELIGIBLE_GROUP_TEMPLATE</key>
 		<string>SmartGroup-macOS-download-ineligible.xml</string>
 		<key>INSTALL_BUTTON_TEXT</key>
 		<string>Download</string>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <computer_group>
-  <name>%TEST_VERSION_INSTALLED_GROUP_NAME%</name>
+  <name>%INELIGIBLE_GROUP_NAME%</name>
   <is_smart>true</is_smart>
   <criteria>
     <criterion>

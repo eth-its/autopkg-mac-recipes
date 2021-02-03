@@ -8,6 +8,10 @@
 	<string>com.github.eth-its-recipes.jamf.erase-install-nodes</string>
 	<key>Input</key>
 	<dict>
+		<key>INELIGIBLE_GROUP_NAME</key>
+		<string>%NAME% ineligible</string>
+		<key>INELIGIBLE_GROUP_TEMPLATE</key>
+		<string>SmartGroup-macOS-erase-install-ineligible.xml</string>
 		<key>INSTALL_BUTTON_TEXT</key>
 		<string>ERASE!</string>
 		<key>NAME</key>
@@ -39,10 +43,6 @@
 		<string>%NAME% test users</string>
 		<key>TEST_USERS_GROUP_TEMPLATE</key>
 		<string>SmartGroup-test-users.xml</string>
-		<key>TEST_VERSION_INSTALLED_GROUP_NAME</key>
-		<string>%NAME% ineligible</string>
-		<key>TEST_VERSION_INSTALLED_GROUP_TEMPLATE</key>
-		<string>SmartGroup-macOS-erase-install-ineligible.xml</string>
 		<key>UNTESTED_RECIPE_IDENTIFIER</key>
 		<string>local.jamf.macOS-erase-install</string>
 		<key>UPDATE_PREDICATE</key>
@@ -131,9 +131,9 @@
 			<key>Arguments</key>
 			<dict>
 				<key>computergroup_name</key>
-				<string>%TEST_VERSION_INSTALLED_GROUP_NAME%</string>
+				<string>%INELIGIBLE_GROUP_NAME%</string>
 				<key>computergroup_template</key>
-				<string>%TEST_VERSION_INSTALLED_GROUP_TEMPLATE%</string>
+				<string>%INELIGIBLE_GROUP_GROUP_TEMPLATE%</string>
 				<key>replace_group</key>
 				<string>True</string>
 			</dict>

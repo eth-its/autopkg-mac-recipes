@@ -8,7 +8,7 @@
 	<string>com.github.eth-its-recipes.jamf.erase-install-prod</string>
 	<key>Input</key>
 	<dict>
-		<key>INSTALLED_GROUP_TEMPLATE</key>
+		<key>INELIGIBLE_GROUP_TEMPLATE</key>
 		<string>SmartGroup-macOS-erase-install-ineligible.xml</string>
 		<key>INSTALL_BUTTON_TEXT</key>
 		<string>ERASE!</string>
