@@ -22,8 +22,6 @@ If the icon does not match NAME.png, SELFSERVICE_ICON should also be overridden.
 		<string>SmartGroup-macOS-erase-install-ineligible.xml</string>
 		<key>INSTALL_BUTTON_TEXT</key>
 		<string>ERASE!</string>
-		<key>JSS_INVENTORY_NAME</key>
-		<string>%NAME%.app</string>
 		<key>PROD_PREDICATE</key>
 		<string>ready_to_stage == False</string>
 		<key>REINSTALL_BUTTON_TEXT</key>
@@ -48,6 +46,8 @@ If the icon does not match NAME.png, SELFSERVICE_ICON should also be overridden.
 		<string>/Library/Management/erase-install/erase-install.sh</string>
 		<key>TRIGGER_POLICY_TEMPLATE</key>
 		<string>Policy-prod-triggeronly.xml</string>
+		<key>UNTESTED_POLICY_NAME</key>
+		<string>%NAME% (Testing)</string>
 		<key>USERS_GROUP_NAME</key>
 		<string>%NAME% users</string>
 		<key>USERS_GROUP_TEMPLATE</key>
@@ -158,7 +158,7 @@ If the icon does not match NAME.png, SELFSERVICE_ICON should also be overridden.
 			<key>Arguments</key>
 			<dict>
 				<key>policy_name</key>
-				<string>%LAST_RUN_POLICY_NAME%</string>
+				<string>%UNTESTED_POLICY_NAME%</string>
 			</dict>
 			<key>Comment</key>
 			<string>Delete the untested policy</string>
