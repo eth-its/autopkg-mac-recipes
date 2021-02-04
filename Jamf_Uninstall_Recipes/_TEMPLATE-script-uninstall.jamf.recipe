@@ -40,7 +40,7 @@ Do not add things like language or license to the NAME key.
 		<key>PARAMETER11_VALUE</key>
 		<string>None</string>
 		<key>PARAMETER4_LABEL</key>
-		<string>Parameter 4</string>
+		<string>Application Name</string>
 		<key>PARAMETER4_VALUE</key>
 		<string>%NAME%</string>
 		<key>PARAMETER5_LABEL</key>

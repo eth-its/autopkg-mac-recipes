@@ -13,7 +13,7 @@ Input:
   JSS_INVENTORY_NAME: "%NAME%.app"
   SCRIPT_NAME: Application-uninstall.sh
   SCRIPT_PATH: Application-uninstall.sh
-  PARAMETER4_LABEL: "Parameter 4"
+  PARAMETER4_LABEL: "Application Name"
   PARAMETER5_LABEL: "Parameter 5"
   PARAMETER6_LABEL: "Parameter 6"
   PARAMETER7_LABEL: "Parameter 7"
