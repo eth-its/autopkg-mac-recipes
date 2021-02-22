@@ -5,17 +5,17 @@
 	<key>Description</key>
 	<string>Checks /Volumes/AutoPkg_Local_Sources for update.</string>
 	<key>Identifier</key>
-	<string>com.github.eth-its-recipes.download.ETHPrinters</string>
+	<string>com.github.eth-its-recipes.download.CiscoAnyConnect</string>
 	<key>Input</key>
 	<dict>
 		<key>EXCEPTION</key>
 		<string></string>
 		<key>LIST_NAME</key>
-		<string>Printers</string>
+		<string>AnyConnect_VPN_Client</string>
 		<key>LOCAL_REPO</key>
 		<string>/Volumes/AutoPkg_Local_Sources</string>
 		<key>VENDOR</key>
-		<string>ETH</string>
+		<string>Cisco</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
@@ -47,7 +47,7 @@
 			<key>Arguments</key>
 			<dict>
 				<key>url</key>
-				<string>file://%root_path%/%version%/%latest_file%.zip</string>
+				<string>file://%root_path%/%version%/%latest_file%.dmg</string>
 			</dict>
 			<key>Comment</key>
 			<string>Downloads the file from the source repo to the AutoPkg cache</string>
