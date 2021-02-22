@@ -22,6 +22,8 @@ Input:
   TEST_VERSION_INSTALLED_GROUP_TEMPLATE: SmartGroup-test-version-installed.xml
   POLICY_TEMPLATE: Policy-untested-selfservice.xml
   POLICY_RUN_COMMAND: "echo 'Installation of %NAME% complete'"
+  INSTALL_BUTTON_TEXT: "Install %version%"
+  REINSTALL_BUTTON_TEXT: "Install %version%"
   UPDATE_PREDICATE: "pkg_uploaded == False"
 
 Process:
