@@ -8,6 +8,8 @@
 	<string>com.github.eth-its-recipes.jamf.CiscoAnyConnect</string>
 	<key>Input</key>
 	<dict>
+		<key>INSTALL_BUTTON_TEXT</key>
+		<string>Install %version%</string>
 		<key>NAME</key>
 		<string>Cisco AnyConnect Secure Mobility Client</string>
 		<key>PKG_CATEGORY</key>
@@ -20,6 +22,8 @@
 		<string>echo 'Installation of %NAME% complete'</string>
 		<key>POLICY_TEMPLATE</key>
 		<string>Policy-untested-selfservice.xml</string>
+		<key>REINSTALL_BUTTON_TEXT</key>
+		<string>Install %version%</string>
 		<key>SELFSERVICE_DESCRIPTION</key>
 		<string>Cisco AnyConnect Secure Mobility Client is the Virtual Private Network (VPN) client for ETH Zürich.  
 Version: %version%

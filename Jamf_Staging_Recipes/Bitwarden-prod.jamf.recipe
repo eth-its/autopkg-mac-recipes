@@ -13,7 +13,7 @@
 		<key>TRIGGER_POLICY_RUN_COMMAND</key>
 		<string>chown -R "$(stat -f%Su /dev/console):staff" "/Applications/%NAME%.app" &amp;&amp; echo "Corrected permissions for %NAME%."</string>
 		<key>UNTESTED_RECIPE_IDENTIFIER</key>
-		<string>local.jamf.%NAME%</string>
+		<string>local.jamf.Bitwarden</string>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>2.0.0</string>
