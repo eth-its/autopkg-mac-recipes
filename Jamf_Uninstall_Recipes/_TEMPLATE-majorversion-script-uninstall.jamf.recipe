@@ -32,9 +32,9 @@ Do not add things like language or license to the NAME key.
 		<key>JSS_INVENTORY_NAME</key>
 		<string>%NAME%.app</string>
 		<key>PARAMETER4_TITLE</key>
-		<string>Major Version</string>
+		<string>Application Name</string>
 		<key>PARAMETER4_VALUE</key>
-		<string>%MAJOR_VERSION%</string>
+		<string>%NAME% %MAJOR_VERSION%</string>
 		<key>PKG_ID</key>
 		<string>None</string>
 		<key>PKG_ID_2</key>
@@ -48,7 +48,7 @@ Do not add things like language or license to the NAME key.
 		<key>REINSTALL_BUTTON_TEXT</key>
 		<string>Uninstall</string>
 		<key>SCRIPT_NAME</key>
-		<string>%NAME%-uninstall.sh</string>
+		<string>Application-uninstall.sh</string>
 		<key>SCRIPT_PATH</key>
 		<string>Application-uninstall.sh</string>
 		<key>SCRIPT_PRIORITY</key>

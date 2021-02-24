@@ -11,10 +11,10 @@ MinimumVersion: 2.0.0
 
 Input:
   JSS_INVENTORY_NAME: "%NAME%.app"
-  SCRIPT_NAME: "%NAME%-uninstall.sh"
+  SCRIPT_NAME: Application-uninstall.sh
   SCRIPT_PATH: Application-uninstall.sh
-  PARAMETER4_TITLE: Major Version
-  PARAMETER4_VALUE: "%MAJOR_VERSION%"
+  PARAMETER4_TITLE: Application Name
+  PARAMETER4_VALUE: "%NAME% %MAJOR_VERSION%"
   SCRIPT_PRIORITY: After
   PKG_ID: "None"
   PKG_ID_2: "None"
