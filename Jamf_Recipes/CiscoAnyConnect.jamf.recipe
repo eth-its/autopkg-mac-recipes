@@ -51,7 +51,7 @@ Category: %PKG_CATEGORY%
 	<key>MinimumVersion</key>
 	<string>2.0.0</string>
 	<key>ParentRecipe</key>
-	<string>ch.ethz.id.pkg.CiscoAnyConnect</string>
+	<string>com.github.eth-its-recipes.pkg.CiscoAnyConnect</string>
 	<key>Process</key>
 	<array>
 		<dict>
