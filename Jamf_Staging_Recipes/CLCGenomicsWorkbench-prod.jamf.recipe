@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Uploads the pkg to the JSS, and creates a Self-Service Policy available to members of a Testing group.</string>
+	<key>Identifier</key>
+	<string>com.github.eth-its-recipes.jamf.CLCGenomicsWorkbench-prod</string>
+	<key>Input</key>
+	<dict>
+		<key>AUTOINSTALL_GROUP_NAME</key>
+		<string>%NAME% %MAJOR_VERSION% %LANGUAGE% auto-install</string>
+		<key>AUTOINSTALL_POLICY_NAME</key>
+		<string>Auto-install %NAME% %MAJOR_VERSION% %LANGUAGE%</string>
+		<key>AUTOUPDATE_GROUP_NAME</key>
+		<string>%NAME% %MAJOR_VERSION% %LANGUAGE% auto-update</string>
+		<key>AUTOUPDATE_POLICY_NAME</key>
+		<string>Auto-update %NAME% %MAJOR_VERSION% %LANGUAGE%</string>
+		<key>CLC_LICENSE_PORT</key>
+		<string>++ REPLACE-ME ++</string>
+		<key>CLC_LICENSE_SERVER</key>
+		<string>++ REPLACE-ME ++</string>
+		<key>INSTALLED_GROUP_NAME</key>
+		<string>%NAME% %MAJOR_VERSION% %LANGUAGE% installed</string>
+		<key>JSS_INVENTORY_NAME</key>
+		<string>CLC Genomics Workbench 20.app</string>
+		<key>LANGUAGE</key>
+		<string>EN</string>
+		<key>MAJOR_VERSION</key>
+		<string>20</string>
+		<key>NAME</key>
+		<string>CLC Genomics Workbench</string>
+		<key>POLICY_RUN_COMMAND</key>
+		<string>chown -R "$(stat -f%Su /dev/console):staff" "/Applications/%NAME% %MAJOR_VERSION%" &amp;&amp; echo "Corrected permissions for %NAME% %MAJOR_VERSION%."</string>
+		<key>PROD_VERSION_INSTALLED_GROUP_NAME</key>
+		<string>%NAME% %MAJOR_VERSION% %LANGUAGE% current version installed</string>
+		<key>SELFSERVICE_DISPLAY_NAME</key>
+		<string>%NAME% %MAJOR_VERSION% %LANGUAGE%</string>
+		<key>SELFSERVICE_POLICY_NAME</key>
+		<string>%NAME% %MAJOR_VERSION% %LANGUAGE%</string>
+		<key>TEST_USERS_GROUP_NAME</key>
+		<string>%NAME% %MAJOR_VERSION% %LANGUAGE% test users</string>
+		<key>TRIGGER_POLICY_NAME</key>
+		<string>Install %NAME% %MAJOR_VERSION% %LANGUAGE%</string>
+		<key>UNTESTED_RECIPE_IDENTIFIER</key>
+		<string>local.jamf.CLCGenomicsWorkbench</string>
+		<key>UNTESTED_VERSION_INSTALLED_GROUP_NAME</key>
+		<string>%NAME% %MAJOR_VERSION% %LANGUAGE% test version installed</string>
+		<key>UPDATE_POLICY_NAME</key>
+		<string>Update %NAME% %MAJOR_VERSION% %LANGUAGE%</string>
+		<key>UPDATE_SELFSERVICE_DISPLAY_NAME</key>
+		<string>Update %NAME% %MAJOR_VERSION% %LANGUAGE%</string>
+		<key>USERS_GROUP_NAME</key>
+		<string>%NAME% %MAJOR_VERSION% %LANGUAGE% users</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>2.0.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.eth-its-recipes.jamf.template-prod</string>
+</dict>
+</plist>
