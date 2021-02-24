@@ -23,7 +23,7 @@
 		<key>PKG_ID</key>
 		<string>ch.ethz.id.pkg.CLCGenomicsWorkbench%MAJOR_VERSION%</string>
 		<key>SELFSERVICE_ICON</key>
-		<string>%NAME% %MAJOR_VERSION%.png</string>
+		<string>%NAME%.png</string>
 		<key>TEST_USERS_GROUP_NAME</key>
 		<string>%NAME% %MAJOR_VERSION% %LANGUAGE% test users</string>
 		<key>TRIGGER_UNINSTALL_POLICY_NAME</key>
