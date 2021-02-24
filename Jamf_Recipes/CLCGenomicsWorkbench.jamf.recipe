@@ -16,6 +16,8 @@
 		<string>Install %version%</string>
 		<key>JSS_INVENTORY_NAME</key>
 		<string>CLC Genomics Workbench 20.app</string>
+		<key>LANGUAGE</key>
+		<string>EN</string>
 		<key>LIST_LANGUAGE</key>
 		<string>EN</string>
 		<key>LIST_NAME</key>

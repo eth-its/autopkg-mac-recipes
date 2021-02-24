@@ -5,6 +5,7 @@ ParentRecipe: com.github.eth-its-recipes.pkg.CLCGenomicsWorkbench
 
 Input:
   NAME: CLC Genomics Workbench
+  LANGUAGE: EN
   LIST_NAME: CLC Genomics Workbench
   JSS_INVENTORY_NAME: "CLC Genomics Workbench 20.app"
   LIST_LANGUAGE: EN
