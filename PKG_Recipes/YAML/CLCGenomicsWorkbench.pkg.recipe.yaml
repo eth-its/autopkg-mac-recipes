@@ -8,8 +8,6 @@ Input:
   LIST_NAME: CLC Genomics Workbench
   LIST_LANGUAGE: EN
   MAJOR_VERSION: "12"
-  CLC_LICENSE_SERVER: lic-clcbio.ethz.ch
-  CLC_LICENSE_PORT: "6200"
 
 Process:
   - Processor: PkgRootCreator

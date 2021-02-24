@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads latest CLC Genomics Workbench installer and uses it to create a package.</string>
+	<key>Identifier</key>
+	<string>com.github.eth-its-recipes.pkg.CLCGenomicsWorkbench</string>
+	<key>Input</key>
+	<dict>
+		<key>LIST_LANGUAGE</key>
+		<string>EN</string>
+		<key>LIST_NAME</key>
+		<string>CLC Genomics Workbench</string>
+		<key>MAJOR_VERSION</key>
+		<string>12</string>
+		<key>NAME</key>
+		<string>CLC Genomics Workbench</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>1.0.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.eth-its-recipes.download.internal-sources</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkgdirs</key>
+				<dict>
+				</dict>
+				<key>pkgroot</key>
+				<string>%RECIPE_CACHE_DIR%/Scripts</string>
+			</dict>
+			<key>Processor</key>
+			<string>PkgRootCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkgdirs</key>
+				<dict>
+				</dict>
+				<key>pkgroot</key>
+				<string>%RECIPE_CACHE_DIR%/pkgroot</string>
+			</dict>
+			<key>Processor</key>
+			<string>PkgRootCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/Scripts/CLCGenomicsWorkbench_%MAJOR_VERSION%.dmg</string>
+				<key>source_path</key>
+				<string>%pathname%</string>
+			</dict>
+			<key>Processor</key>
+			<string>Copier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>file_content</key>
+				<string>#License Settings
+#Tue Aug 14 18:41:06 CEST 2018
+serverip=%CLC_LICENSE_SERVER%
+serverport=%CLC_LICENSE_PORT%
+disableborrow=false
+autodiscover=false
+useserver=true
+username=
+usecustomusername=false
+</string>
+				<key>file_mode</key>
+				<string>0644</string>
+				<key>file_path</key>
+				<string>%RECIPE_CACHE_DIR%/Scripts/license.properties</string>
+			</dict>
+			<key>Processor</key>
+			<string>FileCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>file_content</key>
+				<string>#!/bin/bash
+
+DIR=$(dirname "$0")
+
+# attach main image
+echo "Mounting CLC Genomics Workbench image"
+APPPATH="/Volumes/CLCGenomicsWorkb"
+mkdir -p $APPPATH
+hdiutil attach $DIR/CLCGenomicsWorkbench_%MAJOR_VERSION%.dmg -nobrowse -mountpoint $APPPATH
+
+$APPPATH/CLC\ Genomics\ Workbench\ Installer.app/Contents/MacOS/JavaApplicationStub -q
+
+hdiutil eject $APPPATH
+
+DEPLOYMENTDIR="/Applications/CLC Genomics Workbench %MAJOR_VERSION%/settings"
+/bin/mkdir -p "${DEPLOYMENTDIR}"
+/usr/sbin/chown -R root:wheel "${DEPLOYMENTDIR}"
+/bin/cp $DIR/license.properties "${DEPLOYMENTDIR}/license.properties"
+</string>
+				<key>file_mode</key>
+				<string>0755</string>
+				<key>file_path</key>
+				<string>%RECIPE_CACHE_DIR%/Scripts/postinstall</string>
+			</dict>
+			<key>Processor</key>
+			<string>FileCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_request</key>
+				<dict>
+					<key>chown</key>
+					<array>
+					</array>
+					<key>id</key>
+					<string>ch.ethz.id.pkg.CLCGenomicsWorkbench%version%</string>
+					<key>pkgname</key>
+					<string>CLCGenomicsWorkbench-%version%</string>
+					<key>pkgroot</key>
+					<string>%RECIPE_CACHE_DIR%/pkgroot</string>
+					<key>pkgtype</key>
+					<string>flat</string>
+					<key>scripts</key>
+					<string>Scripts</string>
+					<key>version</key>
+					<string>%version%</string>
+				</dict>
+			</dict>
+			<key>Processor</key>
+			<string>PkgCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>path_list</key>
+				<array>
+					<string>%RECIPE_CACHE_DIR%/Scripts</string>
+					<string>%RECIPE_CACHE_DIR%/pkgroot</string>
+				</array>
+			</dict>
+			<key>Processor</key>
+			<string>PathDeleter</string>
+		</dict>
+	</array>
+</dict>
+</plist>
