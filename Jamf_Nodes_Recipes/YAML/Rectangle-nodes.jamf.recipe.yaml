@@ -1,8 +1,0 @@
-Description: Downloads the latest version of Firefox and makes a pkg of it then uploads it to the JSS, and creates a Self-Service Policy available to members of a Testing group.
-Identifier: com.github.eth-its-recipes.jamf.Rectangle-nodes
-MinimumVersion: 2.0.0
-ParentRecipe: com.github.eth-its-recipes.jamf.template-nodes
-
-Input:
-  NAME: Rectangle
-  UNTESTED_RECIPE_IDENTIFIER: local.jamf.Rectangle
