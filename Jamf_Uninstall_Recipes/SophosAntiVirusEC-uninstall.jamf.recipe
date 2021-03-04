@@ -10,6 +10,8 @@
 	<dict>
 		<key>EXTENSION_ATTRIBUTE_NAME</key>
 		<string>SophosGroupPath</string>
+		<key>EXTENSION_ATTRIBUTE_SCRIPT</key>
+		<string>SophosAntiVirus-EA.sh</string>
 		<key>EXTENSION_ATTRIBUTE_SEARCH_TYPE</key>
 		<string>does not match regex</string>
 		<key>EXTENSION_ATTRIBUTE_SEARCH_VALUE</key>
@@ -18,6 +20,10 @@
 		<string>SmartGroup-installed-EA.xml</string>
 		<key>NAME</key>
 		<string>Sophos Anti-Virus EC</string>
+		<key>PARAMETER4_LABEL</key>
+		<string>Tamper password</string>
+		<key>PARAMETER4_VALUE</key>
+		<string>None</string>
 		<key>PKG_ID</key>
 		<string>ch.ethz.id.pkg.SophosAntiVirusEC</string>
 		<key>SCRIPT_NAME</key>
@@ -28,8 +34,8 @@
 		<string>Sophos Anti-Virus.png</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>2.0.0</string>
+	<string>2.3</string>
 	<key>ParentRecipe</key>
-	<string>com.github.eth-its-recipes.jamf.template-script-uninstall</string>
+	<string>com.github.eth-its-recipes.jamf.template-script-EA-uninstall</string>
 </dict>
 </plist>
