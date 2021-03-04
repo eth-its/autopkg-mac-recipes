@@ -17,7 +17,7 @@
 		<key>EXTENSION_ATTRIBUTE_SEARCH_VALUE</key>
 		<string>^$</string>
 		<key>INSTALLED_GROUP_TEMPLATE</key>
-		<string>SmartGroup-installed-EA.xml</string>
+		<string>SmartGroup-installed-app-EA.xml</string>
 		<key>NAME</key>
 		<string>Sophos Anti-Virus</string>
 		<key>PARAMETER4_LABEL</key>

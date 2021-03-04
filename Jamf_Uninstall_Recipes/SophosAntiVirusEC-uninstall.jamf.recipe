@@ -17,7 +17,9 @@
 		<key>EXTENSION_ATTRIBUTE_SEARCH_VALUE</key>
 		<string>^$</string>
 		<key>INSTALLED_GROUP_TEMPLATE</key>
-		<string>SmartGroup-installed-EA.xml</string>
+		<string>SmartGroup-installed-app-EA.xml</string>
+		<key>JSS_INVENTORY_NAME</key>
+		<string>Sophos Anti-Virus.app</string>
 		<key>NAME</key>
 		<string>Sophos Anti-Virus EC</string>
 		<key>PARAMETER4_LABEL</key>
