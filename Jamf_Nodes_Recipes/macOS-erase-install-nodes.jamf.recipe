@@ -49,7 +49,7 @@
 		<string>pkg_uploaded == False</string>
 	</dict>
 	<key>MinimumVersion</key>
-	<string>1.0.0</string>
+	<string>2.3</string>
 	<key>Process</key>
 	<array>
 		<dict>
@@ -133,7 +133,7 @@
 				<key>computergroup_name</key>
 				<string>%INELIGIBLE_GROUP_NAME%</string>
 				<key>computergroup_template</key>
-				<string>%INELIGIBLE_GROUP_GROUP_TEMPLATE%</string>
+				<string>%INELIGIBLE_GROUP_TEMPLATE%</string>
 				<key>replace_group</key>
 				<string>True</string>
 			</dict>
