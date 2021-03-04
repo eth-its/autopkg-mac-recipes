@@ -13,9 +13,9 @@
 		<key>EXTENSION_ATTRIBUTE_SCRIPT</key>
 		<string>SophosAntiVirus-EA.sh</string>
 		<key>EXTENSION_ATTRIBUTE_SEARCH_TYPE</key>
-		<string>does not match regex</string>
+		<string>matches regex</string>
 		<key>EXTENSION_ATTRIBUTE_SEARCH_VALUE</key>
-		<string>^$</string>
+		<string>id-sec-prd-01</string>
 		<key>INSTALLED_GROUP_TEMPLATE</key>
 		<string>SmartGroup-installed-app-EA.xml</string>
 		<key>JSS_INVENTORY_NAME</key>
